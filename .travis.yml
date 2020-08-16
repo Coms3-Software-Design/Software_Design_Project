@@ -1,1 +1,5 @@
+languag: node_js
 
+install:
+  - npm install -g codecov --save-dev
+  - npm install -g jest --save-dev
