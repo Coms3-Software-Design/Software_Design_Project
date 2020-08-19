@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <!-- Ctrl + shift + H for live editing with atom -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Homepage</title>
+    
+    <link rel="stylesheet" href="../CSS/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <nav id="navBar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="Logo" > MarketPlace </label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Goods</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Slider -->
+    <!-- Displays random products -->
+
+
+    <section id="main">
+        <div id="Carousel" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#Carousel" data-slide-to="1"></li>
+                <li data-target="#Carousel" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                
+                <div class="carousel-item carousel-image-1 active">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h1 class="display-3 title-color">Title 1</h1>
+                            <p class="lead">lorem</p>
+                            <a href="#" class="btn btn-color slide-btn btn-lg">Sign Up Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-2">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h1 class="display-3 title-color">Title 2</h1>
+                            <p class="lead">Lorems</p>
+                            <a href="#" class="btn btn-color slide-btn btn-lg"> Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-image-3">
+                    <div class="container">
+                        <div class="carousel-caption d-none d-sm-block text-right mb-5">
+                            <h1 class="display-3 title-color">Title 3</h1>
+                            <p class="lead">LoremsSS</p>
+                            <a href="#" class="btn btn-color slide-btn btn-lg"> Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#Carousel" data-slide="prev" class="carousel-control-prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+
+                <a href="#Carousel" data-slide="next" class="carousel-control-next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- End of slider-->
+
+    <!-- Products -->
+
+    <section id="products" class="products py-5">
+        <div class="container">
+            <!-- Section Title-->
+            <div class="row">
+                <div class="col-10 mx-auto col-sm-6 text-center">
+                    <h1 class="text-capitalize product-title">
+                        Featured products
+                    </h1>
+                </div>
+            </div>
+            <!-- End Section Title-->
+            
+            <!--Product items-->
+
+            <div class="row product-items" id="product-items">
+                <!-- Single Item -->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <!-- Image of the product-->
+                        <div class="img-container">
+                            <img src="../CSS/Images/iphone.jpg" alt="" class="card-img-top product-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">
+                                    iphone
+                                </h5>
+                                <span>
+                                    <i class="fas fa-dollar-sign"></i>
+                                    R6550
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Single Item-->
+                <!-- Single Item -->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <!-- Image of the product-->
+                        <div class="img-container">
+                            <img src="../CSS/Images/ca_shield.png" alt="" class="card-img-top product-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">
+                                    Captain America's shield
+                                </h5>
+                                <span>
+                                    <i class="fas fa-dollar-sign"></i>
+                                    R-Not for sale
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Single Item-->
+                <!-- Single Item -->
+                <div class="col-10 col-sm-8 col-lg-4 mx-auto my-3">
+                    <div class="card single-item">
+                        <!-- Image of the product-->
+                        <div class="img-container">
+                            <img src="../CSS/Images/playground.jpg" alt="" class="card-img-top product-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text d-flex justify-content-between text-capitalize">
+                                <h5 id="item-name">
+                                    Dlala
+                                </h5>
+                                <span>
+                                    <i class="fas fa-dollar-sign"></i>
+                                    R Free*
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Single Item-->
+            </div>
+            <!-- End of Product Items-->
+        </div>
+    </section>
+
+    <!-- End of Products-->
+
+    <!-- About Section -->
+    <section class="about-sec">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <img src="../CSS/Images/marketplace.png" width="450" height="150" class="img-fluid market-img">
+                </div>
+                <div class="col-lg-7 text-lg-right text-center text-color about-text">
+                    <h1> About our market place app</h1>
+                    <p class="text">nice comfy comfy words about our application</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of about section-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../Scripts/Homepage.js"></script>  
+</body>
+</html>
