@@ -4,7 +4,7 @@ php:
   - 7.1
   - 7.2
 install:
-  - travis_retry composer install --no-interaction --no-suggest
+  - composer install
 
 script:
   - composer test -- --coverage-clover=coverage.xml
