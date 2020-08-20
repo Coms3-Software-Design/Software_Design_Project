@@ -1,7 +1,11 @@
-
 {
 	"require" : {
 		"phpunit/phpunit" : "dev-master"
+	},
+	"autoload" : {
+		"classmap" : [
+			"app/"
+		]
 	}
 
 }
