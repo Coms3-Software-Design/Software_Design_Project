@@ -1,17 +1,13 @@
 language:
   - php
 php:
-  - 7.0
-  - 7.1
-  - 7.2
   - 7.3
   - 7.4
-  - hhvm
 install:
   - composer install
 
 script:
-  - phpunit --testsuite=unit --coverage-text --coverage-clover build/logs/clover.xml
+  - phpunit --testsuite=unit --coverage-text
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
