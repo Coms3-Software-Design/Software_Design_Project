@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="font" href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" >
+</head>
+
+<body>
+
+
+ <!-- Button to open the modal login form -->
+ <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+ <!-- The Modal -->
+ <div id="id01" class="modal">
+
+   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
+    &times;
+  </span>
+ 
+   <!-- Modal Content -->
+   <form class="modal-content animate" action="/action_page.php">
+     <div class="imgcontainer">
+      <header>
+        <h2 class="lab">Login Form</h2>
+      </header>
+     </div>
+ 
+     <div class="container">
+
+      <div class="input_field">
+        <input class="form-control" type="text">    
+        <label>Email or Phone</label>
+      </div>
+    
+      <div class="input_field">
+          <input class="form-control" type="password">
+          <label>Password</label>
+      </div>
+
+        <button type="submit">Login</button>
+      
+        <div class="Signing" style="background-color:#f1f1f1">
+          <span class="psw">New member <a href="#">Sign up</a></span>
+        </div>
+
+     </div>
+ 
+
+
+   </form>
+ </div>
+
+    <script src="../Scripts/app.js"></script>
+
+</body>
+</html>
