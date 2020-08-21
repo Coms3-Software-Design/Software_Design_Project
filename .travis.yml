@@ -5,12 +5,8 @@ php:
   - 7.4
 os: linux
 
-before_script:
+install:
   - composer install
-  - cp .env.example .env
-  - php artisan key: generate
-  - php artisan jwt: secret
-
 
 script:
   - vendor/bin/phpunit
