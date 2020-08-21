@@ -13,7 +13,7 @@ install:
   - composer install
 
 script:
-  - 'vendor/bin/phpunit'
+  - php vendor/bin/phpunit
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
