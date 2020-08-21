@@ -10,8 +10,7 @@ install:
   - composer install
 
 script:
-  #- vendor/bin/phpunit
-  - ./vendor/phpunit/phpunit/phpunit ./tests/ --coverage-clover=coverage.xml
+  - ./vendor/bin/phpunit tests/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
