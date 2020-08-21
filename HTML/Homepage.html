@@ -18,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
-<body>
+<body >
     <nav id="navBar">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -30,11 +30,24 @@
             <li><a href="#">Goods</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact Us</a></li>
-            <button type="button" onclick="window.location.href='Login.html'">SIGN UP</button>
+            <li><a href='../New/app.html'  data-toggle="modal" data-target="#myModal">Sign in</a></li>
+            <!-- <button type="button"  data-toggle="modal" data-target="#myModal" onclick="window.location.href='../New/app.html'">Sign Up</button> -->
             
+            <!-- -->
 
         </ul>
     </nav>
+
+    <!-- this is for displaying the sign in pop up  -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+          </div>
+
+        </div> 
 
     <!-- Slider -->
     <!-- Displays random products -->
@@ -202,5 +215,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../Scripts/Homepage.js"></script>  
+    
 </body>
 </html>

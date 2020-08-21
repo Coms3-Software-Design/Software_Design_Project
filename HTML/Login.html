@@ -4,57 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="font" href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" >
+    <link rel="stylesheet" href="../CSS/Login.css">
 </head>
 
 <body>
 
+ <!-- Trigger/Open The Modal -->
+	
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
 
- <!-- Button to open the modal login form -->
- <button onclick="document.getElementById('id01').style.display='block'">Login</button>
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Some text in the Modal..</p>
+	  </div>
 
- <!-- The Modal -->
- <div id="id01" class="modal">
+	</div> 
 
-   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
-    &times;
-  </span>
- 
-   <!-- Modal Content -->
-   <form class="modal-content animate" action="/action_page.php">
-     <div class="imgcontainer">
-      <header>
-        <h2 class="lab">Login Form</h2>
-      </header>
-     </div>
- 
-     <div class="container">
-
-      <div class="input_field">
-        <input class="form-control" type="text">    
-        <label>Email or Phone</label>
-      </div>
-    
-      <div class="input_field">
-          <input class="form-control" type="password">
-          <label>Password</label>
-      </div>
-
-        <button type="submit">Login</button>
-      
-        <div class="Signing" style="background-color:#f1f1f1">
-          <span class="psw">New member <a href="#">Sign up</a></span>
-        </div>
-
-     </div>
- 
-
-
-   </form>
- </div>
-
-    <script src="../Scripts/app.js"></script>
+	<script src="../Scripts/Login.js"></script>
 
 </body>
 </html>
