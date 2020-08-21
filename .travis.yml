@@ -10,7 +10,7 @@ install:
   - composer install
 
 script:
-  - ./vendor/bin/phpunit tests/
+  - vendor/bin/phpunit tests/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
