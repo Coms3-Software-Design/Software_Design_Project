@@ -3,11 +3,17 @@ language:
 php:
   - 7.3
   - 7.4
-install:
+os: linux
+
+before_script:
   - composer install
+  - cp .env.example .env
+  - php artisan key: generate
+  - php artisan jwt: secret
+
 
 script:
-  - phpunit --testsuite=unit --coverage-text
+  - vendor/bin/phpunit
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
