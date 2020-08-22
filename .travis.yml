@@ -1,4 +1,17 @@
-languag: node_js
+
+language:
+  - php
+php:
+  - 7.3
+  - 7.4
+
+os: linux
 
 install:
-  - npm install -g jest --save-dev
+  - composer install
+
+script:
+  - php vendor/bin/phpunit
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
