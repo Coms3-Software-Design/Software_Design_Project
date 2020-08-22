@@ -4,60 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!--     <link rel="stylesheet" href="../CSS/Login.css"> -->
+    <link rel="stylesheet" href="../CSS/Login.css">
 </head>
 
-<body>
+<body class="text-center">
 
- <!-- Trigger/Open The Modal -->
-	
-	<!-- The Modal -->
+		<form class="form-signin">
 
-	  <!-- Modal content -->
-	  <!-- <div class="modal-content">
-	    <span class="close">&times;</span>
-	    <p>Some text in the Modal..</p>
-	  </div> -->
+			<img class="logo" src="../CSS/Images/gummy-signin.svg" alt="" width="200" height="200">
 
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal">X</button>
-		<h1>Lab 6</h1>
-	  </div>
-	  <div class="modal-body">
-		<div class="panel panel-default">
-		  <div class="panel-heading text-center">
-			Employee Information
-		  </div>
-		  <div class="panel-body">
-			<div class="row">
-			  <div class="text-right col-xs-2">Title:</div>
-			  <div class="text-left col-xs-3" id="title"></div>
-			  <div class="text-right col-xs-2">First:</div>
-			  <div class="text-left col-xs-3" id="firstname"></div>
+			<header>
+				<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			</header>
+
+			<div class="input_field">
+				<label class="sr-only">User Name</label>
+				<input type="text"  class="form-control" placeholder="User Name" required autofocus>
 			</div>
-			<div class="row">
-			  <div class="text-right col-xs-2">Phone#</div>
-			  <div class="text-left col-xs-3" id="phone"></div>
-			  <div class="text-right col-xs-2">Email</div>
-			  <div class="text-left col-xs-3" id="email"></div>
+
+			<div class="input_field"> 
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 			</div>
-			<div class="row">
-			  <div class="text-right col-xs-2">Dept:</div>
-			  <div class="text-left col-xs-3" id="departmentname"></div>
-			  <div class="text-left col-xs-2">Surname:</div>
-			  <div class="text-left col-xs-4">
-				<input type="text" placeholder="enter last name" id="TextBoxLastName" class="form-control" />
-			  </div>
+
+			<div class="checkbox">
+			  <label> <input type="checkbox" value="remember-me"> Remember me </label>
 			</div>
-		  </div>
-		</div>
-		<div class="modal-footer">
-		  <div class="panel-footer">
-			<input type="button" value="Find Employee" id="empbutton" />
-			<div class="col-xs-10" id="lblstatus"></div>
-		  </div>
-		</div>
-	  </div>
+
+			<button class="button" type="submit">Sign in</button>
+
+			<!-- Come back here -->
+			<div>
+				<p class="Signing_up">Not a member <a href="Register.html">Sign Up</a></p>
+			</div>
+
+			<p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+		</form>
+
 
 <!-- 	<script src="../Scripts/Login.js"></script> -->
 
