@@ -10,7 +10,9 @@
 <body class="text-center">
 
 		<form class="form-signin">
-
+			<!-- <<x>> button for close the modal popup -->
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<!-- End of close box popup button-->
 			<img class="logo" src="../CSS/Images/gummy-signin.svg" alt="" width="200" height="200">
 
 			<header>
@@ -33,16 +35,23 @@
 
 			<button class="button" type="submit">Sign in</button>
 
-			<!-- Come back here -->
+			<!-- Movin from one file to another for popup -->
 			<div>
-				<p class="Signing_up">Not a member <a href="Register.html">Sign Up</a></p>
+				<p class="Signing_up">Not a member <a href="Register.html"  class="li-modal"  >Sign Up</a></p>
 			</div>
 
 			<p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
 		</form>
 
+		<div class="modal fade text-center" id="theModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              </div>
+            </div>
+        </div>
 
 <!-- 	<script src="../Scripts/Login.js"></script> -->
+<script src="../Scripts/Popup.js"></script>
 
 </body>
 </html>
