@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  left: 0;
+}
+
+#profile{
+  position: fixed;
+  border: 1px solid black;
+  border-radius: 10px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50% ,-50%);
+  z-index: 99px;
+  background-color: white;
+  width: 800px;
+  max-width: 80%;
+  text-align: left;
+height: auto;
+}
+
+.lab{
+
+  text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: .8rem;
+  padding: 5px;
+}
+
+#profilePic{
+  display: block;
+  border-radius : 50%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  height: 250px;
+
+}
+
+.pItem{
+  text-align: left;
+  text-decoration: none;
+  font-size: .9rem;
+  margin-left: 25px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  border-bottom: .5px solid rgba(0, 0, 0, 0.5);
+}
+
+#contact{
+  border-bottom: 0px;
+}
