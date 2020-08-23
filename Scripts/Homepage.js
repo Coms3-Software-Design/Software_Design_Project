@@ -52,8 +52,8 @@ let categories = function() {
 
 					var productBLOCK = document.createElement("div");
 					productBLOCK.innerHTML = productHTML;
-		            var node = document.createTextNode(productHTML);
-		            productBlock.appendChild(productBLOCK);
+		      var node = document.createTextNode(productHTML);
+		      productBlock.appendChild(productBLOCK);
             	}
             });
         }

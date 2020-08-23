@@ -6,6 +6,145 @@
     /*box-sizing: border-box;*/
 }
 
+body{
+  text-decoration: none;
+    font-family: montserrat , sans-serif;
+}
+
+nav{
+    background: #0082e6;
+    height:  80px;
+    width: 100%;
+}
+
+label.Logo{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul.nav-items{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li.nav-items{
+    display: inline-block;
+    line-height: 80px;
+    margin-right: 5px;
+}
+nav ul li a.nav-a{
+  text-decoration: none;
+    color:  white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+a.active, a.nav-a:hover{
+    background: #1b9bff;
+    transition: .5s;
+    color:  white;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+/*Drop downs of nav items*/
+.profile-SubMenu {
+  padding: 0;
+  margin: 0;
+  z-index:99 !important;
+  position: absolute;
+  display: none;
+}
+nav ul li:hover .profile-SubMenu{
+  display: block;
+  position:  absolute;
+  background: rgb(230,230,230);
+}
+nav ul li .profile-SubMenu li{
+  line-height: 40px;
+  display: flex;
+}
+nav ul li:hover .profile-SubMenu li a{
+ background: transparent;
+ font-size: 15px;
+ width: 150px;
+ padding-left : 5px;
+ border-radius: 0;
+ text-align:Left;
+ text-decoration: none;
+ color: #1b9bff;
+
+}
+nav ul li:hover .profile-SubMenu li a:hover{
+  transition: .4s;
+  color: white;
+  position: relative;
+  background: #1b9bff;
+}
+
+/* handling responsiveness*/
+#check{
+    display: none;
+}
+
+@media (max-width: 952px) {
+    label.Logo{
+        font-size: 30px;
+        padding-left:50px ;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+  nav{
+    position: absolute;
+    z-index: 99 !important;
+  }
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background:#2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked ~ul{
+        left: 0;
+    }
+}
+
+
 .carousel-item{
     height: 400px;
 }
@@ -81,7 +220,7 @@
 /*======== Product section ===========*/
 
 #products{
-    background: black;
+    background: url("https://www.rawpixel.com/image/575923/marbled-table-top-background");
 }
 
 .product-title{
@@ -154,7 +293,7 @@
 .about-sec{
     margin-top: 5px;
     margin-bottom: 5px;
-}   
+}
 
 .text-color{
     color: black;
@@ -181,7 +320,7 @@
     }
 
     100%{
-        transform: translateX(0);   
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -199,98 +338,3 @@
 }
 
 /* ======= Enf of about section ============*/
-
-body{
-    font-family: montserrat , sans-serif;
-}
-nav{
-    background: #0082e6;
-    height:  80px;
-    width: 100%;
-}
-
-label.Logo{
-    color: white;
-    font-size: 30px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-
-nav ul{
-    float: right;
-    margin-right: 20px;
-}
-
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin-right: 5px;
-}
-
-nav ul li a{
-    color:  white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
-}
-a.active,a:hover{
-    background: #1b9bff;
-    transition: .5s;
-}
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-#check{
-    display: none;
-}
-
-@media (max-width: 952px) {
-    label.Logo{
-        font-size: 30px;
-        padding-left:50px ;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 858px) {
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background:#2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    a:hover,a.active{
-        background: none;
-        color: #0082e6;
-    }
-
-    #check:checked ~ul{
-        left: 0;
-    }
-}
