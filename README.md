@@ -1,4 +1,4 @@
-# Software_Design_Project
-> Building a website for the market app
+### SOFTWARE DESIGN WEB APPLICATION
 
-[![Build Status](https://travis-ci.org/Coms3-Software-Design/software_design_project.svg?branch=master)](https://travis-ci.org/Coms3-Software-Design/software_design_project)
+> Building a market place app
+
