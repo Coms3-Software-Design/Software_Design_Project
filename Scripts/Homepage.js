@@ -12,27 +12,19 @@ let HTMLcode = '';
 
 var productBlock = document.getElementById("product-items");
 
-let categories = function() {
-    $.getJSON(url, function (result) {
-        goodsArray = result;
-        for (let i = 0; i < goodsArray.length; i++) {
-        	/*--------------- list of categories ----------------------*/
-            //console.log(goodsArray[i].Category);
+let goods = function(cat) {
+  const cats = cat;
 
-            var heading = document.createElement("h1");
-            var node = document.createTextNode(goodsArray[i].Category);
-            heading.appendChild(node);
-            productBlock.appendChild(heading);
 
-            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ goodsArray[i].Category +'&type=Goods', function(results) {
+            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ cat +'&type=Goods', function(results) {
             	productsArray = results;
             	for(let j = 0; j < productsArray.length; j++){
-            		//console.log(productsArray[j].Product_Name);
-
+            		console.log(productsArray[j]);
+                var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+productsArray[j].Product_ID+`.jpeg`
             		productHTML = '<div class="card single-item"> '+
 										    '<!-- Image of the product--> '+
 										    '<div class="img-container"> '+
-										        '<img src="../CSS/Images/iphone.jpg" alt="" class="card-img-top product-img"> '+
+                                `<img src=${pic} alt="" class="card-img-top product-img" width = "300" height = "250">`+
 										    '</div> '+
 										    '<div class="card-body"> '+
 										        '<div class="card-text d-flex justify-content-between text-capitalize"> '+
@@ -54,12 +46,27 @@ let categories = function() {
 		      productBlock.appendChild(productBLOCK);
             	}
             });
-        }
-    });
+
 };
 
-categories();
+goods('Other');
 
+categories = function(){
+  $.getJSON(url, function (result) {
+    goodsArray = result;
+    for (let i = 0; i < goodsArray.length; i++) {
+    	/*--------------- list of categories ----------------------*/
+        //console.log(goodsArray[i].Category);
+
+        var heading = document.createElement("h1");
+        var node = document.createTextNode(goodsArray[i].Category);
+        heading.appendChild(node);
+        productBlock.appendChild(heading);
+
+
+ }
+});
+};
 let viewProduct = function(){
 	console.log("It works");
 }
