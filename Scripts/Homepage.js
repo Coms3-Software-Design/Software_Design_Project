@@ -54,19 +54,36 @@ goods('Other');
 categories = function(){
   $.getJSON(url, function (result) {
     goodsArray = result;
-    for (let i = 0; i < goodsArray.length; i++) {
-    	/*--------------- list of categories ----------------------*/
-        //console.log(goodsArray[i].Category);
+    // for (let i = 0; i < goodsArray.length; i++) {
+    // 	/*--------------- list of categories ----------------------*/
+    //     //console.log(goodsArray[i].Category);
+    //
+    //     var heading = document.createElement("h1");
+    //     var node = document.createTextNode(goodsArray[i].Category);
+    //     heading.appendChild(node);
+    //     productBlock.appendChild(heading);
+    //   }
+    catDropDown = `
 
-        var heading = document.createElement("h1");
-        var node = document.createTextNode(goodsArray[i].Category);
-        heading.appendChild(node);
-        productBlock.appendChild(heading);
+      <ul class="nav-items">${goodsArray.map(function(category){
+        return `<li id = "category">${category.Category}</li>`;
+      }).join('')}
+      </ul>
+
+    `
+    $(function(){
+      $('.click').click(function(){
+        var str = $(this).text();
+        goods(str);
+      });
+    });
+    document.getElementById("goodsDrop").innerHTML = catDropDown;
 
 
- }
 });
 };
+
+categories()
 let viewProduct = function(){
 	console.log("It works");
 }
