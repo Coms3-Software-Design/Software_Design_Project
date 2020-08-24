@@ -8,6 +8,7 @@ const  url = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories/categor
 let productsArray;
 let goodsArray;
 let productHTML;
+let HTMLcode = '';
 
 var productBlock = document.getElementById("product-items");
 
@@ -16,7 +17,7 @@ let categories = function() {
         goodsArray = result;
         for (let i = 0; i < goodsArray.length; i++) {
         	/*--------------- list of categories ----------------------*/
-            console.log(goodsArray[i].Category);
+            //console.log(goodsArray[i].Category);
 
             var heading = document.createElement("h1");
             var node = document.createTextNode(goodsArray[i].Category);
@@ -26,12 +27,9 @@ let categories = function() {
             $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ goodsArray[i].Category +'&type=Goods', function(results) {
             	productsArray = results;
             	for(let j = 0; j < productsArray.length; j++){
-            		console.log(productsArray[j].Product_Name);
+            		//console.log(productsArray[j].Product_Name);
 
-
-
-            		productHTML = '<div class="col-10 col-sm-8 col-lg-4 mx-auto my-3"> '+
-										'<div class="card single-item"> '+
+            		productHTML = '<div class="card single-item"> '+
 										    '<!-- Image of the product--> '+
 										    '<div class="img-container"> '+
 										        '<img src="../CSS/Images/iphone.jpg" alt="" class="card-img-top product-img"> '+
@@ -42,15 +40,15 @@ let categories = function() {
 										                productsArray[j].Product_Name+
 										            '</h5> '+
 										            '<span> '+
-										                '<i class="fas fa-dollar-sign"></i> '+
 										                'R' + productsArray[j].Product_Price+
 										            '</span> '+
 										        '</div> '+
 										    '</div> '+
-										'</div> '+
-									'</div>';
-
+										'</div> ';
+					HTMLcode += productHTML;
 					var productBLOCK = document.createElement("div");
+					productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
+					productBLOCK.setAttribute("onclick", "viewProduct()");
 					productBLOCK.innerHTML = productHTML;
 		      var node = document.createTextNode(productHTML);
 		      productBlock.appendChild(productBLOCK);
@@ -61,3 +59,7 @@ let categories = function() {
 };
 
 categories();
+
+let viewProduct = function(){
+	console.log("It works");
+}
