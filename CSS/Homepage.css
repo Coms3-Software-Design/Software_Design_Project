@@ -266,6 +266,10 @@ nav ul li:hover .profile-SubMenu li a:hover{
     transform: translateY(5px);
 }
 
+.products{
+    background-color: black;
+}
+
 .img-container{
     position: relative;
     overflow: hidden;
