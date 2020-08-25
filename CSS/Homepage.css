@@ -69,13 +69,14 @@ a.active, a.nav-a:hover{
 nav ul li:hover .profile-SubMenu{
   display: block;
   position:  fixed;
+  top:60px;
   background: rgb(230,230,230);
 }
 nav ul li .profile-SubMenu li{
   line-height: 40px;
   display: flex;
 }
-nav ul li:hover .profile-SubMenu li a{
+nav ul li:hover .profile-SubMenu li a {
  background: transparent;
  font-size: 15px;
  width: 150px;
@@ -86,6 +87,32 @@ nav ul li:hover .profile-SubMenu li a{
  color: #1b9bff;
 
 }
+
+.category{
+  display: flex;
+  font-size: 15px;
+
+  padding-left : 20px;
+  border-radius: 0;
+  text-align:Left;
+  text-decoration: none;
+  color: #1b9bff;
+}
+
+.category:hover{
+  cursor: pointer;
+  transition: .4s;
+  color: white;
+  position: relative;
+  background: #1b9bff;
+}
+#productPic{
+  min-width: 300px;
+  min-height: 250px;
+  max-width: 300px;
+  max-height: 250px;
+}
+
 nav ul li:hover .profile-SubMenu li a:hover{
   transition: .4s;
   color: white;
@@ -94,7 +121,7 @@ nav ul li:hover .profile-SubMenu li a:hover{
 }
 
 /* handling responsiveness*/
-#check{
+#check , #Services{
     display: none;
 }
 
@@ -225,6 +252,10 @@ nav ul li:hover .profile-SubMenu li a:hover{
 
 .product-title{
     color: white;
+}
+#main , #product-items{
+    position: relative;
+    top:-16px;
 }
 
 .single-item{

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/Login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="text-center">
@@ -21,19 +22,19 @@
 
 			<div class="input_field">
 				<label class="sr-only">User Name</label>
-				<input type="text"  class="form-control" placeholder="User Name" required autofocus>
+				<input type="text" id=username name="username" class="form-control" placeholder="User Name" required autofocus>
 			</div>
 
-			<div class="input_field"> 
+			<div class="input_field">
 				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 			</div>
 
 			<div class="checkbox">
 			  <label> <input type="checkbox" value="remember-me"> Remember me </label>
 			</div>
 
-			<button class="button" type="submit">Sign in</button>
+			<button class="button" type="submit" id="submit" name="submit">Sign in</button>
 
 			<!-- Movin from one file to another for popup -->
 			<div>
@@ -51,7 +52,9 @@
         </div>
 
 <!-- 	<script src="../Scripts/Login.js"></script> -->
+<script src="../Scripts/Userlogin.js"></script>
 <script src="../Scripts/Popup.js"></script>
+
 
 </body>
 </html>

@@ -1,4 +1,8 @@
 .form-signin .logo{
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d903dbd4401e4fa0e7fbbe8e9f883ba19f4240a
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -18,7 +22,10 @@
 }
 
 .checkbox{
-  margin-top: 10px;  
+  margin-top: 10px;
+}
+.date_field{
+  display: none;
 }
 
 .button{

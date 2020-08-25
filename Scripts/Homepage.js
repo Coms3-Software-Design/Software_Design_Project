@@ -10,29 +10,21 @@ let goodsArray;
 let productHTML;
 let HTMLcode = '';
 
+
 var productBlock = document.getElementById("product-items");
 
-let categories = function() {
-    $.getJSON(url, function (result) {
-        goodsArray = result;
-        for (let i = 0; i < goodsArray.length; i++) {
-        	/*--------------- list of categories ----------------------*/
-            //console.log(goodsArray[i].Category);
-
-            var heading = document.createElement("h1");
-            var node = document.createTextNode(goodsArray[i].Category);
-            heading.appendChild(node);
-            productBlock.appendChild(heading);
-
-            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ goodsArray[i].Category +'&type=Goods', function(results) {
+let goods = function(cat,type) {
+  const cats = cat;
+  $("#product-items").empty();
+            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ cat +'&type='+type, function(results) {
             	productsArray = results;
             	for(let j = 0; j < productsArray.length; j++){
-            		//console.log(productsArray[j].Product_Name);
-
+            		//console.log(productsArray[j]);
+                var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+productsArray[j].Product_ID+`.jpeg`
             		productHTML = '<div class="card single-item"> '+
 										    '<!-- Image of the product--> '+
 										    '<div class="img-container"> '+
-										        '<img src="../CSS/Images/iphone.jpg" alt="" class="card-img-top product-img"> '+
+                                `<img src=${pic} alt="" class="card-img-top product-img" id="productPic">`+
 										    '</div> '+
 										    '<div class="card-body"> '+
 										        '<div class="card-text d-flex justify-content-between text-capitalize"> '+
@@ -54,12 +46,47 @@ let categories = function() {
 		      productBlock.appendChild(productBLOCK);
             	}
             });
-        }
-    });
+
 };
 
-categories();
+categories = function(){
 
-let viewProduct = function(){
-	console.log("It works");
-}
+  var array = $.getJSON(url, function (result) {
+    goodsArray = result;
+    catDropDown = `
+      <ul class="nav-items">${goodsArray.map(function(category){
+        console.log(category);
+        return `<li class = "category" id = "${category.Category}" onclick = "goods(${category.Category})">${category.Category}</li>`;
+      }).join('')}
+      </ul>
+    `
+    document.getElementById("goodsDrop").innerHTML = catDropDown;
+
+var Accessories = document.getElementById("Accessories");
+Accessories.setAttribute("onclick", `goods("Accessories","Goods")`);
+
+var Cutlery = document.getElementById("Cutlery");
+Cutlery.setAttribute("onclick", `goods("Cutlery","Goods")`);
+
+var Electronics = document.getElementById("Electronics");
+Electronics.setAttribute("onclick", `goods("Electronics","Goods")`);
+
+var Other = document.getElementById("Other");
+Other.setAttribute("onclick", `goods("Other","Goods")`);
+
+var Shoes = document.getElementById("Shoes");
+Shoes.setAttribute("onclick", `goods("Shoes","Goods")`);
+
+var Stationery = document.getElementById("Stationery");
+Stationery.setAttribute("onclick", `goods("Stationery", "Goods")`);
+
+var Services = document.getElementById("Service");
+Services.setAttribute("onclick", `goods("Services","Services")`);
+
+});
+
+
+};
+
+goods('Accessories','Goods');
+categories();
