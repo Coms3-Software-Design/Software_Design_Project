@@ -20,16 +20,23 @@
 			<header>
 				<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 			</header>
+              <!--Loader-->
+              <div id="response"></div>
 
 			<div class="input_field">
 				<label class="sr-only">User Name</label>
-				<input type="text" id=username name="username" class="form-control" placeholder="User Name" required autofocus>
+				<input type="text" id="username" name="username" class="form-control" placeholder="User Name" required autofocus>
 			</div>
 
 			<div class="input_field">
 				<label for="inputPassword" class="sr-only">Password</label>
 				<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 			</div>
+
+        <!-- Displays error when user logs in with incorrect credential-->
+        <div id="login-message">
+        </div>
+
 
 			<div class="checkbox">
 			  <label> <input type="checkbox" value="remember-me"> Remember me </label>
@@ -38,6 +45,7 @@
 			<button class="button" type="submit" id="submit" name="submit">Sign in</button>
 
 			<!-- Movin from one file to another for popup -->
+
 			<div>
 				<p class="Signing_up">Not a member <a href="Register.html"  class="li-modal"  >Sign Up</a></p>
 			</div>
