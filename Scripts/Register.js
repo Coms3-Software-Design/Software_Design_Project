@@ -1,5 +1,6 @@
 $(document).ready(function(){
      $('#submit').click(function(e){
+
        e.preventDefault();
        var username = $("#username").val();
        var stno = $("#userid").val();
@@ -7,9 +8,14 @@ $(document).ready(function(){
        var last_name = $("#surname").val();
        var password = $("#password").val();
        var phone = $("#contactnum").val();
+        //$('#datecreated').val(new Date().toDateInputValue());
+
+
           if(username =='' || stno=='' || full_name== '' || last_name=='' || password=='' || phone=='')
           {
+
                $('#response').html('<span class="text-danger">All Fields are required</span>');
+
           }
           else
           {
@@ -24,7 +30,7 @@ $(document).ready(function(){
                     },
                     success:function(data){
                          $('form').trigger("reset");
-                         $('#response').fadeIn().html(data);
+                         $('#response').fadeIn().html('<span class="li-modal">registration successfull</span>');
                          setTimeout(function(){
                               $('#response').fadeOut("slow");
                          }, 5000);
