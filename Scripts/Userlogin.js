@@ -49,7 +49,7 @@ $(document).ready(function(){
            $('#response').fadeIn().html('<span class="li-modal"><h4>Loading...</h4></span>');
           setTimeout(function(){
                $('#response').fadeOut("slow");
-               window.location ="home.html";
+               window.location ="Homepage.html";
           }, 3000);
 
         }
