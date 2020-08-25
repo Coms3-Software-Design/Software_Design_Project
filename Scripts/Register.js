@@ -4,7 +4,7 @@ $(document).ready(function(){
        var username = $("#username").val();
        var stno = $("#userid").val();
        var full_name = $("#name").val();
-       var last_name = $("#name").val();
+       var last_name = $("#surname").val();
        var password = $("#password").val();
        var phone = $("#contactnum").val();
           if(username =='' || stno=='' || full_name== '' || last_name=='' || password=='' || phone=='')
@@ -15,12 +15,12 @@ $(document).ready(function(){
           {
 
                $.ajax({
-                    url:"https://lamp.ms.wits.ac.za/~s1814731/public_html/MPphpfiles/MPRegister.php",
+                    url:"https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPRegister.php",
                     method:"POST",
                     data:$('#submit_form').serialize(),
                     dataType: "text",
                     beforeSend:function(){
-                         $('#response').html('<span class="text-info">Loading response...</span>');
+                         $('#response').html('<span class="li-modal">Loading response...</span>');
                     },
                     success:function(data){
                          $('form').trigger("reset");
