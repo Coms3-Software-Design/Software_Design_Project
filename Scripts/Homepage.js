@@ -24,7 +24,7 @@ let goods = function(cat,type) {
             		productHTML = '<div class="card single-item"> '+
 										    '<!-- Image of the product--> '+
 										    '<div class="img-container"> '+
-                                `<img src=${pic} alt="" class="card-img-top product-img" width = "300" height = "250">`+
+                                `<img src=${pic} alt="" class="card-img-top product-img" id="productPic">`+
 										    '</div> '+
 										    '<div class="card-body"> '+
 										        '<div class="card-text d-flex justify-content-between text-capitalize"> '+
@@ -49,8 +49,6 @@ let goods = function(cat,type) {
 
 };
 
-goods('Electronics','Goods');
-
 categories = function(){
 
   var array = $.getJSON(url, function (result) {
@@ -61,22 +59,27 @@ categories = function(){
         return `<li class = "category" id = "${category.Category}" onclick = "goods(${category.Category})">${category.Category}</li>`;
       }).join('')}
       </ul>
-
     `
     document.getElementById("goodsDrop").innerHTML = catDropDown;
 
 var Accessories = document.getElementById("Accessories");
 Accessories.setAttribute("onclick", `goods("Accessories","Goods")`);
+
 var Cutlery = document.getElementById("Cutlery");
 Cutlery.setAttribute("onclick", `goods("Cutlery","Goods")`);
+
 var Electronics = document.getElementById("Electronics");
 Electronics.setAttribute("onclick", `goods("Electronics","Goods")`);
+
 var Other = document.getElementById("Other");
 Other.setAttribute("onclick", `goods("Other","Goods")`);
+
 var Shoes = document.getElementById("Shoes");
 Shoes.setAttribute("onclick", `goods("Shoes","Goods")`);
+
 var Stationery = document.getElementById("Stationery");
 Stationery.setAttribute("onclick", `goods("Stationery", "Goods")`);
+
 var Services = document.getElementById("Service");
 Services.setAttribute("onclick", `goods("Services","Services")`);
 
@@ -85,6 +88,5 @@ Services.setAttribute("onclick", `goods("Services","Services")`);
 
 };
 
-
-
+goods('Accessories','Goods');
 categories();

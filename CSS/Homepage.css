@@ -69,7 +69,7 @@ a.active, a.nav-a:hover{
 nav ul li:hover .profile-SubMenu{
   display: block;
   position:  fixed;
-  top:60px;  
+  top:60px;
   background: rgb(230,230,230);
 }
 nav ul li .profile-SubMenu li{
@@ -105,6 +105,12 @@ nav ul li:hover .profile-SubMenu li a {
   color: white;
   position: relative;
   background: #1b9bff;
+}
+#productPic{
+  min-width: 300px;
+  min-height: 250px;
+  max-width: 300px;
+  max-height: 250px;
 }
 
 nav ul li:hover .profile-SubMenu li a:hover{
