@@ -22,22 +22,22 @@
 
 			<div class="input_field">
 				<label for="inputEmail" class="sr-only">User Name</label>
-				<input type="text"   id = "username" name = "username" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
+				<input type="text"   id = "username" name = "username" class="form-control" placeholder="User Name" required autofocus>
 			</div>
-			
+
 			<div class="input_field">
 				<label  class="sr-only">Student Number</label>
-				<input type='text' name= "stno" id="stno" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Student Number" required/>
+				<input type='text' name= "userid" id="userid" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Student Number" required/>
 			</div>
 
 			<div class="input_field">
 				<label  class="sr-only">Full Name</label>
-				<input type="text" name= "full_name" id= "full_name" class="form-control" placeholder="Full Name" required>
+				<input type="text" name= "name" id= "name" class="form-control" placeholder="Full Name" required>
 			</div>
 
 			<div class="input_field">
 				<label  class="sr-only">Last Name</label>
-				<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" required>
+				<input type="text" name="surname" id="surname" class="form-control" placeholder="Last Name" required>
 			</div>
 
 			<div class="input_field">
@@ -47,7 +47,7 @@
 
 			<div class="input_field">
 				<label  class="sr-only">Phone Number</label>
-				<input type='text' name="phone" id = "phone" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Phone Number" required/>
+				<input type='text' name="contactnum" id = "contactnum" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Phone Number" required/>
 			</div>
 
 			<label class="radio-inline">
@@ -60,7 +60,7 @@
 
 			<div>
 				<label for="birthday">Date of birth</label>
-				<input type="date" id="birthday" name="birthday">
+				<input type="date" id="dob" name="dob">
 			</div>
 
 			<button class="button" type="submit" id="submit" name="submit">Sign Up</button>
@@ -74,10 +74,10 @@
 				<p class="Signing_up"> already a member  <a  data-dismiss="modal">  Sign In </a> </p>
 			</div>
 
-			
+
 			<p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
 		</form>
-		
+
 		<!-- This is the response of the successfull registration -->
 		<div id="response"></div>
 
@@ -85,7 +85,7 @@
 	<script src="../Scripts/Register.js"></script>
 	<script src="../Scripts/Popup.js"></script>
 	<script src="../Scripts/Numeric.js"></script>
-	
+
 
 </body>
 </html>
