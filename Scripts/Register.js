@@ -2,11 +2,11 @@ $(document).ready(function(){
      $('#submit').click(function(e){
        e.preventDefault();
        var username = $("#username").val();
-       var stno = $("#stno").val();
-       var full_name = $("#full_name").val();
-       var last_name = $("#last_name").val();
+       var stno = $("#userid").val();
+       var full_name = $("#name").val();
+       var last_name = $("#name").val();
        var password = $("#password").val();
-       var phone = $("#phone").val();
+       var phone = $("#contactnum").val();
           if(username =='' || stno=='' || full_name== '' || last_name=='' || password=='' || phone=='')
           {
                $('#response').html('<span class="text-danger">All Fields are required</span>');
@@ -15,7 +15,7 @@ $(document).ready(function(){
           {
 
                $.ajax({
-                    url:"https://lamp.ms.wits.ac.za/~s1814731/R.php",
+                    url:"https://lamp.ms.wits.ac.za/~s1814731/public_html/MPphpfiles/MPRegister.php",
                     method:"POST",
                     data:$('#submit_form').serialize(),
                     dataType: "text",
