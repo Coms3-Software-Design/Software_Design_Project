@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/Register.css">
+	<link rel="stylesheet" href="../CSS/Register.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="text-center">
 
-		<form class="form-signin">
+		<form class="form-signin" id= "submit_form">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 
 			<img class="logo" src="../CSS/Images/gummy-signup.svg" alt="" width="202" height="202">
@@ -20,32 +22,32 @@
 
 			<div class="input_field">
 				<label for="inputEmail" class="sr-only">User Name</label>
-				<input type="text"  id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
+				<input type="text"   id = "username" name = "username" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
 			</div>
 			
 			<div class="input_field">
 				<label  class="sr-only">Student Number</label>
-				<input type='text' min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Student Number" required/>
+				<input type='text' name= "stno" id="stno" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Student Number" required/>
 			</div>
 
 			<div class="input_field">
 				<label  class="sr-only">Full Name</label>
-				<input type="text" class="form-control" placeholder="Full Name" required>
+				<input type="text" name= "full_name" id= "full_name" class="form-control" placeholder="Full Name" required>
 			</div>
 
 			<div class="input_field">
 				<label  class="sr-only">Last Name</label>
-				<input type="text" class="form-control" placeholder="Last Name" required>
+				<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" required>
 			</div>
 
-			<div class="input_field"> 
+			<div class="input_field">
 				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 			</div>
 
 			<div class="input_field">
 				<label  class="sr-only">Phone Number</label>
-				<input type='text' min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Phone Number" required/>
+				<input type='text' name="phone" id = "phone" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Phone Number" required/>
 			</div>
 
 			<label class="radio-inline">
@@ -61,7 +63,8 @@
 				<input type="date" id="birthday" name="birthday">
 			</div>
 
-			<button class="button" type="submit">Sign Up</button>
+			<button class="button" type="submit" id="submit" name="submit">Sign Up</button>
+			<!-- <button class="button" type="submit" >Sign Up</button> -->
 
 			<!-- Moving from one pop up to another continuously  has issues -->
 			<!-- I have added the <<data-dismiss="modal">> to temporary dismiss the sigin in buttion till the issue is fixed -->
@@ -74,19 +77,14 @@
 			
 			<p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
 		</form>
-
-		<!-- used to display the transparent background for a popup -->
-		<!-- <div class="modal fade text-center" id="theModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              </div>
-            </div>
-        </div> -->
+		
+		<!-- This is the response of the successfull registration -->
+		<div id="response"></div>
 
 
 	<script src="../Scripts/Register.js"></script>
 	<script src="../Scripts/Popup.js"></script>
-	<script src="../Scripts/Numeric_values.js"></script>
+	<script src="../Scripts/Numeric.js"></script>
 	
 
 </body>
