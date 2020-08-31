@@ -25,12 +25,12 @@ let goods = function(cat,type) {
 	                var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+productsArray[j].Product_ID+`.jpeg`
 	                var id = productsArray[j].Product_ID;
 	                console.log(id);
-	            		productHTML = '<a href="ViewProduct.html">' + 
-	            		'<div class="card single-item"> '+
+	            		productHTML = '<div class="card single-item"> '+
 											    '<!-- Image of the product--> '+
 											    '<div class="img-container"> '+
 	                                				`<img src=${pic} alt="" class="card-img-top product-img" id="productPic">`+
 											    '</div> '+
+											    '<a href="ViewProduct.html">' + 
 											    '<div class="card-body" id='+id+' onclick="viewProduct()> '+
 											        '<div class="card-text d-flex justify-content-between text-capitalize"> '+
 											            '<h5 id="item-name"> '+
@@ -41,8 +41,8 @@ let goods = function(cat,type) {
 											            '</span> '+
 											        '</div> '+
 											    '</div> '+
-											'</div> '
-	            		+ '</a>';
+											    + '</a>'
+											'</div> ';
 						HTMLcode += productHTML;
 						var productBLOCK = document.createElement("div");
 						productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
