@@ -7,6 +7,6 @@ install:
   - npm install --save bufferutil@3 ws@1
   - npm install jest --save-dev
 script:
-  - npm run jest
+  - npm run test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
