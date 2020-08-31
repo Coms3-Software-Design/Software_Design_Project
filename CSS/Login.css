@@ -1,5 +1,5 @@
 .form-signin .logo{
-
+  
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -19,7 +19,7 @@
 }
 
 .checkbox{
-  margin-top: 10px;
+  margin-top: 10px;  
 }
 
 .button{
@@ -37,8 +37,4 @@
 
 .close{
   margin: 10px;
-}
-#login-message{
-  color: red;
-
 }

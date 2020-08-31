@@ -26,18 +26,14 @@ $(document).ready(function(){
                     data:$('#submit_form').serialize(),
                     dataType: "text",
                     beforeSend:function(){
-                         //$('#response').html('<span class="li-modal">Loading response...</span>');
+                         $('#response').html('<span class="li-modal">Loading response...</span>');
                     },
-
-                    // This function gets data from
                     success:function(data){
                          $('form').trigger("reset");
-                         $('#response').fadeIn().html('<span class="li-modal"><h3>registration successfull!!</h3></span>');
+                         $('#response').fadeIn().html('<span class="li-modal">registration successfull</span>');
                          setTimeout(function(){
                               $('#response').fadeOut("slow");
-                              window.location ="Homepage.html";
-                         }, 3000);
-
+                         }, 5000);
                     }
                });
           }
