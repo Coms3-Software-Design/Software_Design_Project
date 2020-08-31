@@ -1,16 +1,12 @@
 language:
-  - php
-
-php:
-  - 7.3
-  - 7.4
-
-os: linux
-
+  - node_js
+node:
+  - 10
 install:
-  - composer install
+  - npm install -g codecov --save-dev
+  - npm install --save bufferutil@3 ws@1
+  - npm install jest --save-dev
 script:
-  - php vendor/bin/phpunit
-
+  - npm run jest
 after_success:
   - bash <(curl -s https://codecov.io/bash)
