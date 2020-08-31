@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../CSS/ViewProduct.css">
     <link rel="stylesheet" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../CSS/rate.css">
     <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
 
 
@@ -74,13 +75,84 @@
           <div class="details col-md-6">
             <h3 class="product-title" id="product_title">men's shoes fashion</h3>
             <div class="rating">
-              <div class="stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
+              <div class="container">
+                <div class="post">
+                  <div class="text">
+                    Thanks for rating this product!
+                  </div>
+                  <div class="edit">
+                    Edit
+                  </div>
+                </div>
+                <div class="star-widget">
+                  <input type="radio" name="rate" id="rate-5">
+                  <label for="rate-5" class="fas fa-star" ></label>
+                  <input type="radio" name="rate" id="rate-4">
+                  <label for="rate-4" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-3">
+                  <label for="rate-3" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-2">
+                  <label for="rate-2" class="fas fa-star"></label>
+                  <input type="radio" name="rate" id="rate-1">
+                  <label for="rate-1" class="fas fa-star"></label>
+
+                  <form action="#">
+                    <header></header>
+                    <div class="textarea">
+                      <textarea cols="30" placeholder="Describe your experience..." id="review"></textarea>
+                    </div>
+                    <div class="btn">
+                      <button type="submit"> Post </button>
+                    </div>
+                  </form>
+                </div>
               </div>
+
+              <script>
+                const btn = document.querySelector("button");
+                const post = document.querySelector(".post");
+                const widget = document.querySelector(".star-widget");
+                const editBtn = document.querySelector(".edit");
+
+                btn.onclick = ()=>{
+                  widget.style.display = "none";
+                  post.style.display = "block";
+
+                  if(document.getElementById("rate-5").checked == true){
+                    console.log(5);
+                  }
+
+                  else if(document.getElementById("rate-4").checked == true){
+                    console.log(4);
+                  }
+
+                  else if(document.getElementById("rate-3").checked == true){
+                    console.log(3);
+                  }
+
+                  else if(document.getElementById("rate-2").checked == true){
+                    console.log(2);
+                  }
+
+                  else if(document.getElementById("rate-1").checked == true){
+                    console.log(1);
+                  }
+
+                  let review = document.getElementById("review").value;
+                  if(review != ""){
+                    console.log(review);
+                  }
+
+                  return false;
+                }
+
+                editBtn.onclick = ()=>{
+                  widget.style.display = "block";
+                  post.style.display = "none";
+
+                  return false;
+                }
+              </script>
               <span class="review-no">41 reviews</span>
             </div>
             <hr>
@@ -105,6 +177,5 @@
     </div>
   </div>
   <script src="../Scripts/ViewProduct.js"></script>
-  <script src="../Scripts/Homepage.js"></script>
   </body>
 </html>

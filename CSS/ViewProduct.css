@@ -91,7 +91,9 @@ img {
   margin-bottom: 15px; }
 
 .product-title {
-  margin-top: 0; }
+  color: black;
+  margin-top: 0; 
+}
 
 .size {
   margin-right: 10px; }
