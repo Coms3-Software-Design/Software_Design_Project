@@ -14,12 +14,18 @@ $(document).ready(function(){
               username:username,
               password:password
             },
+            beforeSend:function(){
+              //   $('#res').html('<span class="li-modal">Loading...</span>');
+            },
             success:function(response){
               if(response=="!exists"){
-                console.log("I dont exists");
+                $('#response').fadeIn(400).html('<span class="li-modal">Invalid username or password</span>');
+                setTimeout(function(){
+                  $('#response').fadeOut('slow');
+                },50000);
               }
               else{
-                console.log("I do");
+
               }
             },
             dataType: 'text'
