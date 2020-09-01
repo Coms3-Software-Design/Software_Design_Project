@@ -15,8 +15,12 @@ $(document).ready(function(){
               password:password
             },
             success:function(response){
-              alert("Login successfull");
-              console.log(response);
+              if(response=="!exists"){
+                console.log("I dont exists");
+              }
+              else{
+                console.log("I do");
+              }
             },
             dataType: 'text'
 

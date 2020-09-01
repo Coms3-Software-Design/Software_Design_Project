@@ -29,6 +29,7 @@ $(document).ready(function(){
                          $('#response').html('<span class="li-modal">Loading response...</span>');
                     },
                     success:function(data){
+                        
                          $('form').trigger("reset");
                          $('#response').fadeIn().html('<span class="li-modal">registration successfull</span>');
                          setTimeout(function(){
