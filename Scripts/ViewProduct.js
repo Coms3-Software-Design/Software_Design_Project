@@ -13,7 +13,7 @@ $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php
         /* Getting and setting a picture*/
         var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+ProductsArray[j].Product_ID+`.jpeg`
         document.getElementById("product_image").src = pic;
-
+        
         /* Getting and setting Products name*/
         document.getElementById("product_title").innerHTML = ProductsArray[j].Product_Name;
 
