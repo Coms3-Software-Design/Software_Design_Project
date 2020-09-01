@@ -22,7 +22,7 @@ $(document).ready(function(){
                 $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
                 setTimeout(function(){
                   $('#response').fadeOut('slow');
-                },50000);
+                },5000);
 
               }
               else{
