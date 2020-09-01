@@ -25,7 +25,7 @@ $(document).ready(function(){
                 },50000);
               }
               else{
-
+                    
               }
             },
             dataType: 'text'
