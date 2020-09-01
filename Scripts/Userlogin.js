@@ -14,9 +14,6 @@ $(document).ready(function(){
               username:username,
               password:password
             },
-            beforeSend:function(){
-              //   $('#res').html('<span class="li-modal">Loading...</span>');
-            },
             success:function(response){
               if(response=="!exists"){
                 $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
@@ -26,7 +23,7 @@ $(document).ready(function(){
 
               }
               else{
-
+                console.log("I do");
               }
             },
             dataType: 'text'
