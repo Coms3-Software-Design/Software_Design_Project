@@ -19,13 +19,14 @@ $(document).ready(function(){
             },
             success:function(response){
               if(response=="!exists"){
-                $('#response').fadeIn(400).html('<span class="li-modal">Invalid username or password</span>');
+                $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
                 setTimeout(function(){
                   $('#response').fadeOut('slow');
                 },50000);
+
               }
               else{
-                    
+
               }
             },
             dataType: 'text'
