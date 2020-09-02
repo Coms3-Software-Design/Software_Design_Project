@@ -1,5 +1,6 @@
 $(document).ready(function(){
   $("#submit").click(function(){
+    console.log("Page ready");
     var username = $("#username").val();
     var password = $("#password").val();
 
@@ -9,13 +10,17 @@ $(document).ready(function(){
       $.ajax(
         {
             url:"https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPLogin.php",
+            method: 'POST',
             data:{
               login:1,
               username:username,
               password:password
             },
+
             success:function(response){
+
               if(response=="!exists"){
+
                 $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
                 setTimeout(function(){
                   $('#response').fadeOut('slow');
@@ -23,7 +28,7 @@ $(document).ready(function(){
 
               }
               else{
-                console.log("I do");
+                $('#response').html('<span class="li-modal">successfully logged in</span>');
               }
             },
             dataType: 'text'
