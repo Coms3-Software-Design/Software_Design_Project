@@ -78,3 +78,5 @@ class User {
     this.proPicURL = proPicURL;
   };
 }
+
+module.exports=User;
