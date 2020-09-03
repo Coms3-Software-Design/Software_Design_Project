@@ -11,10 +11,12 @@ class Product {
                 this.category = category;
                 this.productBrand = productBrand;
                 this.productDescription = productDescription;
-                this.productPicture = NULL;
+                this.productPicture = null;
                 this.prodType = prodType;
 
   }
 
 
 }
+
+module.exports = Product ;
