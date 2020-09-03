@@ -16,7 +16,7 @@ class User {
                    this.contactDetails = contactDetails;
                    this.proPicURL = Profilepic;
   }
-
+/*
   getUserID = () => userID;
   getName = () => name;
   getSurname = () => surname;
@@ -76,7 +76,7 @@ class User {
 
   setProPicURL = (proPicURL) => {
     this.proPicURL = proPicURL;
-  };
+  };*/
 }
 
 module.exports=User;
