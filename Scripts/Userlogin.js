@@ -1,4 +1,4 @@
-$(document).ready(function(){
+c$(document).ready(function(){
   $("#submit").click(function(){
     console.log("Page ready");
     var username = $("#username").val();
