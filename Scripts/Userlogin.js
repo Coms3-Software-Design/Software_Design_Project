@@ -9,14 +9,27 @@ $(document).ready(function(){
       $.ajax(
         {
             url:"https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPLogin.php",
+            method: 'POST',
             data:{
               login:1,
               username:username,
               password:password
             },
+
             success:function(response){
-              alert("Login successfull");
-              console.log(response);
+
+              if(response=="!exists"){
+
+                $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
+                setTimeout(function(){
+                  $('#response').fadeOut('slow');
+                },5000);
+
+              }
+              //THIS PART NOT WORKING
+              else{
+                console.log("I do");
+              }
             },
             dataType: 'text'
 
