@@ -1,42 +1,18 @@
-$(document).ready(function(){
-  $("#submit").click(function(){
-    var username = $("#username").val();
-    var password = $("#password").val();
+var username =  document.getElementById('username');
+var password  =  document.getElementById('password');
 
-    if(username=="" || password==""){
-      alert("All feilds required");
-    }else{
-      $.ajax(
-        {
-            url:"https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPLogin.php",
-            method: 'POST',
-            data:{
-              login:1,
-              username:username,
-              password:password
-            },
 
-            success:function(response){
+addEventListener('submit', function(e){
+//checks the length of password
+ if(password.value.length <= 3){
+   //Prevents form from submitting
+   e.preventDefault();
+   $('#errormessage').fadeIn().html('<span>password must be at least 6 characters </>');
 
-              if(response=="!exists"){
+   setTimeout(function () {
+     $('#errormessage').fadeOut('slow');
 
-                $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
-                setTimeout(function(){
-                  $('#response').fadeOut('slow');
-                },5000);
+   }, 3000);
+ }
 
-              }
-              //THIS PART NOT WORKING
-              else{
-                console.log("I do");
-              }
-            },
-            dataType: 'text'
-
-        }
-      );
-
-    }
-
-  });
 });
