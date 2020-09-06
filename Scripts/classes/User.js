@@ -1,3 +1,7 @@
+
+
+"use strict";
+
 class User {
 
   constructor( userID, name, surname, userName,  password,  contactDetails,  dateOfBirth,  dateCreated,  gender,
@@ -17,18 +21,18 @@ class User {
                    this.proPicURL = Profilepic;
   }
 
-  getUserID = () => userID;
-  getName = () => name;
-  getSurname = () => surname;
-  getUserName = () => userName;
-  getPassword = () => password;
-  getDateOfBirth = () => dateOfBirth;
-  getGender = () => gender;
-  getDateCreated = () => dateCreated;
-  getBio = () => bio;
-  getBalance = () => balance;
-  getContactDetails = () => contactDetails;
-  getProPicURL = () => proPicURL;
+  getUserID = () => this.userID;
+  getName = () => this.name;
+  getSurname = () => this.surname;
+  getUserName = () => this.userName;
+  getPassword = () => this.password;
+  getDateOfBirth = () => this.dateOfBirth;
+  getGender = () => this.gender;
+  getDateCreated = () => this.dateCreated;
+  getBio = () => this.bio;
+  getBalance = () => this.balance;
+  getContactDetails = () => this.contactDetails;
+  getProPicURL = () => this.proPicURL;
 
   setUserID = (userID) => {
     this. userID = userID;
