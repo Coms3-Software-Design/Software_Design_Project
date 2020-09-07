@@ -27,7 +27,7 @@ let goods = function(cat,type) {
                   // {"Product_ID":"51","UserID":"1814732","Category":"Other","Product_Name":"Book","Product_Brand":"Condere",
                   // "Product_Description":"Heat up your life","Product_Price":"783",
                   // "Current_Quantity":"5","Sold_Quantity":"2","Product_Pic":"51.jpeg","Product_type":"goods"}
-                  let prodItem = new Product(productsArray[j].Product_ID , productsArray[j].UserID , productsArray[j].Category
+                  const prodItem = new Product(productsArray[j].Product_ID , productsArray[j].UserID , productsArray[j].Category
                   ,productsArray[j].Product_Name , productsArray[j].Product_Brand , productsArray[j].Product_Description
                   ,productsArray[j].Product_Price , productsArray[j].Current_Quantity ,productsArray[j].Product_Pic
                   ,productsArray[j].Sold_Quantity , productsArray[j].Product_type);
@@ -36,9 +36,8 @@ let goods = function(cat,type) {
 	                const pic = `${productPicUrl}${prodItem.getProductPic()}`;
 	                let id = productsArray[j].Product_ID;
 	            		productHTML = '<div class="card single-item"> '+
-											    '<!-- Image of the product--> '+
 											    '<div class="img-container"> '+
-	                                				`<img src=${pic} alt="" class="card-img-top product-img" id="productPic">`+
+	                               `<img src=${pic} alt="" class="card-img-top product-img" id="productPic">`+
 											    '</div> '+
 
 											    '<div class="card-body" id='+id+' onclick="viewProduct()> '+
@@ -50,13 +49,12 @@ let goods = function(cat,type) {
 											                'R' + prodItem.getPricePerItem()+
 											            '</span> '+
 											        '</div> '+
-											    '</div> '+
-
+											    '</div>'+
 											'</div> ';
 						HTMLcode += productHTML;
 						let productBLOCK = document.createElement("div");
 						productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
-						productBLOCK.setAttribute("onclick", `viewProduct("${prodItem.this}")`);
+						productBLOCK.setAttribute("onclick", `viewProduct("${productsArray[j]}")`);
 						productBLOCK.innerHTML = productHTML;
 			      let node = document.createTextNode(productHTML);
 			      productBlock.appendChild(productBLOCK);
@@ -116,8 +114,7 @@ viewProduct = function(item){
   //     console.log(productsArray[0]);
   //   }
   // }
-let prod = item;
-console.log(item);
+console.log(item.size());
 }
 
 goods('Accessories','Goods');
