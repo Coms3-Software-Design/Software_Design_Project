@@ -100,7 +100,15 @@ img {
 
 .product-title {
   color: black;
+<<<<<<< HEAD
   margin-top: 0;
+=======
+<<<<<<< HEAD
+  margin-top: 0; 
+=======
+  margin-top: 0;
+>>>>>>> moraj
+>>>>>>> 06fc8ab6d21de30f1cbae51e29200f8c2275d160
 }
 
 .size {
@@ -171,4 +179,12 @@ img {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=style.css.map */
+=======
+<<<<<<< HEAD
+/*# sourceMappingURL=style.css.map */
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> moraj
+>>>>>>> 06fc8ab6d21de30f1cbae51e29200f8c2275d160
