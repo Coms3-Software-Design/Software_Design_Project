@@ -8,10 +8,8 @@ const catergoryURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 let productsArray;
 let goodsArray;
-let Category;
 let productHTML;
 
-let HTMLcode = '';
 let users = new User("1","1","1","1","1","1","1","1","1","1","1","1");
 
 console.log(users.getName());
@@ -19,9 +17,13 @@ let productBlock = document.getElementById("product-items");
 
 let goods = function(cat,type) {
   const cats = cat;
-  Category = cat;
   $("#product-items").empty();
-	            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php?&category='+ cat +'&type='+type, function(results) {
+	            $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',
+                {
+                  category:cat,
+                  type:type
+                },
+               function(results) {
 	            	productsArray = results;
 	            	for(let j = 0; j < productsArray.length; j++){
                   // {"Product_ID":"51","UserID":"1814732","Category":"Other","Product_Name":"Book","Product_Brand":"Condere",
@@ -31,8 +33,9 @@ let goods = function(cat,type) {
                   ,productsArray[j].Product_Name , productsArray[j].Product_Brand , productsArray[j].Product_Description
                   ,productsArray[j].Product_Price , productsArray[j].Current_Quantity ,productsArray[j].Product_Pic
                   ,productsArray[j].Sold_Quantity , productsArray[j].Product_type);
-
-
+                //  console.log(prodItem);
+                  let stringFormItem = JSON.stringify(prodItem);
+                  //console.log(stringFormItem);
 	                const pic = `${productPicUrl}${prodItem.getProductPic()}`;
 	                let id = productsArray[j].Product_ID;
 	            		productHTML = '<div class="card single-item"> '+
@@ -51,10 +54,9 @@ let goods = function(cat,type) {
 											        '</div> '+
 											    '</div>'+
 											'</div> ';
-						HTMLcode += productHTML;
 						let productBLOCK = document.createElement("div");
 						productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
-						productBLOCK.setAttribute("onclick", `viewProduct("${productsArray[j]}")`);
+						productBLOCK.setAttribute("onclick", `viewProduct(${stringFormItem})`);
 						productBLOCK.innerHTML = productHTML;
 			      let node = document.createTextNode(productHTML);
 			      productBlock.appendChild(productBLOCK);
@@ -65,7 +67,7 @@ let goods = function(cat,type) {
 
 categories = function(){
 
-  let array = $.getJSON(catergoryURL, function (result) {
+$.getJSON(catergoryURL, function (result) {
     goodsArray = result;
     catDropDown =
     `
@@ -100,21 +102,59 @@ let globalletiable = {
 };
 
 viewProduct = function(item){
-	// let image;
-	// document.onclick = function(e) {
-  //   if (e.target.tagName == 'DIV') {
-  //     x = e.target.id;
-  //     for(i = 0; i < productsArray.length; ++i){
-  //     	if(e.target.id == productsArray[i].Product_ID){
-  //     		localStorage.setItem("id",e.target.id);
-  //     		localStorage.setItem("cat",Category);
-  //     	}
-  //     	//console.log(productsArray[i].Product_ID);
-  //     }
-  //     console.log(productsArray[0]);
-  //   }
-  // }
-console.log(item.size());
+	/*let image;
+	document.onclick = function(e) {
+    if (e.target.tagName == 'DIV') {
+      x = e.target.id;
+      for(i = 0; i < productsArray.length; ++i){
+      	if(e.target.id == productsArray[i].Product_ID){
+      		localStorage.setItem("id",e.target.id);
+      		localStorage.setItem("cat",Category);
+      	}
+      	//console.log(productsArray[i].Product_ID);
+      }
+      console.log(productsArray[0]);
+    }
+  }*/
+  $("#product-items").empty();
+
+  let prodItem = JSON.parse(JSON.stringify(item));
+console.log(prodItem.productID);
+let buyHtml = `
+  <div class="card">
+    <div class="card-body" style="min-width:100%">
+    <p hreg="#"><span class="badge badge-secondary">Back</span></p>
+    <div class="img-container">
+         <img src=${productPicUrl}${prodItem.productPicture} alt="" class="" id="productPic">
+    </div>
+      This is some text within a card body.
+
+    </div>
+
+
+
+  </div>
+`
+let html = `
+<div class="card mb-12" style="max-width: 100%; ">
+  <div class="row no-gutters">
+    <div class="col-md-1">
+      <img src="${productPicUrl}${prodItem.productPicture}" class="card-img" alt="..." style= "  min-width: 400px;
+        min-height: 350px;
+        max-width: 400px;
+        max-height: 350px;">
+    </div>
+    <div class="col-md-12">
+      <div class="card-body">
+        <h5 class="card-title">${prodItem.productName}</h5>
+        <p class="card-text">${prodItem.productDescription}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+document.getElementById("product-item").innerHTML = buyHtml;
 }
 
 goods('Accessories','Goods');
