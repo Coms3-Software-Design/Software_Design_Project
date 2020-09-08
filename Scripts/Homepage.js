@@ -27,9 +27,8 @@ let goods = function(cat, type) {
         // "Product_Description":"Heat up your life","Product_Price":"783",
         // "Current_Quantity":"5","Sold_Quantity":"2","Product_Pic":"51.jpeg","Product_type":"goods"}
         const prodItem = new Product(productsArray[j].Product_ID, productsArray[j].UserID, productsArray[j].Category, productsArray[j].Product_Name, productsArray[j].Product_Brand, productsArray[j].Product_Description, productsArray[j].Product_Price, productsArray[j].Current_Quantity, productsArray[j].Product_Pic, productsArray[j].Sold_Quantity, productsArray[j].Product_type);
-        //  console.log(prodItem);
         let stringFormItem = JSON.stringify(prodItem);
-        //console.log(stringFormItem);
+        
         const pic = `${productPicUrl}${prodItem.getProductPic()}`;
         let id = productsArray[j].Product_ID;
         productHTML = '<div class="card single-item"> ' +
@@ -102,7 +101,7 @@ viewProduct = function(item) {
     item.productPicture, item.soldQuantity, item.prodType);
   console.log(prodItem);
 
-  
+
 }
 
 goods('Accessories', 'Goods');

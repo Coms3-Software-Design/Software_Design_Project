@@ -63,5 +63,6 @@ class Product {
    setSoldQuantity = soldQuantity => {this.soldQuantity = soldQuantity;}
    setProdType = prodType => {this.prodType = prodType;}
 
-
 }
+
+module.exports = Product;

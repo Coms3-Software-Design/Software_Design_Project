@@ -34,18 +34,7 @@ class User {
   getContactDetails = () => this.contactDetails;
   getProPicURL = () => this.proPicURL;
 
-  // getUserID = () => userID;
-  // getName = () => name;
-  // getSurname = () => surname;
-  // getUserName = () => userName;
-  // getPassword = () => password;
-  // getDateOfBirth = () => dateOfBirth;
-  // getGender = () => gender;
-  // getDateCreated = () => dateCreated;
-  // getBio = () => bio;
-  // getBalance = () => balance;
-  // getContactDetails = () => contactDetails;
-  // getProPicURL = () => proPicURL;
+
 
 
   setUserID = (userID) => {
@@ -96,3 +85,5 @@ class User {
     this.proPicURL = proPicURL;
   };
 }
+
+module.exports = User;
