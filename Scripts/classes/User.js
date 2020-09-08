@@ -20,6 +20,7 @@ class User {
                    this.contactDetails = contactDetails;
                    this.proPicURL = Profilepic;
   }
+<<<<<<< HEAD
 <<<<<<< .merge_file_bQXaq2
 
   getUserID = () => this.userID;
@@ -35,6 +36,8 @@ class User {
   getContactDetails = () => this.contactDetails;
   getProPicURL = () => this.proPicURL;
 =======
+=======
+>>>>>>> master
 /*
   getUserID = () => userID;
   getName = () => name;
