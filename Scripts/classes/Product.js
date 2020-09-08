@@ -14,7 +14,11 @@ class Product {
                 this.category = category;
                 this.productBrand = productBrand;
                 this.productDescription = productDescription;
+<<<<<<< .merge_file_uj73Z9
                 this.productPicture = productPic;
+=======
+                this.productPicture = null;
+>>>>>>> .merge_file_wNBaDd
                 this.prodType = prodType;
 
   }
@@ -64,6 +68,11 @@ class Product {
 
 
 }
+<<<<<<< .merge_file_uj73Z9
 // {"Product_ID":"51","UserID":"1814732","Category":"Other","Product_Name":"Book","Product_Brand":"Condere",
 // "Product_Description":"Heat up your life","Product_Price":"783",
 // "Current_Quantity":"5","Sold_Quantity":"2","Product_Pic":"51.jpeg","Product_type":"goods"}
+=======
+
+module.exports = Product ;
+>>>>>>> .merge_file_wNBaDd

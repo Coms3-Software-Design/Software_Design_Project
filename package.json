@@ -1,0 +1,29 @@
+{
+  "name": "software_design_project",
+  "version": "1.0.0",
+  "description": "Building a website for the market app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coms3-Software-Design/software_design_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coms3-Software-Design/software_design_project/issues"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "homepage": "https://github.com/Coms3-Software-Design/software_design_project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "codecov": "^3.7.0",
+    "coveralls": "^3.1.0",
+    "jest": "^26.4.2"
+  }
+}
