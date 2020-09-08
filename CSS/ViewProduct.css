@@ -92,7 +92,11 @@ img {
 
 .product-title {
   color: black;
+<<<<<<< HEAD
   margin-top: 0; 
+=======
+  margin-top: 0;
+>>>>>>> moraj
 }
 
 .size {
@@ -163,4 +167,8 @@ img {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=style.css.map */
+=======
+/*# sourceMappingURL=style.css.map */
+>>>>>>> moraj
