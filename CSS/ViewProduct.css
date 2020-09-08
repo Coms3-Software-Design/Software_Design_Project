@@ -50,19 +50,19 @@ img {
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
 
-<<<<<<< HEAD
+
 /* .card {
   margin-top: 50px;
   background: #eee;
   padding: 3em;
   line-height: 1.5em; } */
-=======
+
 .card {
   margin-top: 50px;
   background: #eee;
   padding: 3em;
   line-height: 1.5em; }
->>>>>>> moraj
+
 
 @media screen and (min-width: 997px) {
   .wrapper {

@@ -20,8 +20,6 @@ class User {
                    this.contactDetails = contactDetails;
                    this.proPicURL = Profilepic;
   }
-<<<<<<< HEAD
-<<<<<<< .merge_file_bQXaq2
 
   getUserID = () => this.userID;
   getName = () => this.name;
@@ -35,23 +33,20 @@ class User {
   getBalance = () => this.balance;
   getContactDetails = () => this.contactDetails;
   getProPicURL = () => this.proPicURL;
-=======
-=======
->>>>>>> master
-/*
-  getUserID = () => userID;
-  getName = () => name;
-  getSurname = () => surname;
-  getUserName = () => userName;
-  getPassword = () => password;
-  getDateOfBirth = () => dateOfBirth;
-  getGender = () => gender;
-  getDateCreated = () => dateCreated;
-  getBio = () => bio;
-  getBalance = () => balance;
-  getContactDetails = () => contactDetails;
-  getProPicURL = () => proPicURL;
->>>>>>> .merge_file_24e4C5
+
+  // getUserID = () => userID;
+  // getName = () => name;
+  // getSurname = () => surname;
+  // getUserName = () => userName;
+  // getPassword = () => password;
+  // getDateOfBirth = () => dateOfBirth;
+  // getGender = () => gender;
+  // getDateCreated = () => dateCreated;
+  // getBio = () => bio;
+  // getBalance = () => balance;
+  // getContactDetails = () => contactDetails;
+  // getProPicURL = () => proPicURL;
+
 
   setUserID = (userID) => {
     this. userID = userID;
@@ -99,7 +94,5 @@ class User {
 
   setProPicURL = (proPicURL) => {
     this.proPicURL = proPicURL;
-  };*/
+  };
 }
-
-module.exports=User;

@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-$(document).ready(function(){
-  $("#submit").click(function(){
-    console.log("Page ready");
-    var username = $("#username").val();
-    var password = $("#password").val();
-
-    if(username=="" || password==""){
-      alert("All feilds required");
-    }else{
-      $.ajax(
-        {
-            url:"https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPLogin.php",
-            method: 'POST',
-            data:{
-              login:1,
-              username:username,
-              password:password
-            },
-
-            success:function(response){
-
-              if(response=="!exists"){
-
-                $('#response').fadeIn().html('<span class="li-modal">Invalid username or password</span>');
-                setTimeout(function(){
-                  $('#response').fadeOut('slow');
-                },5000);
-
-              }
-              else{
-                $('#response').html('<span class="li-modal">successfully logged in</span>');
-              }
-            },
-            dataType: 'text'
-
-        }
-      );
-
-    }
-
-  });
-=======
-
 let button = document.getElementById('submit');
 
 
@@ -67,7 +23,7 @@ if(results=="!exists" && username!=""&&password!=""){
   else if( results!="!exists" && username!="" && password!=""){
 
     sessionStorage.setItem('user', JSON.stringify(results[0]));
-    console.log(JSON.parse(sessionStorage.getItem('user')));
+    alert(JSON.parse(sessionStorage.getItem('user')));
     window.location.href='Homepage.html';
   }
   //When the fields are empty
@@ -80,8 +36,4 @@ if(results=="!exists" && username!=""&&password!=""){
 
 });
 
-
-
-
->>>>>>> moraj
 });
