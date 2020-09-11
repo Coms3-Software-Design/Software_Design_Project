@@ -31,7 +31,8 @@ let goods = function(cat, type) {
         
         const pic = `${productPicUrl}${prodItem.getProductPic()}`;
         let id = productsArray[j].Product_ID;
-        productHTML = '<div class="card single-item"> ' +
+        productHTML = '<a href="ViewProduct.html">' +
+        '<div class="card single-item"> ' +
           '<div class="img-container"> ' +
           `<img src=${pic} alt="" class="card-img-top product-img" id="productPic">` +
           '</div> ' +
@@ -46,7 +47,8 @@ let goods = function(cat, type) {
           '</span> ' +
           '</div> ' +
           '</div>' +
-          '</div> ';
+          '</div> ' +
+          '</a>';
         let productBLOCK = document.createElement("div");
         productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
         productBLOCK.setAttribute("onclick", `viewProduct(${stringFormItem})`);
@@ -95,12 +97,12 @@ let globalletiable = {
 
 viewProduct = function(item) {
 
-
+  console.log(item);
   let prodItem = new Product(item.productID, item.userID, item.category, item.productName,
     item.productBrand, item.productDescription, item.pricePerItem, item.currentQuantity,
     item.productPicture, item.soldQuantity, item.prodType);
-  console.log(prodItem);
-
+  console.log(item.productName);
+  localStorage.setItem("item",JSON.stringify(item));
 
 }
 

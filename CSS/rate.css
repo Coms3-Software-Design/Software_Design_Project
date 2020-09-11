@@ -8,6 +8,7 @@
 .container{
 	position: relative;
 	width: 400px;
+	/*opacity: 0.5;*/
 	padding: 20px 30px;
 	display: flex;
 	align-items: center;
@@ -65,27 +66,7 @@ input#rate-5:checked ~ label{
 	text-shadow: 0 0 20px #952;
 }
 
-input#rate-1:checked ~ form header:before{
-	content: "I just hate it";
-}
-
-input#rate-2:checked ~ form header:before{
-	content: "I don't like it";
-}
-
-input#rate-3:checked ~ form header:before{
-	content: "It is awesome";
-}
-
-input#rate-4:checked ~ form header:before{
-	content: "I just like it";
-}
-
-input#rate-5:checked ~ form header:before{
-	content: "I love it";
-}
-
-.container form {
+.ratingSystem form {
 	display: none;
 }
 
