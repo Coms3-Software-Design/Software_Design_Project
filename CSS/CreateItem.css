@@ -1,0 +1,33 @@
+body {
+    font-family: 'open sans';
+    overflow-x: hidden; 
+}
+
+.card {
+    margin-top: 50px;
+    background: #eee;
+    padding: 3em;
+    line-height: 1.5em; 
+}
+
+  @media screen and (min-width: 997px) {
+    .wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; 
+    }
+ }
+
+ #add-picture{
+    display: block;
+    border-radius : 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+  
+  }
+
+
