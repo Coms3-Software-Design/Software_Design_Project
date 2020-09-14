@@ -96,19 +96,12 @@ img {
   color: #ff9f1a; }
 
 .product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; }
+  margin-bottom: 15px; 
+}
 
 .product-title {
   color: black;
-<<<<<<< HEAD
   margin-top: 0;
-=======
-<<<<<<< HEAD
-  margin-top: 0; 
-=======
-  margin-top: 0;
->>>>>>> moraj
->>>>>>> 06fc8ab6d21de30f1cbae51e29200f8c2275d160
 }
 
 /* =========== rating system ==================*/
@@ -418,13 +411,6 @@ form .btn button:hover{
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1); } }
+            
+/*# sourceMappingURL=style.css.map */
 
-<<<<<<< HEAD
-/*# sourceMappingURL=style.css.map */
-=======
-<<<<<<< HEAD
-/*# sourceMappingURL=style.css.map */
-=======
-/*# sourceMappingURL=style.css.map */
->>>>>>> moraj
->>>>>>> 06fc8ab6d21de30f1cbae51e29200f8c2275d160
