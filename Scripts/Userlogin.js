@@ -23,25 +23,27 @@ if(results=="!exists" && username!=""&&password!=""){
   else if( results!="!exists" && username!="" && password!=""){
 
     sessionStorage.setItem('user', JSON.stringify(results[0]));
-    console.log(sessionStorage.getItem('user'));
-    alert(JSON.stringify(results[0].UserID));
-
-    var UserId = JSON.stringify(results[0].UserID);
-    var Name = JSON.stringify(results[0].Name);
-    var Surname = JSON.stringify(results[0].Surname);
-    var UserName = JSON.stringify(results[0].userName);
-    var Password = JSON.stringify(results[0].Password);
-    var ContactDetails = JSON.stringify(results[0].ContactNum);
-    var DateOfBirth = JSON.stringify(results[0].D_O_B);
-    var DateCreated = JSON.stringify(results[0].Date_Created);
-    var Gender = JSON.stringify(results[0].Gender);
-    var Bio = JSON.stringify(results[0].Bio);
-    var Balance = JSON.stringify(results[0].Balance);
-    var Profilepic = JSON.stringify(results[0].Profilepic);
+     var user1 = JSON.parse(sessionStorage.getItem('user'));
+     console.log(user1);
 
 
-    var User = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
+    var UserId = JSON.stringify(user1.UserID);
+    var Name = JSON.stringify(user1.Name);
+    var Surname = JSON.stringify(user1.Surname);
+    var UserName = JSON.stringify(user1.userName);
+    var Password = JSON.stringify(user1.Password);
+    var ContactDetails = JSON.stringify(user1.ContactNum);
+    var DateOfBirth = JSON.stringify(user1.D_O_B);
+    var DateCreated = JSON.stringify(user1.Date_Created);
+    var Gender = JSON.stringify(user1.Gender);
+    var Bio = JSON.stringify(user1.Bio);
+    var Balance = JSON.stringify(user1.Balance);
+    var Profilepic = JSON.stringify(user1.Profilepic);
+
+
+    var user = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
     //window.location.href='Homepage.html';
+    alert(user.getName());
   }
   //When the fields are empty
   else{
