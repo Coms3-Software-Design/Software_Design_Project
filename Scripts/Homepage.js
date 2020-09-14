@@ -3,18 +3,115 @@
  * We set the catergoryURL and the array of categories
  */
 const catergoryURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories/categories.php';
+const categoryPicURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories/';
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 let productsArray;
 let goodsArray;
 let productHTML;
 
-let users = new User("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+let user = sessionStorage.getItem('user');
+if(user !=  null){
+  console.log(user);
+}
 
-console.log(users.getName());
 let productBlock = document.getElementById("product-items");
 
+// this function sets the categories as well as the top rated goods and services
+let setCatGoodsServices = function(){
+
+  $.getJSON(catergoryURL , function(result){
+    let categ = 
+    `${result.map(function(category){
+      if (String(category.Category) !== String("Services")) {
+      return`<div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;" >
+                <div class="card" style="width: 8rem; cursor: pointer;" id="${category.Category}ss">
+                  <img src="${categoryPicURL}${category.Category}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
+                  <h5 class="card-title">${category.Category}</h5>
+                  
+                </div>
+              </div>      
+      `;
+      }
+      
+      
+    }).join('')
+  }
+    `;
+
+    document.getElementById("homepageCats").innerHTML = categ;
+    
+    result.map(function(category){
+      if (String(category.Category) !== String("Services")) {
+        let individualCat = document.getElementById(`${category.Category}ss`);
+        individualCat.setAttribute("onclick", `goods("${category.Category}","Goods")`);
+      } else {
+        let individualCat = document.getElementById("Service");
+        individualCat.setAttribute("onclick", `goods("Services","Services")`);
+      }
+     })
+  });
+};
+
+
+let setServices = function(){
+
+  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
+    category: 'Services',
+    type: 'Services'
+    },function(result){
+      let servs = 
+      `${result.map(function(service){
+  
+        const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
+          
+          return `
+          <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
+          <div class="card" style="width: 8rem; height: 10rem; cursor: pointer;">
+            <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
+            <h5 class="card-title">${service.Product_Name}</h5>
+            <h6 class="card-title">R${service.Product_Price}</h6>
+          </div>
+        </div>  
+          `;
+      }).join('')}
+    
+      `;
+     document.getElementById("homepageTopServices").innerHTML = servs;
+  
+  
+    }
+  );
+}
+
+let setGoods = function(){
+  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
+    category: 'Electronics',
+    type: 'Goods'
+    },function(result){
+     let prod = '';
+     for(let i = 0 ; i < 6;i++){
+        prod += `
+       <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
+       <div class="card" style="width: 10rem; height: 10rem; cursor: pointer;">
+         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
+         <h5 class="card-title">${result[i].Product_Name}</h5>
+         <h6 class="card-title">R${result[i].Product_Price}</h6>
+       </div>
+     </div>  
+       `;
+       
+     }
+     document.getElementById("homepageTopGoods").innerHTML = prod;
+  
+  
+    }
+  );
+}
+
+ 
 let goods = function(cat, type) {
   const cats = cat;
+  $("#Tops").empty();
   $("#product-items").empty();
   $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php', {
       category: cat,
@@ -87,8 +184,6 @@ categories = function() {
     }).join('');
 
   });
-
-
 };
 
 let globalletiable = {
@@ -106,5 +201,14 @@ viewProduct = function(item) {
 
 }
 
-goods('Accessories', 'Goods');
-categories();
+let init = function(){
+  setCatGoodsServices();
+  //goods('Accessories', 'Goods');
+  setServices();
+  setGoods();
+  categories();
+
+}
+
+init();
+

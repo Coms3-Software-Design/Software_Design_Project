@@ -38,10 +38,9 @@ if(results=="!exists" && username!=""&&password!=""){
     var Bio = JSON.stringify(results[0].Bio);
     var Balance = JSON.stringify(results[0].Balance);
     var Profilepic = JSON.stringify(results[0].Profilepic);
-
-
-    var User = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
-    //window.location.href='Homepage.html';
+  
+    var user = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
+    window.location.href='Homepage.html';
   }
   //When the fields are empty
   else{
