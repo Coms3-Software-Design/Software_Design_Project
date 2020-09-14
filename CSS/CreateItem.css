@@ -3,10 +3,9 @@ body {
 }
 
 .card {
-    margin-top: 50px;
-    background: #eee;
-    padding: 3em;
-    line-height: 1.5em; 
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
 
   @media screen and (min-width: 997px) {
@@ -18,16 +17,16 @@ body {
     }
  }
 
- #add-picture{
+ /* #add-picture{
     display: block;
-    border-radius : 50%;
-    margin-top: 20px;
+    border-radius : 1%;
+ 
     margin-left: auto;
     margin-right: auto;
     width: 250px;
     height: 250px;
   
-  }
+  } */
 
   .create-button{
       margin: 50px;
