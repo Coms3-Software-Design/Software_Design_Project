@@ -10,10 +10,10 @@ let productsArray;
 let goodsArray;
 let productHTML;
 
-let user = sessionStorage.getItem('user');
-if(user !=  null){
-  console.log(user);
-}
+// let user = sessionStorage.getItem('user');
+// if(user !=  null){
+//   console.log(user);
+// }
 
 
 
@@ -21,26 +21,26 @@ if(user !=  null){
 let homepageCategories = function(){
 
   $.getJSON(catergoryURL , function(result){
-    let categ = 
+    let categ =
     `${result.map(function(category){
       if (String(category.Category) !== String("Services")) {
       return`<div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;" >
                 <div class="card" style="width: 8rem; cursor: pointer;" id="${category.Category}ss">
                   <img src="${categoryPicURL}${category.Category}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
                   <h5 class="card-title">${category.Category}</h5>
-                  
+
                 </div>
-              </div>      
+              </div>
       `;
       }
-      
-      
+
+
     }).join('')
   }
     `;
 
     document.getElementById("homepageCats").innerHTML = categ;
-    
+
     result.map(function(category){
       if (String(category.Category) !== String("Services")) {
         let individualCat = document.getElementById(`${category.Category}ss`);
@@ -54,18 +54,18 @@ let homepageCategories = function(){
 };
 
 
-// This function handles the top rated services on the main 
+// This function handles the top rated services on the main
 let topRatedServices = function(){
 
   $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
     category: 'Services',
     type: 'Services'
     },function(result){
-      let servs = 
+      let servs =
       `${result.map(function(service){
-  
+
         const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
-          
+
           return `
           <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
           <div class="card" style="width: 8rem; height: 10rem; cursor: pointer;">
@@ -73,14 +73,14 @@ let topRatedServices = function(){
             <h5 class="card-title">${service.Product_Name}</h5>
             <h6 class="card-title">R${service.Product_Price}</h6>
           </div>
-        </div>  
+        </div>
           `;
       }).join('')}
-    
+
       `;
      document.getElementById("homepageTopServices").innerHTML = servs;
-  
-  
+
+
     }
   );
 }
@@ -101,13 +101,13 @@ let topRatedGoods = function(){
          <h5 class="card-title">${result[i].Product_Name}</h5>
          <h6 class="card-title">R${result[i].Product_Price}</h6>
        </div>
-     </div>  
+     </div>
        `;
-       
+
      }
      document.getElementById("homepageTopGoods").innerHTML = prod;
-  
-  
+
+
     }
   );
 }
@@ -129,7 +129,7 @@ let goods = function(cat, type) {
         // "Current_Quantity":"5","Sold_Quantity":"2","Product_Pic":"51.jpeg","Product_type":"goods"}
         const prodItem = new Product(productsArray[j].Product_ID, productsArray[j].UserID, productsArray[j].Category, productsArray[j].Product_Name, productsArray[j].Product_Brand, productsArray[j].Product_Description, productsArray[j].Product_Price, productsArray[j].Current_Quantity, productsArray[j].Product_Pic, productsArray[j].Sold_Quantity, productsArray[j].Product_type);
         let stringFormItem = JSON.stringify(prodItem);
-        
+
         const pic = `${productPicUrl}${prodItem.getProductPic()}`;
         let id = productsArray[j].Product_ID;
         productHTML = '<a href="ViewProduct.html" class = " my-2 ml-5">' +
@@ -215,4 +215,3 @@ let init = function(){
 }
 
 init();
-
