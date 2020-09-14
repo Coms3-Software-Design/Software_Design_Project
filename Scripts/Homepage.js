@@ -16,6 +16,17 @@ let productHTML;
 // }
 
 
+//When user logins sign up and Registration disappears
+let hide = function(){
+  let log = JSON.parse(sessionStorage.getItem('user'));
+
+  if(log==null){
+  document.getElementById('signed').className = "D-login";
+  }else{
+
+   document.getElementById('Bsign').className = "D-login";
+  }
+}
 
 // this function sets the categories on homepage
 let homepageCategories = function(){
@@ -207,7 +218,9 @@ viewProduct = function(item) {
 
 }
 
+
 let init = function(){
+  hide();
   homepageCategories();
   topRatedServices();
   topRatedGoods();
