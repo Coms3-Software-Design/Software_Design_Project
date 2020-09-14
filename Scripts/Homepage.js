@@ -5,6 +5,7 @@
 const catergoryURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories/categories.php';
 const categoryPicURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/categories/';
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
+let productBlock = document.getElementById("product-items");
 let productsArray;
 let goodsArray;
 let productHTML;
@@ -14,10 +15,10 @@ if(user !=  null){
   console.log(user);
 }
 
-let productBlock = document.getElementById("product-items");
 
-// this function sets the categories as well as the top rated goods and services
-let setCatGoodsServices = function(){
+
+// this function sets the categories on homepage
+let homepageCategories = function(){
 
   $.getJSON(catergoryURL , function(result){
     let categ = 
@@ -53,7 +54,8 @@ let setCatGoodsServices = function(){
 };
 
 
-let setServices = function(){
+// This function handles the top rated services on the main 
+let topRatedServices = function(){
 
   $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
     category: 'Services',
@@ -83,7 +85,9 @@ let setServices = function(){
   );
 }
 
-let setGoods = function(){
+
+// This function makes sure handles the top rated goods on homepage start up
+let topRatedGoods = function(){
   $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
     category: 'Electronics',
     type: 'Goods'
@@ -108,7 +112,7 @@ let setGoods = function(){
   );
 }
 
- 
+ // This function is responsible for showing goods of any selected category
 let goods = function(cat, type) {
   const cats = cat;
   $("#Tops").empty();
@@ -128,7 +132,7 @@ let goods = function(cat, type) {
         
         const pic = `${productPicUrl}${prodItem.getProductPic()}`;
         let id = productsArray[j].Product_ID;
-        productHTML = '<a href="ViewProduct.html">' +
+        productHTML = '<a href="ViewProduct.html" class = " my-2 ml-5">' +
         '<div class="card single-item"> ' +
           '<div class="img-container"> ' +
           `<img src=${pic} alt="" class="card-img-top product-img" id="productPic">` +
@@ -147,7 +151,7 @@ let goods = function(cat, type) {
           '</div> ' +
           '</a>';
         let productBLOCK = document.createElement("div");
-        productBLOCK.className = "col-10 col-sm-8 col-lg-4 mx-auto my-3";
+        productBLOCK.className = "col-10 col-sm-8 col-lg-3 mx-auto my-3";
         productBLOCK.setAttribute("onclick", `viewProduct(${stringFormItem})`);
         productBLOCK.innerHTML = productHTML;
         let node = document.createTextNode(productHTML);
@@ -157,6 +161,8 @@ let goods = function(cat, type) {
 
 };
 
+
+//This Function sets the categories Drop down
 categories = function() {
 
   $.getJSON(catergoryURL, function(result) {
@@ -202,12 +208,10 @@ viewProduct = function(item) {
 }
 
 let init = function(){
-  setCatGoodsServices();
-  //goods('Accessories', 'Goods');
-  setServices();
-  setGoods();
+  homepageCategories();
+  topRatedServices();
+  topRatedGoods();
   categories();
-
 }
 
 init();
