@@ -28,6 +28,14 @@ let hide = function(){
   }
 }
 
+
+let logout = function(){
+  sessionStorage.removeItem('user');
+  sessionStorage.clear();
+}
+
+
+
 // this function sets the categories on homepage
 let homepageCategories = function(){
 
@@ -220,11 +228,13 @@ viewProduct = function(item) {
 
 
 let init = function(){
+
   hide();
   homepageCategories();
   topRatedServices();
   topRatedGoods();
   categories();
+  logout();
 }
 
 init();
