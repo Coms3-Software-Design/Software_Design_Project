@@ -28,10 +28,11 @@ let hide = function(){
   }
 }
 
-
+//clears the session when the user has logged out
 let logout = function(){
   sessionStorage.removeItem('user');
   sessionStorage.clear();
+ 
 }
 
 
