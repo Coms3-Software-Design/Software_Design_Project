@@ -6,4 +6,4 @@
 
 [![codecov](https://codecov.io/gh/Coms3-Software-Design/software_design_project/branch/master/graph/badge.svg)](https://codecov.io/gh/Coms3-Software-Design/software_design_project)
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Coms3-Software-Design/Software-Design#the-state-diagram)](https://github.com/Coms3-Software-Design/software_design_project/releases/tag/v1.0)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Coms3-Software-Design/Software-Design#the-state-diagram)](https://github.com/Coms3-Software-Design/software_design_project/releases/tag/v1.10)
