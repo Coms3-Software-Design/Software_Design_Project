@@ -2,6 +2,7 @@ body {
     overflow-x: hidden; 
 }
 
+/* positions the upload image card to the centre */
 .card {
   margin: 0 auto; /* Added */
   float: none; /* Added */
@@ -17,16 +18,7 @@ body {
     }
  }
 
- /* #add-picture{
-    display: block;
-    border-radius : 1%;
- 
-    margin-left: auto;
-    margin-right: auto;
-    width: 250px;
-    height: 250px;
-  
-  } */
+
 
   .create-button{
       margin: 50px;
@@ -56,6 +48,7 @@ body {
     border: 1px solid silver;
     outline: none;
   }
+  /* -------end------------- */
 
   #header-name{
     margin-top: 25px;

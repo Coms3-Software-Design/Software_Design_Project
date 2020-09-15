@@ -1,3 +1,4 @@
+*
 #profile{
   position: fixed;
   border: 1px solid black;
@@ -44,4 +45,40 @@ height: auto;
 
 #contact{
   border-bottom: 0px;
+}
+
+
+/* positions the profile card to the centre */
+.card{
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+/* -------------end------------- */
+
+/* the input spacing and placement */
+.input_field {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input_field input{
+  margin-block: 15px;
+  width: 65%;
+  padding-left: 10px;
+  border: 1px solid silver;
+  outline: none;
+}
+/* -------end------------- */
+
+/* eediting the title to start at a marin top */
+#title-header{
+  margin-top: 20px;
+}
+
+/* editin the btn margintop which is created in bootstrap */
+.btn{
+  margin-bottom:30px;
+  margin-top: 10px;
 }

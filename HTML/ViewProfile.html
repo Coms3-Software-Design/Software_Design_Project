@@ -10,36 +10,67 @@
   </head>
   <body class="profile">
 
-<div class="profile">
+<form class="form-createitem" id="submit_form_create">
 
-  <div id="p-Propic">
+  <!-- <<x>> button for close the modal popup -->
+<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <!-- End of close box popup button-->
 
-  </div>
-  <!-- <img src="../CSS/Images/iphone.jpg" alt="../CSS/Images/iphone.jpg" id="profilePic"> -->
+  <header class="header-name" id="title-header">
+    <h2 class="h3 mb-3 font-weight-normal">Profile edit</h2>
+  </header>
 
-  <br>
-  <p for="name"  class="lab">Name</p>
+  <!-- image representing the logo for createitem page -->
+  <div class="card" style="width: 18rem;">
+    <img src="../CSS/Images/hardisk-profilepic.svg"  alt="../CSS/Images/iphone.jpg" id="add-picture" class="card-img-top">
+    <div class="card-body">
+     
+      <p class="card-text">Upload your Profile Picture</p>
+      <a href="#" class="btn btn-primary">Upload</a>
 
-  <div class="" id="p-Name">
-  </div>
-
-  <p for="" class="lab">Surname</p>
-  <div class="" id="p-surname">
-  </div>
-
-  <p for="" class="lab">Username</p>
-  <div class="" id="p-userName">
-  </div>
-
-  <p for=""class="lab" > Bio</p>
-  <div class="" id="p-Bio">
-  </div>
-
-
-    <p for="contact" class="lab">Contact Details</p>
-    <div class="" id="p-No">
     </div>
-</div>
+  </div>
+  
+
+
+  <div class="input_field">
+      <label class="sr-only">Enter your Name</label>
+      <input type="text" id="edit-name" name="edit-name" class="form-control" placeholder="Name" required autofocus>
+  </div>
+
+  <div class="input_field">
+      <label  class="sr-only">Enter your Surname</label>
+      <input type="text" id="edit-surname" name="edit-surname" class="form-control" placeholder="Surname" required>
+  </div>
+
+  <div class="input_field">
+    <label class="sr-only">Enter your Username</label>
+    <input type="text" id="edit-username" name="edit-username" class="form-control" placeholder="Username" required autofocus>
+  </div>
+
+  <div class="input_field">
+      <label  class="sr-only">Enter your Bio</label>
+      <input type="text" id="edit-bio" name="edit-bio" class="form-control" placeholder="Bio" required>
+  </div>
+
+  <div class="input_field">
+      <label  class="sr-only">Enter Conntact Number</label>
+      <input type='text' ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" min="1" max="10" step="any" id="edit-number" name="edit-number" class="form-control" placeholder="Conntact Number" required>
+  </div>
+
+
+  <div id="response"></div>
+
+
+
+  
+  
+  <button class="btn btn-primary" type="submit" id="create-submit" name="create-submit">Create item</button>
+  
+</form>
+<!-- ////////////////////////////////////////////////////// -->
+
+
 
 <script src="../Scripts/Viewprofile.js"> </script>
 
