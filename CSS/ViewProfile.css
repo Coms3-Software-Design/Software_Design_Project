@@ -33,6 +33,7 @@ height: auto;
 }
 
 .pItem{
+  overflow-wrap: break-word;
   text-align: left;
   text-decoration: none;
   font-size: .9rem;
@@ -40,6 +41,10 @@ height: auto;
   margin-bottom: 15px;
   margin-right: 20px;
   border-bottom: .5px dashed rgba(0, 0, 0, 0.5);
+}
+.dd{
+word-break: break-word;
+
 }
 
 #contact{
