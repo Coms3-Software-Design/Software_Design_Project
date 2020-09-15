@@ -9,6 +9,9 @@ let user_brand = document.getElementById('create-brand').value;
 let desc_name = document.getElementById('create-description').value;
 let price_value = document.getElementById('create-price').value;
 let quantity_value = document.getElementById('create-quantity').value;
+let goods_service = document.getElementById('goods-service').value;
+let categories = document.getElementById('cat-opt').value;
+
 url = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/creatProd.php";
 //console.log(quantity_value);
 
@@ -19,7 +22,7 @@ $.getJSON(url,
      pDesc:desc_name, 
      pPrice:price_value,
      pQuant:quantity_value,  
-     pCat:"Other",
+     pCat:categories,
      pType:"goods"
      },
      function(results){
