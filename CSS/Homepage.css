@@ -11,6 +11,12 @@ body{
   font-family: montserrat , sans-serif;
 }
 
+
+.D-login{
+display: none;
+}
+
+
 /* editing the nav bar */
 .site-header {
     background-color: rgba(0, 0, 0, .85);
@@ -18,12 +24,12 @@ body{
     backdrop-filter: saturate(180%) blur(20px);
     height:  80px;
     width: 100%;
-    
+
   }
   .site-header a {
     color: #999;
     transition: ease-in-out color .15s;
-    
+
   }
   .site-header a:hover {
     color: #fff;
