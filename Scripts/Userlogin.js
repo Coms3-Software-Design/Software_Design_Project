@@ -40,7 +40,7 @@ if(results=="!exists" && username!=""&&password!=""){
     var Profilepic = JSON.stringify(user1.Profilepic);
 
 
-    var user = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
+    //var user = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
 
 
 

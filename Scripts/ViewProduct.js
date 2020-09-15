@@ -104,7 +104,24 @@ document.getElementById("post-btn").addEventListener('click', function(){
 });
 
 document.getElementById("buy-product").addEventListener('click',function(){
-    document.querySelector('.buy-popup').style.display = 'flex';
+
+  let user = sessionStorage.getItem('user');
+  if(user !=  null){
+    console.log(JSON.parse(user).Balance);
+    if(JSON.parse(user).Balance < item.pricePerItem){
+      alert("Insuficient funds, please load your account and try again later");
+    }
+    else{
+      document.querySelector('.buy-popup').style.display = 'flex';
+    }
+    // document.getElementById("user-balance").value = 'R' + JSON.parse(user).Balance;
+    
+  }
+   else{
+    window.location.href = "login.html";
+    //console.log(user);
+  }
+    
 });
 
 document.getElementById("Buy-btn").addEventListener('click',function(){

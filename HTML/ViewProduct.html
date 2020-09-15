@@ -99,14 +99,12 @@
             <p class="product-description" id="product_description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
             <hr>
             <h4 class="price">current price: <span id="product_price">$180</span></h4>
-            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
             <h5 class="sizes">Quantity:
               <span class="size" data-toggle="tooltip" title="small" id="product_quantity"></span>
             </h5>
             <hr>
             <div class="action">
               <button class="add-to-cart btn btn-default" type="button" id="buy-product">Buy Product</button>
-              <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
             </div>
           </div>
         </div>
@@ -143,17 +141,20 @@
   <div class="buy-popup">
     <div class="buy-box">
       <div class="row" >
-        <span id="buy-message" class="buy-msg">
-          You are about to buy a product, are you sure you want to continue?
-        </span>
-      </div>
-      <div class="row">
-        <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Buy-btn">
-          <button type="submit"> Buy </button>
-        </div>
-        <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Cancel-btn">
-          <button type="submit"> Cancel </button>
-        </div>
+        
+          <h3 id="buy-message" class="buy-msg">
+            You are about to buy a product, are you sure you want to continue?
+          </h3>
+          <span class="buy-msg" id="user-balance">
+            
+          </span> 
+          <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Buy-btn">
+            <button type="submit"> Buy </button>
+          </div>
+          <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Cancel-btn">
+            <button type="submit"> Cancel </button>
+          </div>
+        
       </div>
     </div>
   </div>

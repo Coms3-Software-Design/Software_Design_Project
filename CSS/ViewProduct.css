@@ -8,26 +8,6 @@ width:500px;
 height: 400px; 
 }
 
-/*.preview {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  @media screen and (max-width: 996px) {
-    .preview {
-      margin-bottom: 20px; } }
-
-.preview-pic {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }*/
-
 .preview-thumbnail.nav-tabs {
   border: none;
   margin-top: 15px; }
@@ -126,10 +106,10 @@ input:checked ~ label{
   color: #fd4;
 }
 
-input#rate_5:checked ~ label{
+/*input#rate_5:checked ~ label{
   color: #fe7;
   text-shadow: 0 0 20px #952;
-}
+}*/
 
 .review-btn{
   height: 45px;
@@ -264,7 +244,7 @@ form .btn{
 }
 
 form .btn button{
-  height: 100%;
+  /*height: 100%;
   width: 100%;
   border: 1px solid #444;
   outline: none;
@@ -272,13 +252,23 @@ form .btn button{
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;*/
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  background-size: 200%;
+  background: rgb(88, 133, 201);
+  color: white;
 }
 
-form .btn button:hover{
+/*form .btn button:hover{
   background: #a4a3a3;
 
-}
+}*/
 
 /* ========== end of rating pop-up ==============*/
 
@@ -305,15 +295,15 @@ form .btn button:hover{
 }
 
 .buy-btn{
-  height: 45px;
+  /*height: 45px;
   width: 100px;
   margin: 15px 0;
   display: flex;
-  position: bottom;
+  position: bottom;*/
 }
 
 .buy-btn button{
-  height: 100%;
+  /*height: 100%;
   width: 100%;
   border: none;
   outline: none;
@@ -321,7 +311,18 @@ form .btn button:hover{
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;*/
+
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  background-size: 200%;
+  background: rgb(88, 133, 201);
+  color: white;
 }
 
 /*.buy-btn button{
@@ -334,17 +335,19 @@ form .btn button:hover{
   -webkit-transition: background .3s ease;
   transition: background .3s ease;
 }*/
-.buy-btn button:hover{
+/*.buy-btn button:hover{
   background: #b36800;
   color: #fff; 
-}
+}*/
 
 .buy-msg{
   height: 100%;
   width: 100%;
   font: sans-serif;
-  font-weight: 500;
-  overflow: hidden;
+  position: relative;
+  text-align: center;
+/*  font-weight: 500;
+  overflow: hidden;*/
 }
 /* =========== end buy pop-up ==========*/
 
@@ -363,18 +366,29 @@ form .btn button:hover{
   .color:first-of-type {
     margin-left: 20px; }
 
-.add-to-cart, .like {
-  background: #ff9f1a;
+.add-to-cart {
+  /*background: #ff9f1a;
   padding: 1.2em 1.5em;
   border: none;
   text-transform: UPPERCASE;
   font-weight: bold;
   color: #fff;
   -webkit-transition: background .3s ease;
-          transition: background .3s ease; }
-  .add-to-cart:hover, .like:hover {
+          transition: background .3s ease;*/
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  background-size: 200%;
+  background: rgb(88, 133, 201);
+  color: white;
+   }
+  /*.add-to-cart:hover, .like:hover {
     background: #b36800;
-    color: #fff; }
+    color: #fff; }*/
 
 .not-available {
   text-align: center;
