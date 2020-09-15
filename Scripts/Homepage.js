@@ -35,8 +35,6 @@ let logout = function(){
  
 }
 
-
-
 // this function sets the categories on homepage
 let homepageCategories = function(){
 
@@ -74,6 +72,46 @@ let homepageCategories = function(){
 };
 
 
+// This function makes sure handles the top rated goods on homepage start up
+let topRatedGoods = function(){
+  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
+    category: 'Electronics',
+    type: 'Goods'
+    },function(result){
+
+     let prod = '';
+     let item;
+     let arr = [];
+     for(let i = 0 ; i < 6;i++){
+      arr.push(result[i]);
+      const prodItem = new Product(result[i].Product_ID, result[i].UserID, result[i].Category, result[i].Product_Name, result[i].Product_Brand, result[i].Product_Description, result[i].Product_Price, result[i].Current_Quantity, result[i].Product_Pic, result[i].Sold_Quantity, result[i].Product_type);
+       item = JSON.stringify(prodItem); 
+        prod += `
+       <div class = "col-sm-1 my-2 ml-5"  style="margin: auto; width: 50%; cursor: pointer;">
+       <a href="ViewProduct.html">
+       <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
+         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
+         <h5 class="card-title">${result[i].Product_Name}</h5>
+         <h6 class="card-title">R${result[i].Product_Price}</h6>
+       </div>
+       </a>
+     </div>  
+       `;
+  
+     }
+     document.getElementById("homepageTopGoods").innerHTML = prod;
+     
+     arr.map(function(good){
+      const prodItem = new Product(good.Product_ID, good.UserID, good.Category, good.Product_Name, good.Product_Brand, good.Product_Description, good.Product_Price, good.Current_Quantity, good.Product_Pic, good.Sold_Quantity, good.Product_type);
+      const ite = JSON.stringify(prodItem); 
+      let individualCat = document.getElementById(good.Product_ID);
+      individualCat.setAttribute("onclick", `viewProduct(${ite})`);
+     }).join('');
+  
+  
+    }
+  );
+}
 // This function handles the top rated services on the main
 let topRatedServices = function(){
 
@@ -115,48 +153,6 @@ let topRatedServices = function(){
 
       }).join('');
 
-  
-    }
-  );
-}
-
-
-// This function makes sure handles the top rated goods on homepage start up
-let topRatedGoods = function(){
-  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
-    category: 'Electronics',
-    type: 'Goods'
-    },function(result){
-
-     let prod = '';
-     let item;
-     let arr = [];
-     for(let i = 0 ; i < 6;i++){
-      arr.push(result[i]);
-      const prodItem = new Product(result[i].Product_ID, result[i].UserID, result[i].Category, result[i].Product_Name, result[i].Product_Brand, result[i].Product_Description, result[i].Product_Price, result[i].Current_Quantity, result[i].Product_Pic, result[i].Sold_Quantity, result[i].Product_type);
-       item = JSON.stringify(prodItem); 
-        prod += `
-       <div class = "col-sm-1 my-2 ml-5"  style="margin: auto; width: 50%; cursor: pointer;">
-       <a href="ViewProduct.html">
-       <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
-         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
-         <h5 class="card-title">${result[i].Product_Name}</h5>
-         <h6 class="card-title">R${result[i].Product_Price}</h6>
-       </div>
-       </a>
-     </div>  
-       `;
-  
-     }
-     document.getElementById("homepageTopGoods").innerHTML = prod;
-     
-     arr.map(function(good){
-      const prodItem = new Product(good.Product_ID, good.UserID, good.Category, good.Product_Name, good.Product_Brand, good.Product_Description, good.Product_Price, good.Current_Quantity, good.Product_Pic, good.Sold_Quantity, good.Product_type);
-      const ite = JSON.stringify(prodItem); 
-      let individualCat = document.getElementById(good.Product_ID);
-      individualCat.setAttribute("onclick", `viewProduct(${ite})`);
-     }).join('');
-  
   
     }
   );
