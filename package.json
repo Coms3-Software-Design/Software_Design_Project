@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Coms3-Software-Design/software_design_project#readme",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.11.6",
     "codecov": "^3.7.0",
     "coveralls": "^3.1.0",
     "jest": "^26.4.2"

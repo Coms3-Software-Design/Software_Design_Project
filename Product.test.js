@@ -1,7 +1,7 @@
 const Product = require('./Scripts/classes/Product');
 
 test("Product details verification", () => {
-	const product = new Product('101', '1001', '20', '10', '10.99', 'XBOX', 'Electronics', 'Microsoft', 'Best In The World', 'good');
+	const product = new Product('101', '1001', 'Electronics', 'XBOX', 'Microsoft', 'Best In The World', '10.99', '20', 'www.hello.com/img/img.jpg','10', 'good');
 
 	expect(product.productID).toBe('101');
 	expect(product.userID).toBe('1001');
@@ -11,8 +11,20 @@ test("Product details verification", () => {
 	expect(product.productName).toBe('XBOX');
 	expect(product.category).toBe('Electronics');
 	expect(product.productBrand).toBe('Microsoft');
-	expect(product.productPicture).toBe(null);
+	expect(product.productPicture).toBe('www.hello.com/img/img.jpg');
 	expect(product.productDescription).toBe('Best In The World');
 	expect(product.prodType).toBe('good');
 
+});
+
+test('get functions', ()=>{
+	const product = new Product('101', '1001', 'Electronics', 'XBOX', 'Microsoft', 'Best In The World', '10.99', '20', 'www.hello.com/img/img.jpg','10', 'good');
+	
+	const spy = jest.spyOn(product, 'getProductID', 'get');
+	const  getterProductID = product.getProductID;
+
+	expect(spy).toHaveBeenCalled();
+	expect(getterProductID).toBe('101');
+
+	spy.mockRestore();
 });
