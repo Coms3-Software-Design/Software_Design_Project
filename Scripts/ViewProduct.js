@@ -109,13 +109,12 @@ document.getElementById("post-btn").addEventListener('click', function(){
 
 // The buy button
 document.getElementById("buy-product").addEventListener('click',function(){
-<<<<<<< HEAD
 
-  let user = sessionStorage.getItem('user');
+  let user = localStorage.getItem('user');
   if(user !=  null){
     console.log(JSON.parse(user).Balance);
     if(JSON.parse(user).Balance < item.pricePerItem){
-      alert("Insuficient funds, please load your account and try again later");
+      alert("Insuficient funds, please load your account and try again");
     }
     else{
       document.querySelector('.buy-popup').style.display = 'flex';
@@ -124,27 +123,9 @@ document.getElementById("buy-product").addEventListener('click',function(){
     
   }
    else{
-    window.location.href = "login.html";
-    //console.log(user);
+    alert("Please sign in");
   }
     
-=======
-    // check if user can buy through checking the amount of money they have vs the price of the product
-    if(loggedUser == null){
-        alert("please sign in to make a purchase");
-        return;
-    }
-    else{
-       if(loggedUser.Balance < item.pricePerItem){
-           alert("Your balance is insufficient");
-           return;
-       }
-       else{
-        document.querySelector('.buy-popup').style.display = 'flex';
-       }
-    }
-  
->>>>>>> 6010b5b5dabd540a2b32377a716521985f574d74
 });
 
 document.getElementById("Buy-btn").addEventListener('click',function(){
