@@ -21,69 +21,69 @@ class User {
                    this.proPicURL = Profilepic;
   }
 
-  getUserID = () => this.userID;
-  getName = () => this.name;
-  getSurname = () => this.surname;
-  getUserName = () => this.userName;
-  getPassword = () => this.password;
-  getDateOfBirth = () => this.dateOfBirth;
-  getGender = () => this.gender;
-  getDateCreated = () => this.dateCreated;
-  getBio = () => this.bio;
-  getBalance = () => this.balance;
-  getContactDetails = () => this.contactDetails;
-  getProPicURL = () => this.proPicURL;
+  get getUserID(){return this.userID;}
+  get getName(){return this.name;}
+  get getSurname(){return this.surname;}
+  get getUserName(){return this.userName;}
+  get getPassword(){return this.password;}
+  get getDateOfBirth(){return this.dateOfBirth;}
+  get getGender(){return this.gender;}
+  get getDateCreated(){return this.dateCreated;}
+  get getBio(){return this.bio;}
+  get getBalance(){return this.balance;}
+  get getContactDetails(){return this.contactDetails;}
+  get getProPicURL(){return this.proPicURL;}
 
 
 
 
-  setUserID = (userID) => {
+  set setUserID(userID){
     this. userID = userID;
   };
 
-  setName = (name) => {
+  set setName(name){
     this.name = name;
   };
 
-  setSurname = (surname) => {
+  set setSurname(surname){
     this.surname = surname;
   };
 
-  setUserName = (userName) => {
+  set setUserName(userName){
     this.userName = userName;
   };
 
-  setPassword = (password) => {
+  set setPassword(password){
     this.password = password;
   };
 
-  setDateOfBirth = (dateOfBirth) => {
+  set setDateOfBirth(dateOfBirth){
     this.dateOfBirth = dateOfBirth;
   };
 
-  setGender = (gender) => {
+  set setGender(gender){
     this.gender = gender;
   };
 
-  setDateCreated = (dateCreated) => {
+  set setDateCreated(dateCreated){
     this.dateCreated = dateCreated;
   };
 
-  setBio = (bio) => {
+  set setBio(bio){
     this.bio = bio;
   };
 
-  setBalance = (balance) => {
+  set setBalance(balance){
     this.balance = balance;
   };
 
-  setContactDetails = (contactDetails) => {
+  set setContactDetails(contactDetails){
     this.contactDetails= contactDetails;
   };
 
-  setProPicURL = (proPicURL) => {
+  set setProPicURL(proPicURL){
     this.proPicURL = proPicURL;
   };
 }
 
-Module.exports = User;
+module.exports = User;

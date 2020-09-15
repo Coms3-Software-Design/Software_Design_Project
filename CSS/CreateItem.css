@@ -53,3 +53,14 @@ body {
   #header-name{
     margin-top: 25px;
   }
+
+
+
+  .input_field select{
+    margin-block: 15px;
+    width: 66%;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    outline: none;
+  }

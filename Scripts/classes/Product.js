@@ -20,48 +20,48 @@ class Product {
 
   }
 
-   getProductID = () => {
+   get getProductID(){
     return this.productID;
   }
-   getUserID = () => {
+   get getUserID(){
     return this.userID;
   }
-   getCategory = () => {
+   get getCategory(){
     return this.category;
   }
-   getProductName = () => {
+   get getProductName(){
     return this.productName;
   }
-   getProductBrand = () => {
+   get getProductBrand(){
     return this.productBrand;
   }
-   getProductDescription = () => {
+   get getProductDescription(){
     return this.productDescription;
   }
-   getPricePerItem = () => {
+   get getPricePerItem(){
     return this.pricePerItem;
   }
-   getCurrentQuantity = () => {
+   get getCurrentQuantity(){
     return this.currentQuantity;
   }
-   getProductPic = () => {
+   get getProductPic(){
     return this.productPicture;
   }
-   getProdType = () => {
+   get getProdType(){
     return this.prodType;
   }
-   getSoldQuantity = () => {
+   get getSoldQuantity(){
     return this.soldQuantity;
   }
 
-   setCategory = category => {this.category = category;}
-   setProductName = productName => {this.productName = productName;}
-   setProductBrand = productBrand => {this.productBrand = productBrand;}
-   setProductDescription = productDescription => {this.productDescription = productDescription;}
-   setPricePerItem = pricePerItem => {this.pricePerItem = pricePerItem;}
-   setCurrentQuantity = currentQuantity => {this.currentQuantity = currentQuantity;}
-   setSoldQuantity = soldQuantity => {this.soldQuantity = soldQuantity;}
-   setProdType = prodType => {this.prodType = prodType;}
+   set setCategory(category){this.category = category;}
+   set setProductName(productName){this.productName = productName;}
+   set setProductBrand(productBrand){this.productBrand = productBrand;}
+   set setProductDescription(productDescription){this.productDescription = productDescription;}
+   set setPricePerItem(pricePerItem){this.pricePerItem = pricePerItem;}
+   set setCurrentQuantity(currentQuantity){this.currentQuantity = currentQuantity;}
+   set setSoldQuantity(soldQuantity){this.soldQuantity = soldQuantity;}
+   set setProdType(prodType){this.prodType = prodType;}
 
 }
 
