@@ -86,4 +86,4 @@ class User {
   };
 }
 
-module.exports = User;
+Module.exports = User;

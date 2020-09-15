@@ -1,3 +1,7 @@
+// Getting to know who's logged in
+let loggedUser = JSON.parse(localStorage.getItem('user'));
+console.log(loggedUser);
+
 var item = JSON.parse(localStorage.getItem("item"));
 console.log(item);
 /* Getting and setting a picture*/
@@ -98,12 +102,14 @@ document.getElementById("post-btn").addEventListener('click', function(){
     console.log(itemRatings);
 
     let URL='https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php';
-    $.getJSON(URL,{ProductID: item.productID, Review:review, Rating:rating, Reviewer:'1814731'},function(results){
+    $.getJSON(URL,{ProductID: item.productID, Review:review, Rating:rating, Reviewer:'1814732'},function(results){
         return;
     });
 });
 
+// The buy button
 document.getElementById("buy-product").addEventListener('click',function(){
+<<<<<<< HEAD
 
   let user = sessionStorage.getItem('user');
   if(user !=  null){
@@ -122,6 +128,23 @@ document.getElementById("buy-product").addEventListener('click',function(){
     //console.log(user);
   }
     
+=======
+    // check if user can buy through checking the amount of money they have vs the price of the product
+    if(loggedUser == null){
+        alert("please sign in to make a purchase");
+        return;
+    }
+    else{
+       if(loggedUser.Balance < item.pricePerItem){
+           alert("Your balance is insufficient");
+           return;
+       }
+       else{
+        document.querySelector('.buy-popup').style.display = 'flex';
+       }
+    }
+  
+>>>>>>> 6010b5b5dabd540a2b32377a716521985f574d74
 });
 
 document.getElementById("Buy-btn").addEventListener('click',function(){
@@ -133,53 +156,3 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
     document.querySelector('.buy-popup').style.display = 'none';
     alert("Purchase canceled");
 });
-
-/*
-
-<script>
-                const btn = document.querySelector("button");
-                const post = document.querySelector(".post");
-                const widget = document.querySelector(".star-widget");
-                const editBtn = document.querySelector(".edit");
-
-                btn.onclick = ()=>{
-                  widget.style.display = "none";
-                  post.style.display = "block";
-
-                  if(document.getElementById("rate-5").checked == true){
-                    console.log(5);
-                  }
-
-                  else if(document.getElementById("rate-4").checked == true){
-                    console.log(4);
-                  }
-
-                  else if(document.getElementById("rate-3").checked == true){
-                    console.log(3);
-                  }
-
-                  else if(document.getElementById("rate-2").checked == true){
-                    console.log(2);
-                  }
-
-                  else if(document.getElementById("rate-1").checked == true){
-                    console.log(1);
-                  }
-
-                  let review = document.getElementById("review").value;
-                  if(review != ""){
-                    console.log(review);
-                  }
-
-                  return false;
-                }
-
-                editBtn.onclick = ()=>{
-                  widget.style.display = "block";
-                  post.style.display = "none";
-
-                  return false;
-                }
-              </script>
-
-*/

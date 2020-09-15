@@ -10,15 +10,10 @@ let productsArray;
 let goodsArray;
 let productHTML;
 
-// let user = sessionStorage.getItem('user');
-// if(user !=  null){
-//   console.log(user);
-// }
-
 
 //When user logins sign up and Registration disappears
 let hide = function(){
-  let log = JSON.parse(sessionStorage.getItem('user'));
+  let log = JSON.parse(localStorage.getItem('user'));
 
   if(log==null){
   document.getElementById('signed').className = "D-login";
@@ -26,6 +21,12 @@ let hide = function(){
 
    document.getElementById('Bsign').className = "D-login";
   }
+}
+
+//clears the session when the user has logged out
+let logout = function(){
+  localStorage.removeItem('user');
+  sessionStorage.clear();
 }
 
 // this function sets the categories on homepage
@@ -65,6 +66,46 @@ let homepageCategories = function(){
 };
 
 
+// This function makes sure handles the top rated goods on homepage start up
+let topRatedGoods = function(){
+  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
+    category: 'Electronics',
+    type: 'Goods'
+    },function(result){
+
+     let prod = '';
+     let item;
+     let arr = [];
+     for(let i = 0 ; i < 6;i++){
+      arr.push(result[i]);
+      const prodItem = new Product(result[i].Product_ID, result[i].UserID, result[i].Category, result[i].Product_Name, result[i].Product_Brand, result[i].Product_Description, result[i].Product_Price, result[i].Current_Quantity, result[i].Product_Pic, result[i].Sold_Quantity, result[i].Product_type);
+       item = JSON.stringify(prodItem); 
+        prod += `
+       <div class = "col-sm-1 my-2 ml-5"  style="margin: auto; width: 50%; cursor: pointer;">
+       <a href="ViewProduct.html">
+       <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
+         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
+         <h5 class="card-title">${result[i].Product_Name}</h5>
+         <h6 class="card-title">R${result[i].Product_Price}</h6>
+       </div>
+       </a>
+     </div>  
+       `;
+  
+     }
+     document.getElementById("homepageTopGoods").innerHTML = prod;
+     
+     arr.map(function(good){
+      const prodItem = new Product(good.Product_ID, good.UserID, good.Category, good.Product_Name, good.Product_Brand, good.Product_Description, good.Product_Price, good.Current_Quantity, good.Product_Pic, good.Sold_Quantity, good.Product_type);
+      const ite = JSON.stringify(prodItem); 
+      let individualCat = document.getElementById(good.Product_ID);
+      individualCat.setAttribute("onclick", `viewProduct(${ite})`);
+     }).join('');
+  
+  
+    }
+  );
+}
 // This function handles the top rated services on the main
 let topRatedServices = function(){
 
@@ -76,49 +117,37 @@ let topRatedServices = function(){
       `${result.map(function(service){
 
         const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
-
+        const item = JSON.stringify(prodItem); 
           return `
           <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
-          <div class="card" style="width: 8rem; height: 10rem; cursor: pointer;">
+          <a href="ViewProduct.html">
+          <div href="ViewProduct.html" class="card" style="width: 8rem; height: 10rem; cursor: pointer;" id="${service.Product_ID}">
             <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
             <h5 class="card-title">${service.Product_Name}</h5>
             <h6 class="card-title">R${service.Product_Price}</h6>
           </div>
-        </div>
+          </a>
+        </div>  
           `;
-      }).join('')}
-
+      }).join('')
+    
+      }
+    
       `;
+
+
      document.getElementById("homepageTopServices").innerHTML = servs;
+  
+      result.map(function(service){
+        const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
+        const item = JSON.stringify(prodItem); 
+        let individualCat = document.getElementById(service.Product_ID);
+        individualCat.setAttribute("onclick", `viewProduct(${item})`);
+       // console.log(item);
 
+      }).join('');
 
-    }
-  );
-}
-
-
-// This function makes sure handles the top rated goods on homepage start up
-let topRatedGoods = function(){
-  $.getJSON('https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/products.php',{
-    category: 'Electronics',
-    type: 'Goods'
-    },function(result){
-     let prod = '';
-     for(let i = 0 ; i < 6;i++){
-        prod += `
-       <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
-       <div class="card" style="width: 10rem; height: 10rem; cursor: pointer;">
-         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
-         <h5 class="card-title">${result[i].Product_Name}</h5>
-         <h6 class="card-title">R${result[i].Product_Price}</h6>
-       </div>
-     </div>
-       `;
-
-     }
-     document.getElementById("homepageTopGoods").innerHTML = prod;
-
-
+  
     }
   );
 }
@@ -220,6 +249,7 @@ viewProduct = function(item) {
 
 
 let init = function(){
+
   hide();
   homepageCategories();
   topRatedServices();
