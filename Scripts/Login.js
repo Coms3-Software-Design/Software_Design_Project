@@ -1,4 +1,4 @@
-// Get the modal
+ // Get the modal
 var modal = document.getElementById("theModal");
 
 // Get the <span> element that closes the modal

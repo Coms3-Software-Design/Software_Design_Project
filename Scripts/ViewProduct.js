@@ -109,21 +109,23 @@ document.getElementById("post-btn").addEventListener('click', function(){
 
 // The buy button
 document.getElementById("buy-product").addEventListener('click',function(){
-    // check if user can buy through checking the amount of money they have vs the price of the product
-    if(loggedUser == null){
-        alert("please sign in to make a purchase");
-        return;
+
+  let user = localStorage.getItem('user');
+  if(user !=  null){
+    console.log(JSON.parse(user).Balance);
+    if(JSON.parse(user).Balance < item.pricePerItem){
+      alert("Insuficient funds, please load your account and try again");
     }
     else{
-       if(loggedUser.Balance < item.pricePerItem){
-           alert("Your balance is insufficient");
-           return;
-       }
-       else{
-        document.querySelector('.buy-popup').style.display = 'flex';
-       }
+      document.querySelector('.buy-popup').style.display = 'flex';
     }
-  
+    // document.getElementById("user-balance").value = 'R' + JSON.parse(user).Balance;
+    
+  }
+   else{
+    alert("Please sign in");
+  }
+    
 });
 
 document.getElementById("Buy-btn").addEventListener('click',function(){
