@@ -46,7 +46,7 @@ if(results=="!exists" && username!=""&&password!=""){
 
 
     window.location.href='Homepage.html';
-    alert(user.getName;
+    alert(user.getName);
   }
   //When the fields are empty
   else{
