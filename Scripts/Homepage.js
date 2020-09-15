@@ -10,11 +10,6 @@ let productsArray;
 let goodsArray;
 let productHTML;
 
-// let user = sessionStorage.getItem('user');
-// if(user !=  null){
-//   console.log(user);
-// }
-
 
 //When user logins sign up and Registration disappears
 let hide = function(){
@@ -30,9 +25,8 @@ let hide = function(){
 
 //clears the session when the user has logged out
 let logout = function(){
-  sessionStorage.removeItem('user');
+  localStorage.removeItem('user');
   sessionStorage.clear();
- 
 }
 
 // this function sets the categories on homepage
@@ -261,7 +255,6 @@ let init = function(){
   topRatedServices();
   topRatedGoods();
   categories();
-  logout();
 }
 
 init();
