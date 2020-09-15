@@ -150,7 +150,7 @@ let goods = function(cat, type) {
         const prodItem = new Product(productsArray[j].Product_ID, productsArray[j].UserID, productsArray[j].Category, productsArray[j].Product_Name, productsArray[j].Product_Brand, productsArray[j].Product_Description, productsArray[j].Product_Price, productsArray[j].Current_Quantity, productsArray[j].Product_Pic, productsArray[j].Sold_Quantity, productsArray[j].Product_type);
         let stringFormItem = JSON.stringify(prodItem);
 
-        const pic = `${productPicUrl}${prodItem.getProductPic()}`;
+        const pic = `${productPicUrl}${prodItem.getProductPic}`;
         let id = productsArray[j].Product_ID;
         productHTML = '<a href="ViewProduct.html" class = " my-2 ml-5">' +
         '<div class="card single-item"> ' +
@@ -161,10 +161,10 @@ let goods = function(cat, type) {
           '<div class="card-body" id=' + id + ' onclick="viewProduct()> ' +
           '<div class="card-text d-flex justify-content-between text-capitalize"> ' +
           '<h5 id="item-name"> ' +
-          prodItem.getProductName() +
+          prodItem.getProductName +
           '</h5> ' +
           '<span> ' +
-          'R' + prodItem.getPricePerItem() +
+          'R' + prodItem.getPricePerItem +
           '</span> ' +
           '</div> ' +
           '</div>' +
