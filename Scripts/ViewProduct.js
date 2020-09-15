@@ -162,6 +162,7 @@ document.getElementById("Buy-btn").addEventListener('click',function(){
             localStorage.setItem('user', JSON.stringify(result[0]));
             console.log(JSON.parse(localStorage.getItem('user')));
             alert("Product successfully purchased");
+            window.location.href = "Homepage.html";
             }
         });
  
