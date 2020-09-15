@@ -2,7 +2,7 @@
 let loggedUser = JSON.parse(localStorage.getItem('user'));
 console.log(loggedUser);
 
-var item = JSON.parse(localStorage.getItem("item"));
+let item = JSON.parse(localStorage.getItem("item"));
 console.log(item);
 /* Getting and setting a picture*/
 var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+item.productPicture;
@@ -24,7 +24,7 @@ document.getElementById("product_quantity").innerHTML = item.currentQuantity;
 /* Getting and setting Ratings*/
 var ratings = 0;
 var itemRatings;
-let url = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReviews.php';
+const url = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReviews.php';
 $.getJSON(url,{ProductID: item.productID},function(results){
     //console.log(results);
     itemRatings = results;
@@ -110,10 +110,10 @@ document.getElementById("post-btn").addEventListener('click', function(){
 // The buy button
 document.getElementById("buy-product").addEventListener('click',function(){
 
-  let user = localStorage.getItem('user');
-  if(user !=  null){
-    console.log(JSON.parse(user).Balance);
-    if(JSON.parse(user).Balance < item.pricePerItem){
+  
+  if(loggedUser !=  null){
+    console.log(loggedUser.Balance + " "+ item.pricePerItem);
+    if(parseFloat(loggedUser.Balance) < parseFloat(item.pricePerItem)){
       alert("Insuficient funds, please load your account and try again");
     }
     else{
@@ -128,9 +128,52 @@ document.getElementById("buy-product").addEventListener('click',function(){
     
 });
 
+// Buying a product
+const buyURL = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPBuy.php";
 document.getElementById("Buy-btn").addEventListener('click',function(){
+
+    console.log("Testing");
+
+
+    let  transDate= new Date();
+    let dd = String(transDate.getDate()).padStart(2, '0');
+    let mm = String(transDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = transDate.getFullYear();
+
+    transDate = mm + '/' + dd + '/' + yyyy;
+    let prodID = item.productID;
+    let buyer = loggedUser.UserID;
+    let balance = parseFloat(loggedUser.Balance) - parseFloat(item.pricePerItem);
+    let Quant = parseInt(item.currentQuantity) - 1; 
+    console.log( transDate , prodID , buyer , balance , Quant);
+    $.getJSON(buyURL , {
+        ProductID : prodID,
+        Buyer: buyer,
+        TransDate : transDate,
+        Balance: balance,
+        Quantity : Quant
+    },function(confirmation){
+       console.log(confirmation);
+        if(confirmation === "1"){
+        const updateUserURl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReturnUser.php";
+        $.getJSON(updateUserURl , {username : loggedUser.UserName}, function(result){
+            if(result[0] !== ''){
+            localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(result[0]));
+            console.log(JSON.parse(localStorage.getItem('user')));
+            alert("Product successfully purchased");
+            }
+        });
+ 
+        }
+    });
+
+    
+
     document.querySelector('.buy-popup').style.display = 'none';
-    alert("You just bought a product");
+    
+
+  
 });
 
 document.getElementById("Cancel-btn").addEventListener('click',function(){
