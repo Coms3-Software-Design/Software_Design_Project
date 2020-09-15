@@ -26,38 +26,49 @@
 
   <body>
 
-    <!-- Nav Bar -->
-    <nav id="navBar" class="site-header sticky-top py-1">
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fa fa-bars"></i>
-      </label>
-      <label class="Logo"> MarketPlace </label>
-      <ul class="nav-items">
-        <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
-        <li class="nav-items"><a class="nav-a" href="#">Goods</a>
-          <div class="profile-SubMenu" id="goodsDrop">
-          </div>
-        </li>
-        <li class="nav-items" id="Service"><a class="nav-a" href="#"><i class="far fa-clone" style="color:#fff;"></i>Services</a></li>
-        <li class="nav-items">
-          <a class="nav-a" href="#"><i class="far fa-user" style="color:#fff;"></i> Profile</a>
-  
-          <div class="profile-SubMenu">
-            <ul>
-              <li><a href="ViewProfile.html" class="li-modal">Edit profile</a></li>
-  
-              <li><a href="#">Transaction history</a></li>
-              <li><a href="CreateItem.html">Create item</a></li>
-              <li><a href="#">Edit my items </a></li>
-              <li><a href="Login.html" class="li-modal">Sign in</a></li>
-              <li><a href="Register.html" class="li-modal">Sign up</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <!-- End of Nav bar -->
+  <!-- The navigation bar  -->
+  <nav id="navBar" class="site-header sticky-top py-1">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+    </label>
+    <label class="Logo"> MarketPlace </label>
+    <ul class="nav-items">
+      <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
+      <li class="nav-items"><a class="nav-a" href="#">Goods</a>
+        <div class="profile-SubMenu" id="goodsDrop">
+        </div>
+      </li>
+      <li class="nav-items" id="Service"><a class="nav-a" href="#"><i class="far fa-clone" style="color:#fff;"></i>Services</a></li>
+      <li class="nav-items">
+        <a class="nav-a" href="#"><i class="far fa-user" style="color:#fff;"></i> Profile</a>
+
+        <div class="profile-SubMenu">
+
+          <ul class="A-login" id="signed">
+            <li><a href="EditProfile.html" >Edit profile</a></li>
+            <li><a href="#">Transaction history</a></li>
+            <li><a href="CreateItem.html" class="li-modal">Create item</a></li>
+            <li><a href="#">Edit my items </a></li>
+            <li><a onclick="logout()" href="homepage.html"> Logout </a></li>
+          </ul>
+
+          <ul class="B-login" id="Bsign">
+            <li><a href="Login.html" class="li-modal">Sign in</a></li>
+            <li><a href="Register.html" class="li-modal">Sign up</a></li>
+          </ul>
+
+        </div>
+
+      </li>
+
+      <!-- <button type="button"  data-toggle="modal" data-target="#myModal" onclick="window.location.href='../New/app.html'">Sign Up</button> -->
+      <!-- data-target="#theModal" data-toggle="modal"  -->
+    </ul>
+  </nav>
+  <!-- end of navigation bar -->
+
+
 
   <div class="container">
     <div class="card">

@@ -1,78 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EditProfile</title>
+    <link rel="stylesheet" href="../CSS/ViewProfile.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-   <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
-   <link rel="stylesheet" href="../CSS/ViewProfile.css">
-    <title>Profile View</title>
-  </head>
-  <body class="profile">
 
-<form class="form-createitem" id="submit_form_create">
+</head>
+<body class="profile">
 
-  <!-- <<x>> button for close the modal popup -->
-<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <!-- End of close box popup button-->
-
-  <header class="header-name" id="title-header">
-    <h2 class="h3 mb-3 font-weight-normal">Profile edit</h2>
-  </header>
-
-  <!-- image representing the logo for createitem page -->
-  <div class="card" style="width: 18rem;">
-    <img src="../CSS/Images/hardisk-profilepic.svg"  alt="../CSS/Images/iphone.jpg" id="add-picture" class="card-img-top">
-    <div class="card-body">
-     
-      <p class="card-text">Upload your Profile Picture</p>
-      <a href="#" class="btn btn-primary">Upload</a>
-
+  <div class="profile">
+  
+    <div id="p-Propic">
+        
+      
+      <!-- this is for displaying the pop up  -->
+      <div class="modal fade text-center" id="theModal">
+        <div class="modal-dialog">
+          <div class="modal-content"></div>
+        </div>
+      </div>
+  
     </div>
+    <!-- <img src="../CSS/Images/iphone.jpg" alt="../CSS/Images/iphone.jpg" id="profilePic"> -->
+  
+        <br>
+        <p for="name"  class="lab">Name</p>
+      
+        <div class="" id="p-Name">
+        </div>
+      
+        <p for="" class="lab">Surname</p>
+        <div class="" id="p-surname">
+        </div>
+      
+        <p for="" class="lab">Username</p>
+        <div class="" id="p-userName">
+        </div>
+      
+        <p for=""class="lab" > Bio</p>
+        <div class="" id="p-Bio">
+        </div>
+    
+    
+        <p for="contact" class="lab">Contact Details</p>
+        <div class="" id="p-No">
+
+          <div>
+            <ul>
+              <li><a href="EditProfile.html"  class="li-modal">Edit your profile</a></li>
+            </ul>
+          </div>
+
+        </div>
   </div>
   
 
-
-  <div class="input_field">
-      <label class="sr-only">Enter your Name</label>
-      <input type="text" id="edit-name" name="edit-name" class="form-control" placeholder="Name" required autofocus>
-  </div>
-
-  <div class="input_field">
-      <label  class="sr-only">Enter your Surname</label>
-      <input type="text" id="edit-surname" name="edit-surname" class="form-control" placeholder="Surname" required>
-  </div>
-
-  <div class="input_field">
-    <label class="sr-only">Enter your Username</label>
-    <input type="text" id="edit-username" name="edit-username" class="form-control" placeholder="Username" required autofocus>
-  </div>
-
-  <div class="input_field">
-      <label  class="sr-only">Enter your Bio</label>
-      <input type="text" id="edit-bio" name="edit-bio" class="form-control" placeholder="Bio" required>
-  </div>
-
-  <div class="input_field">
-      <label  class="sr-only">Enter Conntact Number</label>
-      <input type='text' ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" min="1" max="10" step="any" id="edit-number" name="edit-number" class="form-control" placeholder="Conntact Number" required>
-  </div>
-
-
-  <div id="response"></div>
-
-
-
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <script src="../Scripts/Viewprofile.js"> </script>
+      <script src="../Scripts/Popup.js"></script>
+      
   
-  
-  <button class="btn btn-primary" type="submit" id="create-submit" name="create-submit">Create item</button>
-  
-</form>
-<!-- ////////////////////////////////////////////////////// -->
-
-
-
-<script src="../Scripts/Viewprofile.js"> </script>
-
-  </body>
+    </body>
 </html>
+
+

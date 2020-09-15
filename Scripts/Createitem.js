@@ -102,3 +102,12 @@ $.getJSON(url,
      );
      
 });
+
+
+
+function upload(){
+  var imagecanvas = document.getElementById("can");
+  var fileinput = document.getElementById("upload-image");
+  var image = new SimpleImage(fileinput);
+  image.drawTo(imagecanvas);
+}

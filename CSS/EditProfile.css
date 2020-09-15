@@ -1,63 +1,34 @@
+/* positions the profile card to the centre */
+.card{
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+/* -------------end------------- */
 
-.inputText{
-  display: block;
-  box-sizing: border-box;
-  background: none;
-  color: #3498db;
-  margin-bottom: 30px;
-  padding: 4px;
-  width: 220px;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #0082e6;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
+/* the input spacing and placement */
+.input_field {
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
-.inputText:focus{
-  border-bottom: 2px solid #3498db;
-  border-bottom-right-radius: 20px:
-  color:#3498db;
-  transition: 0.2 ease;
 
+.input_field input{
+  margin-block: 15px;
+  width: 65%;
+  padding-left: 10px;
+  border: 1px solid silver;
+  outline: none;
 }
-.edit-btn{
-  border:1px solid #3498db;
-  background: rgb(88, 133, 201);
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
-  margin:0px;
-  color: white;
-  transition: all 0.3s;
-}
-.edit-btn:hover{
-  transform: scale(1.1);
-}
-.edit-pic{
-  box-sizing: border-box;
-  font-size:15px;
-  color: white;
-  border: 1px solid rgb(88, 133, 201);
-  background-color:rgb(88, 133, 201);
-  padding: 2px 20px;
-  border-radius: 10px;
-  transition: all 0.3s;
-  margin-left: 250px;
-  width: 110px;
-}
-.edit-pic:hover{
-background-color:rgb(88, 133, 201);
-transform: scale(1.05);
-}
-.lab{
-  display: none;
-}
-.profile{
-  margin: 0 auto;
-  width: 300px;
-  height: 700px;
+/* -------end------------- */
 
+/* eediting the title to start at a marin top */
+#title-header{
+  margin-top: 20px;
+}
 
+/* editin the btn margintop which is created in bootstrap */
+.btn{
+  margin-bottom:30px;
+  margin-top: 10px;
 }
