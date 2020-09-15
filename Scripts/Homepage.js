@@ -13,7 +13,7 @@ let productHTML;
 
 //When user logins sign up and Registration disappears
 let hide = function(){
-  let log = JSON.parse(sessionStorage.getItem('user'));
+  let log = JSON.parse(localStorage.getItem('user'));
 
   if(log==null){
   document.getElementById('signed').className = "D-login";
