@@ -19,8 +19,8 @@ test("Returning information of the user", () => {
 test('get functions', ()=>{
 	const user = new User('101', 'Billy', 'McTominay', 'BigTee', 'BigMacTeaMoney', '0860010111', '22-06-2010', '30-06-2017', 'male', 'low-key douche', '5000', 'www.hello.com/images/image.png');
 	
-	const spy = jest.spyOn(product, 'getUserID', 'get');
-	const  getterUserID = product.getUserID;
+	const spy = jest.spyOn(user, 'getUserID', 'get');
+	const  getterUserID = user.getUserID;
 
 	expect(spy).toHaveBeenCalled();
 	expect(getterUserID).toBe('101');

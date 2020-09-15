@@ -18,7 +18,7 @@ var Profilepic = user.Profilepic;
 
 var abuser = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
 console.log(user.UserName);
-$("#p-Name").html(`<p class="pItem">${abuser.getName()}</p>`);
+$("#p-Name").html(`<p class="pItem">${abuser.getName}</p>`);
 $("#p-surname").html(`<p class="pItem">${Surname}</p>`);
 $("#p-userName").html(`<p class="pItem">${user.UserName}</p>`);
 $("#p-Bio").html(`<p class="pItem">${Bio}</p>`);
