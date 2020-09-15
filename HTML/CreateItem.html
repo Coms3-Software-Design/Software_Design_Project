@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateItem</title>
+    <link rel="stylesheet" href="../CSS/CreateItem.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="form-createitem">
+
+            <!-- <<x>> button for close the modal popup -->
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <!-- End of close box popup button-->
+
+            <!-- image representing the logo for createitem page -->
+            <img class="logo" src="../CSS/Images/gummy-createitem.svg" alt="" width="200" height="200">
+            
+            <header class="header-name">
+                <h2 class="h3 mb-3 font-weight-normal">Create an Item</h2>
+            </header>
+    
+            <div class="input_field">
+                <label class="sr-only">Enter your Name</label>
+                <input type="text" id="create-name" name="name" class="form-control" placeholder="Users name" required autofocus>
+            </div>
+    
+            <div class="input_field">
+                <label  class="sr-only">Enter the brand name</label>
+                <input type="text" id="create-brand" name="brand" class="form-control" placeholder="Brand name" required>
+            </div>
+    
+            <div class="input_field">
+                <label  class="sr-only">Enter the product description</label>
+                <input type="text" id="create-description" name="description" class="form-control" placeholder="Product description" required>
+            </div>
+    
+            <div class="input_field">
+                <label  class="sr-only">Enter the product price</label>
+                <input type="number" min="1" step="any" id="create-price" name="description" class="form-control" placeholder="Product price" required>
+            </div>
+    
+            <div class="input_field">
+                <label  class="sr-only">How many products do you want to add</label>
+                <input type="number" id="create-quantity" name="quantity" class="form-control" placeholder="Product quantity" required>
+            </div>
+    
+            <img src="../CSS/Images/iphone.jpg" alt="../CSS/Images/iphone.jpg" id="add-picture">
+    
+            <div>
+                <button class="create-button" type="submit" id="create-submit" name="submit">Create item</button>
+            </div>
+            
+          </div>
+        </form>
+</body>
+</html>

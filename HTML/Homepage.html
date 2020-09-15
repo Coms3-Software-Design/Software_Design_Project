@@ -25,14 +25,14 @@
 
 <body>
 
-  <nav id="navBar">
+  <nav id="navBar" class="site-header sticky-top py-1">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
       <i class="fa fa-bars"></i>
     </label>
     <label class="Logo"> MarketPlace </label>
     <ul class="nav-items">
-      <li class="nav-items"><a class="nav-a" href="#"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
+      <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
       <li class="nav-items"><a class="nav-a" href="#">Goods</a>
         <div class="profile-SubMenu" id="goodsDrop">
         </div>
@@ -46,7 +46,7 @@
             <li><a href="ViewProfile.html" class="li-modal">Edit profile</a></li>
 
             <li><a href="#">Transaction history</a></li>
-            <li><a href="#">Create item</a></li>
+            <li><a href="CreateItem.html" class="li-modal">Create item</a></li>
             <li><a href="#">Edit my items </a></li>
             <li><a href="Login.html" class="li-modal">Sign in</a></li>
             <li><a href="Register.html" class="li-modal">Sign up</a></li>
@@ -72,9 +72,7 @@
 
 
   <!-- Slider -->
-  <!-- Displays random products -->
-
-
+ 
   <section id="main">
     <div id="Carousel" class="carousel slide" data-ride="carousel">
 
@@ -127,33 +125,50 @@
     </div>
   </section>
 
-
-
   <!-- End of slider-->
+
+
+  <!-- Categories and top rated section -->
+  <div class="container-fluid" id="CatsTops">
+    <h3 class="text-center text-dark pt-4">Categories</h3>
+    <div class="row my-2" id="homepageCats" >
+      <!-- Categories will be place here from JS using -->
+       
+    </div>
+    <div class="border-top border-secondary w-50 mx-auto my-3"></div>
+
+    <div class="container-fluid" id="Tops">
+      <h3 class="text-center text-dark pt-4">Top rated Goods</h3>
+      <div class="row my-2" id="homepageTopGoods"  >
+        <!-- Categories will be place here from JS using -->
+
+     </div>
+
+      <h3 class="text-center pt-4 my-5">Top rated Services</h3>
+      <div class="row my-2" id="homepageTopServices" >
+        <!-- Categories will be place here from JS using -->
+
+      </div>
+    </div>
+  </div>
+  <!-- End of Categories and top rated section -->
 
   <!-- Products -->
 
   <section id="products" class="products py-5">
-    <div class="container">
+    <div class="container-fluid" >
       <!-- Section Title-->
-      <div class="row">
-        <div class="col-10 mx-auto col-sm-6 text-center">
-          <h1 class="text-capitalize product-title">
-            Featured products
-          </h1>
-        </div>
-      </div>
+      
       <!-- End Section Title-->
 
       <!--Product items-->
 
-      <div class="row product-items" id="product-items">
+  
+      <div class="row product-items" id="product-items" >
         <!-- Single Item -->
       </div>
       <!-- End of Product Items-->
-      <div id="product-item">
 
-      </div>
     </div>
   </section>
 
@@ -186,6 +201,7 @@
   <script type="text/javascript" src="../Scripts/classes/User.js"></script>
   <script type="text/javascript" src="../Scripts/classes/Product.js"></script>
   <script src="../Scripts/Homepage.js"></script>
+  
 
 </body>
 

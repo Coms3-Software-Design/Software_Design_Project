@@ -1,0 +1,63 @@
+body {
+    overflow-x: hidden; 
+}
+
+.card {
+    margin-top: 50px;
+    background: #eee;
+    padding: 3em;
+    line-height: 1.5em; 
+}
+
+  @media screen and (min-width: 997px) {
+    .wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; 
+    }
+ }
+
+ #add-picture{
+    display: block;
+    border-radius : 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+  
+  }
+
+  .create-button{
+      margin: 50px;
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+      margin: 1rem 0;
+      cursor: pointer;
+    transition: .5s;
+    background-size: 200%;
+    background: rgb(88, 133, 201);
+    color: white;
+  }
+
+/* the input spacing and placement */
+.input_field {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input_field input{
+    margin-block: 15px;
+    width: 65%;
+    padding-left: 10px;
+    border: 1px solid silver;
+    outline: none;
+  }
+
+  #header-name{
+    margin-top: 25px;
+  }
