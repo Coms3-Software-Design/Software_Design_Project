@@ -1,5 +1,5 @@
 
-let user = JSON.parse(sessionStorage.getItem('user'));
+let user = JSON.parse(localStorage.getItem('user'));
 console.log(user);
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
 
