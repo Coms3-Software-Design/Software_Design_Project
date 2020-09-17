@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<coverage generated="1600167403214" clover="3.2.0">
-  <project timestamp="1600167403215" name="All files">
-    <metrics statements="68" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="45" coveredmethods="4" elements="113" coveredelements="31" complexity="0" loc="68" ncloc="68" packages="1" files="2" classes="2"/>
-=======
-<coverage generated="1600173707074" clover="3.2.0">
-  <project timestamp="1600173707074" name="All files">
-    <metrics statements="68" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="45" coveredmethods="10" elements="113" coveredelements="43" complexity="0" loc="68" ncloc="68" packages="1" files="2" classes="2"/>
->>>>>>> 8f672482763392e57ff82dea35e98b82592418c6
-    <file name="Product.js" path="C:\Users\Mahlatse Charlie\Pictures\trial\software_design_project\Scripts\classes\Product.js">
+<coverage generated="1600380479851" clover="3.2.0">
+  <project timestamp="1600380479851" name="All files">
+    <metrics statements="68" coveredstatements="42" conditionals="0" coveredconditionals="0" methods="45" coveredmethods="19" elements="113" coveredelements="61" complexity="0" loc="68" ncloc="68" packages="1" files="2" classes="2"/>
+    <file name="Product.js" path="C:\Users\Mahlatse Charlie\Pictures\software_design_project\Scripts\classes\Product.js">
       <metrics statements="31" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="20" coveredmethods="9"/>
       <line num="9" count="9" type="stmt"/>
       <line num="10" count="9" type="stmt"/>
@@ -42,31 +36,31 @@
       <line num="64" count="0" type="stmt"/>
       <line num="68" count="1" type="stmt"/>
     </file>
-    <file name="User.js" path="C:\Users\Mahlatse Charlie\Pictures\trial\software_design_project\Scripts\classes\User.js">
-      <metrics statements="37" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="25" coveredmethods="2"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="12" count="2" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="16" count="2" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
-      <line num="18" count="2" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
+    <file name="User.js" path="C:\Users\Mahlatse Charlie\Pictures\software_design_project\Scripts\classes\User.js">
+      <metrics statements="37" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="25" coveredmethods="10"/>
+      <line num="10" count="10" type="stmt"/>
+      <line num="11" count="10" type="stmt"/>
+      <line num="12" count="10" type="stmt"/>
+      <line num="13" count="10" type="stmt"/>
+      <line num="14" count="10" type="stmt"/>
+      <line num="15" count="10" type="stmt"/>
+      <line num="16" count="10" type="stmt"/>
+      <line num="17" count="10" type="stmt"/>
+      <line num="18" count="10" type="stmt"/>
+      <line num="19" count="10" type="stmt"/>
+      <line num="20" count="10" type="stmt"/>
+      <line num="21" count="10" type="stmt"/>
       <line num="24" count="1" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="26" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
       <line num="29" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
       <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
       <line num="35" count="0" type="stmt"/>
       <line num="41" count="0" type="stmt"/>
       <line num="45" count="0" type="stmt"/>
