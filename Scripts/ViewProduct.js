@@ -26,7 +26,7 @@ var ratings = 0;
 var itemRatings;
 const url = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReviews.php';
 $.getJSON(url,{ProductID: item.productID},function(results){
-    //console.log(results);
+    console.log(results);
     itemRatings = results;
     for(var i = 0; i < results.length;++i){
         console.log(results[i].Review_Rating);
@@ -181,3 +181,12 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
     document.querySelector('.buy-popup').style.display = 'none';
     alert("Purchase canceled");
 });
+
+
+
+
+
+//---> https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php
+/*
+Takes :: ProductID : productID , Rating: integer ,Review : text ,Reviewer : UserID
+*/
