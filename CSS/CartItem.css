@@ -1,0 +1,40 @@
+
+#topLine{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    
+}
+
+.cartMainBody{
+    /* display: grid;
+    grid-auto-flow: column; */
+    margin-top: 50px;
+}
+
+#cartItemsDiv{
+    padding: 10px;
+    padding-bottom: .5px;
+   
+    background-color: rgb(250, 250, 250);
+}
+
+.cartItemPic{
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 80px;
+    max-height: 80px;
+    margin-right: 50px;
+}
+
+.media-body{
+    margin: auto;
+    height: 50%;
+}
+
+#cartSummary{
+    padding: 10px;
+    background-color: rgb(232, 235, 233);
+}
+
