@@ -51,20 +51,20 @@
                 <input type="number" id="create-quantity" name="create-quantity" class="form-control" placeholder="Product quantity" required>
             </div>
 
-            <!-- well work with this -->
-            <!-- <div class="input_field">
-                <label  class="sr-only">How many products do you want to add</label>
-                <input list="type" type="text" id="type-opt" name="type-opt" class="form-control" placeholder="Select your:" required>
-                    <datalist id="type">
-                      <option value="goods">
-                      <option value="service">
-                    </datalist>
-            </div> -->
-            
             <div class="input_field">
-                <label  class="sr-only">How many products do you want to add</label>
-                <input list="cat" type="text" id="cat-opt" name="cat-opt" class="form-control" placeholder="Select your:" required>
-                    <datalist id="cat">
+                <label  class="sr-only">The service you want to sell </label>
+                <input list="product-gs" type="text" id="prod-opt" name="prod-opt" class="form-control" placeholder="Tap to Select your service:" required>
+                    <datalist id="product-gs">
+                        <option value="goods">
+                        <option value="services">
+                    </datalist>
+            </div>
+        
+
+            <div class="input_field">
+                <label  class="sr-only">The type of category</label>
+                <input list="categ" type="text" id="cat-opt" name="cat-opt" class="form-control" placeholder="Tap to Select your category:" required>
+                    <datalist id="categ">
                         <option value="Accessories">
                         <option value="Cutlery">
                         <option value="Electronics">
@@ -88,10 +88,6 @@
                   <input type="file" name="" id="upload-image" multiple="false" accept="image/*" onchange="upload()">
                 </div>
               </div>
-
-
-
-            
             
             <button class="create-submit" type="submit" id="create-submit" name="create-submit">Create item</button>
             
