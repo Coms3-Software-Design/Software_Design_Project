@@ -16,7 +16,6 @@
 #cartItemsDiv{
     padding: 10px;
     padding-bottom: .5px;
-   
     background-color: rgb(250, 250, 250);
 }
 
@@ -36,5 +35,6 @@
 #cartSummary{
     padding: 10px;
     background-color: rgb(232, 235, 233);
+    max-height: 500px;
 }
 
