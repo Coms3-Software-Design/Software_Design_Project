@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>eCommerce Product Detail</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
 
     <link rel="stylesheet" href="../CSS/ViewProduct.css">
     <link rel="stylesheet" href="../CSS/Homepage.css">
     <link rel="stylesheet" href="../CSS/rate.css">
     <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
@@ -58,7 +57,7 @@
     <div class="card">
       <div class="container-fliud">
         <div class="wrapper row">
-          <div class="preview col-md-6">
+          <div class="preview col-md">
 
             <div class="preview-pic tab-content">
               <div class="tab-pane active" id="pic-1">
@@ -83,9 +82,11 @@
                 <label for="rate_1" class="fas fa-star"></label>
               </div>
             </div>
+
             <span id="review-no">41 reviews</span>
-            <div class="review-btn" id="review_btn">
-              <button>Add your review here</button>
+            <div >
+              <button class="review-btn btn btn-outline-primary" id="review_btn" >Add your review here</button>
+                  <!-- Use this button to view the review -->
             </div>
             <hr>
             <h3>
@@ -99,7 +100,7 @@
             </h5>
             <hr>
             <div class="action">
-              <button class="add-to-cart btn btn-default" type="button" id="buy-product">Buy Product</button>
+              <button class="add-to-cart btn btn-outline-primary" type="button" id="buy-product">Buy Product</button>
             </div>
           </div>
         </div>
