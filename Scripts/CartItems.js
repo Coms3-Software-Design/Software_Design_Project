@@ -22,7 +22,7 @@ let populate = function(){
             totalItemsQuant += 1;
             priceSum += (cartItem.Product_Price * cartItem.Amount);
             return `
-            <div class="media" style="margin-bottom: 25px; background:rgb(222, 227, 224)">
+            <div class="media" style="margin-bottom: 20px; background:rgb(222, 227, 224)">
             <img src="${productPicUrl}${cartItem.Product_Pic}" class="mr-3 cartItemPic rounded-circle" alt="..." >
             <div class="media-body">
               <h4 class="mt-0">${cartItem.Product_Name}</h4>   
@@ -44,6 +44,10 @@ let populate = function(){
             </div>
             `;
         }).join('')}`;
+
+        if(results.length === 0 ){
+            htmlItems = `<a href="Homepage.html" style="marginn:auto; width:50%;"><Button class="btn btn-danger">Continue Shopping<button></a>`;
+        }
 
         document.getElementById("cartItemsDiv").innerHTML = htmlItems;
         document.getElementById("tLNumItem").innerHTML = totalItemsQuant;
