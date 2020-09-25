@@ -10,7 +10,7 @@ console.log(pic);
 document.getElementById("product_image").src = pic;
 
 /* Getting and setting Products name*/
-document.getElementById("product_title").innerHTML = item.productName;
+document.getElementById("product_title").innerHTML = item.productName.replace(":","");
 
 /* Getting and setting Product Description*/
 document.getElementById("product_description").innerHTML = item.productDescription;
@@ -61,7 +61,10 @@ $.getJSON(url,{ProductID: item.productID},function(results){
 
 // Add review button
 document.getElementById("review_btn").addEventListener('click', function(){
-    document.querySelector('.ratingSystem').style.display = 'flex';
+    console.log("Reviews: ");
+    console.log(itemRatings);
+    //alert("Clicked the review button");
+    //document.querySelector('.ratingSystem').style.display = 'flex';
 });
 
 document.getElementById("post-btn").addEventListener('click', function(){
