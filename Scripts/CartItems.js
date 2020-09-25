@@ -1,3 +1,9 @@
+
+/*
+TODO:
+
+*/  
+
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPGetCart.php";
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 
@@ -7,17 +13,21 @@ console.log(loggedUser);
 let populate = function(){
     
     $.getJSON(cartUrl , {userID : loggedUser.UserID} , function(results){
+        let totalItemsQuant = 0;
+        let priceSum = 0;
         let htmlItems = ``;
         console.log(results);
 
         htmlItems += `${results.map(function(cartItem){
+            totalItemsQuant += 1;
+            priceSum += (cartItem.Product_Price * cartItem.Amount);
             return `
             <div class="media" style="margin-bottom: 25px; background:rgb(222, 227, 224)">
             <img src="${productPicUrl}${cartItem.Product_Pic}" class="mr-3 cartItemPic rounded-circle" alt="..." >
             <div class="media-body">
               <h4 class="mt-0">${cartItem.Product_Name}</h4>   
             </div>
-            
+        
             <div class="media-body">
             <h6><i class="fa fa-minus" aria-hidden="true" style="margin-right:20px;"></i>${cartItem.Amount}<i class="fa fa-plus" aria-hidden="true" style="margin-left:20px;"></i></h6>
             </div>
@@ -36,6 +46,11 @@ let populate = function(){
         }).join('')}`;
 
         document.getElementById("cartItemsDiv").innerHTML = htmlItems;
+        document.getElementById("tLNumItem").innerHTML = totalItemsQuant;
+        document.getElementById("SumNumItem").innerHTML = totalItemsQuant;
+        document.getElementById("PriceSum").innerHTML = "R"+priceSum;
+
+        
     });
 
        

@@ -6,6 +6,9 @@
     padding: 10px;
     
 }
+.fa-minus,.fa-plus{
+    cursor: pointer;
+}
 
 .cartMainBody{
     margin-top: 50px;
@@ -34,6 +37,6 @@
 #cartSummary{
     padding: 10px;
     background-color: rgb(232, 235, 233);
-    max-height: 500px;
+    max-height: 150px;
 }
 
