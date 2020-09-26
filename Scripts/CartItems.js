@@ -1,7 +1,9 @@
 
 /*
 TODO:
-
+    Give the icons IDs for reference
+    Apply functionality to the checkout button
+    add functionality to the icon to increase and decrease amount of items in cart
 */  
 
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPGetCart.php";
@@ -22,10 +24,12 @@ let populate = function(){
             totalItemsQuant += 1;
             priceSum += (cartItem.Product_Price * cartItem.Amount);
             return `
-            <div class="media" style="margin-bottom: 20px; background:rgb(222, 227, 224)">
-            <img src="${productPicUrl}${cartItem.Product_Pic}" class="mr-3 cartItemPic rounded-circle" alt="..." >
+            <div class="media" style="margin-bottom: 20px; ">
+            <img src="${productPicUrl}${cartItem.Product_Pic}" class="mr-3 cartItemPic" alt="..." >
             <div class="media-body">
-              <h4 class="mt-0">${cartItem.Product_Name}</h4>   
+              
+              <h4 class="mt-0" style="text-color : rgb(72, 74, 72)">${cartItem.Product_Name}</h4>  
+              <p>${cartItem.Product_Description}</p> 
             </div>
         
             <div class="media-body">
