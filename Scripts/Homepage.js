@@ -82,13 +82,16 @@ let topRatedGoods = function(){
        item = JSON.stringify(prodItem); 
         prod += `
        <div class = "col-sm-1 my-2 ml-5"  style="margin: auto; width: 50%; cursor: pointer;">
-       <a href="ViewProduct.html">
+       
        <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
-         <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
-         <h5 class="card-title">${result[i].Product_Name}</h5>
-         <h6 class="card-title">R${result[i].Product_Price}</h6>
+        <a href="ViewProduct.html">  
+          <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
+          <h5 class="card-title">${result[i].Product_Name.replace(":","")}</h5>
+          <h6 class="card-title">R${result[i].Product_Price}</h6>
+        </a>
+        <button type="button" class="btn btn-secondary">Add to Cart</button>
        </div>
-       </a>
+      
      </div>  
        `;
   
@@ -119,14 +122,16 @@ let topRatedServices = function(){
         const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
         const item = JSON.stringify(prodItem); 
           return `
-          <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
-          <a href="ViewProduct.html">
+        <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
+          
           <div href="ViewProduct.html" class="card" style="width: 8rem; height: 10rem; cursor: pointer;" id="${service.Product_ID}">
-            <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
-            <h5 class="card-title">${service.Product_Name}</h5>
-            <h6 class="card-title">R${service.Product_Price}</h6>
-          </div>
-          </a>
+            <a href="ViewProduct.html">  
+              <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
+              <h5 class="card-title">${service.Product_Name}</h5>
+              <h6 class="card-title">R${service.Product_Price}</h6>
+            </a>
+            <button type="button" class="btn btn-secondary">Add to Cart</button>
+          </div>  
         </div>  
           `;
       }).join('')
@@ -170,7 +175,7 @@ let goods = function(cat, type) {
         const prodItem = new Product(productsArray[j].Product_ID, productsArray[j].UserID, productsArray[j].Category, productsArray[j].Product_Name, productsArray[j].Product_Brand, productsArray[j].Product_Description, productsArray[j].Product_Price, productsArray[j].Current_Quantity, productsArray[j].Product_Pic, productsArray[j].Sold_Quantity, productsArray[j].Product_type);
         let stringFormItem = JSON.stringify(prodItem);
 
-        const pic = `${productPicUrl}${prodItem.getProductPic()}`;
+        const pic = `${productPicUrl}${prodItem.getProductPic}`;
         let id = productsArray[j].Product_ID;
         productHTML = '<a href="ViewProduct.html" class = " my-2 ml-5">' +
         '<div class="card single-item"> ' +
@@ -181,10 +186,10 @@ let goods = function(cat, type) {
           '<div class="card-body" id=' + id + ' onclick="viewProduct()> ' +
           '<div class="card-text d-flex justify-content-between text-capitalize"> ' +
           '<h5 id="item-name"> ' +
-          prodItem.getProductName() +
+          prodItem.getProductName +
           '</h5> ' +
           '<span> ' +
-          'R' + prodItem.getPricePerItem() +
+          'R' + prodItem.getPricePerItem +
           '</span> ' +
           '</div> ' +
           '</div>' +
