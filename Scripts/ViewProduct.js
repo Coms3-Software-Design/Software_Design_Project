@@ -10,7 +10,7 @@ console.log(pic);
 document.getElementById("product_image").src = pic;
 
 /* Getting and setting Products name*/
-document.getElementById("product_title").innerHTML = item.productName;
+document.getElementById("product_title").innerHTML = item.productName.replace(":","");
 
 /* Getting and setting Product Description*/
 document.getElementById("product_description").innerHTML = item.productDescription;
@@ -61,7 +61,20 @@ $.getJSON(url,{ProductID: item.productID},function(results){
 
 // Add review button
 document.getElementById("review_btn").addEventListener('click', function(){
-    document.querySelector('.ratingSystem').style.display = 'flex';
+    console.log("Reviews: ");
+    //console.log(itemRatings);
+    var didReview = false;
+    console.log(loggedUser);
+    for(var i = 0; i < itemRatings.length; ++ i){
+        if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+            alert("You already reviewed this  item");
+            didReview = true;
+        }
+    }
+    if(!didReview){
+        document.querySelector('.ratingSystem').style.display = 'flex';
+    }
+    //alert("Clicked the review button");
 });
 
 document.getElementById("post-btn").addEventListener('click', function(){
@@ -102,9 +115,10 @@ document.getElementById("post-btn").addEventListener('click', function(){
     console.log(itemRatings);
 
     let URL='https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php';
-    $.getJSON(URL,{ProductID: item.productID, Review:review, Rating:rating, Reviewer:'1814732'},function(results){
+    $.getJSON(URL,{ProductID: item.productID, Review:review, Rating:rating, Reviewer:loggedUser.UserID},function(results){
         return;
     });
+    location.reload();
 });
 
 // The buy button
@@ -124,6 +138,7 @@ document.getElementById("buy-product").addEventListener('click',function(){
   }
    else{
     alert("Please sign in");
+    window.location.href = "Login.html";
   }
     
 });

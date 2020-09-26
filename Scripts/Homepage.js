@@ -86,7 +86,7 @@ let topRatedGoods = function(){
        <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
         <a href="ViewProduct.html">  
           <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
-          <h5 class="card-title">${result[i].Product_Name}</h5>
+          <h5 class="card-title">${result[i].Product_Name.replace(":","")}</h5>
           <h6 class="card-title">R${result[i].Product_Price}</h6>
         </a>
         <button type="button" class="btn btn-secondary">Add to Cart</button>
