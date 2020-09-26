@@ -203,11 +203,20 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
 
         if(itemRatings[i].Review != ""){
             console.log("Phakathi inside");
-            var para = document.createElement("p");
-            var node = document.createTextNode(itemRatings[i].Review);
-            para.appendChild(node);
+            var reviewBlock = document.createElement("div");
+            reviewBlock.className = "all-reviews";
+            var reviewHTML =  '<h3 class="reviewer">'+
+                              itemRatings[i].Reviewers_Name +
+                              '</h3>'+
+                              '<h4 class="the-review">' + 
+                              itemRatings[i].Review +
+                              '</h4>' +
+                              '<hr>';
+            reviewBlock.innerHTML = reviewHTML;
+            var node = document.createTextNode(reviewHTML);
+            //reviewBlock.appendChild(node);
             var element = document.getElementById("reviews");
-            element.appendChild(para);
+            element.appendChild(reviewBlock);
         }
     }
     document.querySelector('.review-popup').style.display = 'flex';
