@@ -1,84 +1,114 @@
 
-.form-signin .logo{
-
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-.input_field {
-  display:flex;
-  justify-content: center;
+body {
+  -ms-flex-align: center;
   align-items: center;
+  background-color: #ebebeb;
 }
 
-.input_field input{
-  margin-block: 15px;
-  width: 65%;
-  padding-left: 10px;
-  border: 1px solid silver;
-  outline: none;
-}
-
-.checkbox{
-  margin-top: 10px;
-}
-
-.button{
-  width: 50%;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-	margin: 1rem 0;
-	cursor: pointer;
-  transition: .5s;
-  background-size: 200%;
-  background: rgb(88, 133, 201);
-  color: white;
-}
-
-.close{
-  margin: 10px;
-}
 #response{
+  text-align: center;
   color: red;
 }
 
-.form-signin .logo{
-  margin-top: 25px;
-  margin-bottom: 25px;
+/* positions the upload image card to the centre */
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 30px; /* Added */
+  margin-top: 60px;
 }
 
-.input_field {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
+  @media screen and (min-width: 997px) {
+    .wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; 
+    }
+ }
 
-.input_field input{
-  margin-block: 15px;
-  width: 65%;
-  padding-left: 10px;
-  border: 1px solid silver;
-  outline: none;
-}
+ .wrapper-centre{
+  text-align: center;
+ }
 
-.checkbox{
-  margin-top: 10px;
-}
-
-.button{
-  width: 50%;
+ .btn{
+  width: 30%;
   height: 40px;
-  border-radius: 20px;
-  border: none;
-	margin: 1rem 0;
-	cursor: pointer;
-  transition: .5s;
-  background-size: 200%;
-  background: rgb(88, 133, 201);
-  color: white;
-}
+  margin-bottom: 30px;
+ }
 
-.close{
-  margin: 10px;
-}
+/* the input spacing and placement */
+.input_field {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input_field input{
+    margin-block: 15px;
+    width: 60%;
+    padding-left: 10px;
+    border: 1px solid silver;
+    outline: none;
+  }
+  /* -------end------------- */
+
+  .header-name{
+    text-align: center;
+  }
+
+    
+    .preview-thumbnail.nav-tabs {
+      border: none;
+      margin-top: 15px; }
+      .preview-thumbnail.nav-tabs li {
+        width: 18%;
+        margin-right: 2.5%; }
+        .preview-thumbnail.nav-tabs li img {
+          max-width: 100%;
+          display: block; }
+        .preview-thumbnail.nav-tabs li a {
+          padding: 0;
+          margin: 0; }
+        .preview-thumbnail.nav-tabs li:last-of-type {
+          margin-right: 0; }
+    
+    .tab-content {
+      overflow: hidden; }
+      .tab-content img {
+        width: 100%;
+        -webkit-animation-name: opacity;
+                animation-name: opacity;
+        -webkit-animation-duration: .3s;
+                animation-duration: .3s; }
+    
+    
+    
+
+    
+    
+    @media screen and (min-width: 997px) {
+      .wrapper {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; } }
+    
+
+
+
+    /* -------- */
+    
+
+    .logo-view {
+      margin-top: 5%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+
+    /* ----------------------------------------- */
+
+    
