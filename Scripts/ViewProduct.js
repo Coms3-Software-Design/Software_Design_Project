@@ -56,7 +56,7 @@ $.getJSON(url,{ProductID: item.productID},function(results){
     }
 
     document.getElementById("review-no").innerHTML = results.length + ' Reviews';
-    
+
 });
 
 // Add review button
@@ -78,7 +78,7 @@ document.getElementById("review_btn").addEventListener('click', function(){
 });
 
 document.getElementById("post-btn").addEventListener('click', function(){
-    
+
     document.querySelector('.ratingSystem').style.display = 'none';
 
     var rating = 0;
@@ -124,7 +124,7 @@ document.getElementById("post-btn").addEventListener('click', function(){
 // The buy button
 document.getElementById("buy-product").addEventListener('click',function(){
 
-  
+
   if(loggedUser !=  null){
     console.log(loggedUser.Balance + " "+ item.pricePerItem);
     if(parseFloat(loggedUser.Balance) < parseFloat(item.pricePerItem)){
@@ -134,13 +134,13 @@ document.getElementById("buy-product").addEventListener('click',function(){
       document.querySelector('.buy-popup').style.display = 'flex';
     }
     // document.getElementById("user-balance").value = 'R' + JSON.parse(user).Balance;
-    
+
   }
    else{
     alert("Please sign in");
     window.location.href = "Login.html";
   }
-    
+
 });
 
 // Buying a product
@@ -159,7 +159,7 @@ document.getElementById("Buy-btn").addEventListener('click',function(){
     let prodID = item.productID;
     let buyer = loggedUser.UserID;
     let balance = parseFloat(loggedUser.Balance) - parseFloat(item.pricePerItem);
-    let Quant = parseInt(item.currentQuantity) - 1; 
+    let Quant = parseInt(item.currentQuantity) - 1;
     console.log( transDate , prodID , buyer , balance , Quant);
     $.getJSON(buyURL , {
         ProductID : prodID,
@@ -180,16 +180,16 @@ document.getElementById("Buy-btn").addEventListener('click',function(){
             window.location.href = "Homepage.html";
             }
         });
- 
+
         }
     });
 
-    
+
 
     document.querySelector('.buy-popup').style.display = 'none';
-    
 
-  
+
+
 });
 
 document.getElementById("Cancel-btn").addEventListener('click',function(){

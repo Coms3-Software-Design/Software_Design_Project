@@ -16,12 +16,12 @@ url = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/creatProd.php";
 console.log(goods_service);
 
 $.getJSON(url,
-     {pName: user_name, 
-     user:user_id, 
-     pBrand:user_brand, 
-     pDesc:desc_name, 
+     {pName: user_name,
+     user:user_id,
+     pBrand:user_brand,
+     pDesc:desc_name,
      pPrice:price_value,
-     pQuant:quantity_value,  
+     pQuant:quantity_value,
      pCat:categories,
      pType:goods_service
      },
@@ -35,28 +35,23 @@ $.getJSON(url,
          setTimeout(function(){$("#response").fadeOut('slow');},5000);
          return;
        }
-       
+
      //   //If the user exists in the database then it links to the Homepage
      //   else if( results!="!exists" && username!="" && password!=""){
-     
+
      //     sessionStorage.setItem('user', JSON.stringify(results[0]));
      //     alert(JSON.parse(sessionStorage.getItem('user')));
      //     window.location.href='Homepage.html';
      //   }
      //   //When the fields are empty
      //   else{
-     
+
      //   $("#response").fadeIn().html('<span>All fields required</span>');
      //   setTimeout(function(){ $("#response").fadeOut('slow');}, 3000);
      //   return;
 
       }
-     
+
      );
-     
+
 });
-
-
-
-
-

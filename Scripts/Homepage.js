@@ -19,7 +19,6 @@ let hide = function(){
   document.getElementById('signed').className = "D-login";
   document.getElementById('Servicecart').className = "D-login";
   }else{
-
    document.getElementById('Bsign').className = "D-login";
   }
 }
