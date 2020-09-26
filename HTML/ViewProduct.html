@@ -44,8 +44,6 @@
               <li><a href="#">Transaction history</a></li>
               <li><a href="CreateItem.html">Create item</a></li>
               <li><a href="#">Edit my items </a></li>
-              <li><a href="Login.html" >Sign in</a></li>
-              <li><a href="Register.html" >Sign up</a></li>
             </ul>
           </div>
         </li>
@@ -61,13 +59,13 @@
 
             <div class="preview-pic tab-content">
               <div class="tab-pane active" id="pic-1">
-                <img src="../CSS/Images/ca_shield.png" id="product_image" />
+                <img id="product_image" />
               </div>
             </div>
 
           </div>
           <div class="details col-md-6">
-            <h3 class="product-title" style="color: black" id="product_title">men's shoes fashion</h3>
+            <h3 class="product-title" style="color: black" id="product_title"></h3>
             <div class="rating">
               <div class="star-widget">
                 <input type="radio" name="rate" id="rate_5" onclick="this.checked=false;">
@@ -83,24 +81,25 @@
               </div>
             </div>
 
-            <span id="review-no">41 reviews</span>
-            <div >
-              <button class="review-btn btn btn-outline-primary" id="review_btn" >Add your review here</button>
+            <span id="review-no"></span>
+            <div class="row">
+                <button class="review-btn btn btn-outline-primary" id="review_btn" >Add your review here</button>
                   <!-- Use this button to view the review -->
+                <button class="review-btn btn btn-outline-primary" id="veiw_reviews_btn" >View all reviews</button>
             </div>
             <hr>
             <h3>
               Description:
             </h3>
-            <p class="product-description" id="product_description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+            <p class="product-description" id="product_description"></p>
             <hr>
-            <h4 class="price">current price: <span id="product_price">$180</span></h4>
+            <h4 class="price">current price: <span id="product_price"></span></h4>
             <h5 class="sizes">Quantity:
               <span class="size" data-toggle="tooltip" title="small" id="product_quantity"></span>
             </h5>
             <hr>
             <div class="action">
-              <button class="add-to-cart btn btn-outline-primary" type="button" id="buy-product">Buy Product</button>
+              <button class="add-to-cart btn btn-outline-primary" type="button" id="buy-product">Add to cart</button>
             </div>
           </div>
         </div>
@@ -150,6 +149,17 @@
           <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Cancel-btn">
             <button type="submit"> Cancel </button>
           </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="review-popup">
+    <div class="review-box">
+      <h3 class="close-btn" id="close-btn">
+        +
+      </h3>
+      <div id="reviews">
         
       </div>
     </div>

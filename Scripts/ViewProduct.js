@@ -176,7 +176,7 @@ document.getElementById("Buy-btn").addEventListener('click',function(){
             localStorage.removeItem('user');
             localStorage.setItem('user', JSON.stringify(result[0]));
             console.log(JSON.parse(localStorage.getItem('user')));
-            alert("Product successfully purchased");
+            alert("Product(s) successfully purchased");
             window.location.href = "Homepage.html";
             }
         });
@@ -197,7 +197,25 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
     alert("Purchase canceled");
 });
 
+document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
+    
+    for(var i = 0; i < itemRatings.length; i++){
 
+        if(itemRatings[i].Review != ""){
+            console.log("Phakathi inside");
+            var para = document.createElement("p");
+            var node = document.createTextNode(itemRatings[i].Review);
+            para.appendChild(node);
+            var element = document.getElementById("reviews");
+            element.appendChild(para);
+        }
+    }
+    document.querySelector('.review-popup').style.display = 'flex';
+});
+
+document.getElementById("close-btn").addEventListener('click',function(){
+    document.querySelector('.review-popup').style.display = 'none';
+});
 
 
 
