@@ -336,7 +336,7 @@ form .btn button{
 }
 /* =========== end buy pop-up ==========*/
 
-/* =========== review pop-up ===========*/
+/* =========== reviews pop-up ===========*/
 
 .review-popup{
   width: 100%;
@@ -367,11 +367,11 @@ form .btn button{
   cursor: pointer;
 }
 
-.close-btn :hover{
+.close-btn:hover {
   background-color: blue;
 }
 
-/* =========== end of review pop-up =====*/
+/* =========== end of reviews pop-up =====*/
 
 .size {
   margin-right: 10px; }
