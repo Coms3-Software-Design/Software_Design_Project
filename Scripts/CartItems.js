@@ -2,11 +2,11 @@
 /*
 TODO:
     Give the icons IDs for reference
-    Apply functionality to the checkout button
     add functionality to the icon to increase and decrease amount of items in cart
 */  
 
-const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPGetCart.php";
+// fetches cart items
+const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 
 let loggedUser = JSON.parse(localStorage.getItem('user'));
