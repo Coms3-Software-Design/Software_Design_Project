@@ -99,6 +99,7 @@ height: 400px;
   font-size: 40px;
   color: #444;
   padding: 10px;
+  float: right;
   transition: all 0.2s ease;
 }
 
@@ -150,6 +151,7 @@ input:checked ~ label{
   font-size: 40px;
   color: #444;
   padding: 10px;
+  float: right;
   transition: all 0.2s ease;
 }
 
@@ -292,7 +294,7 @@ form .btn button{
   cursor: pointer;
   transition: all 0.3s ease;*/
 
-  width: 50%;
+  width: 40%;
   height: 40px;
   border-radius: 20px;
   border: none;
@@ -302,6 +304,10 @@ form .btn button{
   background-size: 200%;
   background: rgb(88, 133, 201);
   color: white;
+}
+
+.buttons{
+  display: flex;
 }
 
 /*.buy-btn button{
@@ -329,6 +335,48 @@ form .btn button{
   overflow: hidden;*/
 }
 /* =========== end buy pop-up ==========*/
+
+/* =========== reviews pop-up ===========*/
+
+.review-popup{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.review-box{
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: scroll;
+}
+
+.close-btn{
+  position: absolute;
+  transform: rotate(45deg);
+  font-size: 50px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.the-review{
+  margin-left: 20px;
+}
+
+.close-btn:hover {
+  background-color: blue;
+}
+
+/* =========== end of reviews pop-up =====*/
 
 .size {
   margin-right: 10px; }
