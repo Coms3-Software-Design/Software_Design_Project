@@ -67,6 +67,8 @@ document.getElementById("review_btn").addEventListener('click', function(){
     console.log(loggedUser);
     for(var i = 0; i < itemRatings.length; ++ i){
         if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+            document.getElementById("your-Review").innerText = "Your review:";
+            document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
             alert("You already reviewed this  item");
             didReview = true;
         }
