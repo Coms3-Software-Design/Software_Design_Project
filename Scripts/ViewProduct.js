@@ -4,6 +4,10 @@ console.log(loggedUser);
 
 let item = JSON.parse(localStorage.getItem("item"));
 console.log(item);
+
+
+
+
 /* Getting and setting a picture*/
 var pic = `https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/`+item.productPicture;
 console.log(pic);
