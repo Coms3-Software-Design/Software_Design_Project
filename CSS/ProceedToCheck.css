@@ -1,0 +1,24 @@
+.summary{
+    height: 100%;
+}
+
+.input{
+    width: 100%;
+    border: none;
+}
+input :hover{
+    border: 2px solid;
+    background: rgba(0,0,0,1);
+}
+
+
+.postal{
+    width: 25%;
+}
+
+.addInput{
+    margin-bottom: 5px;
+}
+.payments{
+    background-color: rgba(237, 237, 237 , .5);
+}

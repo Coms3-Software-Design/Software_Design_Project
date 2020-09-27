@@ -20,6 +20,8 @@ let populate = function(){
         let htmlItems = ``;
         console.log(results);
 
+        sessionStorage.setItem("cart" , JSON.stringify(results));
+
         htmlItems += `${results.map(function(cartItem){
             totalItemsQuant += 1;
             priceSum += (cartItem.Product_Price * cartItem.Amount);
