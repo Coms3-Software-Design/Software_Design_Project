@@ -71,6 +71,8 @@ document.getElementById("review_btn").addEventListener('click', function(){
     console.log(loggedUser);
     for(var i = 0; i < itemRatings.length; ++ i){
         if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+            document.getElementById("your-Review").innerText = "Your review:";
+            document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
             alert("You already reviewed this  item");
             didReview = true;
         }
@@ -180,7 +182,7 @@ document.getElementById("Buy-btn").addEventListener('click',function(){
             localStorage.removeItem('user');
             localStorage.setItem('user', JSON.stringify(result[0]));
             console.log(JSON.parse(localStorage.getItem('user')));
-            alert("Product successfully purchased");
+            alert("Product(s) successfully purchased");
             window.location.href = "Homepage.html";
             }
         });
@@ -201,7 +203,34 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
     alert("Purchase canceled");
 });
 
+document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
+    
+    for(var i = 0; i < itemRatings.length; i++){
 
+        if(itemRatings[i].Review != ""){
+            console.log("Phakathi inside");
+            var reviewBlock = document.createElement("div");
+            reviewBlock.className = "all-reviews";
+            var reviewHTML =  '<h3 class="reviewer">'+
+                              itemRatings[i].Reviewers_Name +
+                              '</h3>'+
+                              '<h4 class="the-review">' + 
+                              itemRatings[i].Review +
+                              '</h4>' +
+                              '<hr>';
+            reviewBlock.innerHTML = reviewHTML;
+            var node = document.createTextNode(reviewHTML);
+            //reviewBlock.appendChild(node);
+            var element = document.getElementById("reviews");
+            element.appendChild(reviewBlock);
+        }
+    }
+    document.querySelector('.review-popup').style.display = 'flex';
+});
+
+document.getElementById("close-btn").addEventListener('click',function(){
+    document.querySelector('.review-popup').style.display = 'none';
+});
 
 
 
