@@ -16,32 +16,6 @@ let cartItems;
 
 //getCartItems();
 setVariables();
-
-//console.log( user);
-
- function getCartItems(){
-   const promise = new Promise(resolve =>{
-     //console.log("in promise");   
-     $.getJSON(cartUrl , {userID : user.UserID} , function(results){
-        console.log("in promise2"); 
-    // sessionStorage.removeItem("cart");
-    // sessionStorage.setItem("cart" , JSON.stringify(results));
-    // cartItems = JSON.parse(sessionStorage.getItem("cart"));
-    resolve();
-    });
-    
-   });
-    
-   promise.then(results => {
-    //sessionStorage.removeItem("cart");
-    // sessionStorage.setItem("cart" , JSON.stringify(results));
-    // cartItems = JSON.parse(sessionStorage.getItem("cart"));
-    console.log("from item promise");
-   });
-
-}
-
-
  
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
@@ -73,7 +47,7 @@ function setVariables() {
         }
     
         document.getElementById("PCSumNumItem").innerHTML = numItems;
-        document.getElementById("PCPriceSum").innerHTML = sumTotal;
+        document.getElementById("PCPriceSum").innerHTML = "R" + sumTotal;
     });
     
 
@@ -119,6 +93,9 @@ function varifyAndProceed() {
             DeleteItemFromCart()
             promise.then(()=>{
                 setVariables();
+                document.querySelector('.buy-popup').style.display = 'none';
+                alert("Product(s) successfully purchased");
+
             });
          })
     });
