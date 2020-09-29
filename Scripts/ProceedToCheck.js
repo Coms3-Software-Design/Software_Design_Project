@@ -1,11 +1,4 @@
 
-// window.onhashchange = function() {
-//     //blah blah blah
-    
-// location.reload();
-//    }
-//window.location=document.referrer;
-
 let user = JSON.parse(localStorage.getItem("user"));
 const buyURL = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPBuy.php";
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
@@ -95,6 +88,7 @@ function varifyAndProceed() {
                 setVariables();
                 document.querySelector('.buy-popup').style.display = 'none';
                 alert("Product(s) successfully purchased");
+                window.location.href = "Homepage.html";
 
             });
          })
@@ -126,6 +120,7 @@ function proceedToBuy() {
 
             ProcessElement(prodID,buyer,transDate,transDate,balance,Quant);
         }
+
         
     }
     
