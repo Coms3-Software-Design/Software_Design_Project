@@ -171,14 +171,12 @@ function updateCart(){
                     $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  item.productID , amount : parseInt(prod.Amount)+1},function(ans){
                         alert("Cart Item increased by 1");
                         found = false;
-                        resolve(found);  
+                          
                     });
                 }
-                else{
-                    
-                    resolve(found); 
-                }
+                
             });
+            resolve(found);
         });
 
     });

@@ -13,6 +13,23 @@ setVariables();
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
 
+
+function personCheck(){
+    let pName = document.getElementById("name").value;
+    let mail =  document.getElementById("mail").value;
+    let street = document.getElementById("street").value;
+    let suburb = document.getElementById("suburb").value;
+    let city = document.getElementById("city").value;
+    let postal = document.getElementById("postal").value;
+
+    if(pName == "" || mail == "" || street == ""  || suburb == "" || city == "" || postal == ""){
+        alert("Please enter all fields");
+        return false;
+    }
+    else{return true;}
+
+}
+
 function setVariables() {
     
     const promises = new Promise( resolve =>{  
@@ -97,6 +114,7 @@ function varifyAndProceed() {
 }
 
 function proceedToBuy() {
+    if(!personCheck) return;
     const buyer = user.UserID;
     let transDate = new Date();
     let dd = String(transDate.getDate()).padStart(2, '0');
@@ -193,6 +211,8 @@ function DeleteItemFromCart() {
 
     
 }
+
+
 
 
 ConfirmPurchase.setAttribute("onclick", "varifyAndProceed()");
