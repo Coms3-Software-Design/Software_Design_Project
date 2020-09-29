@@ -4,8 +4,9 @@ TODO:
     Give the icons IDs for reference
     add functionality to the icon to increase and decrease amount of items in cart
 */  
-
+//location.reload();
 // fetches cart items
+
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 
@@ -20,11 +21,12 @@ let populate = function(){
         let htmlItems = ``;
         console.log(results);
 
-        sessionStorage.setItem("cart" , JSON.stringify(results));
+       // sessionStorage.setItem("cart" , JSON.stringify(results));
 
         htmlItems += `${results.map(function(cartItem){
             totalItemsQuant += 1;
             priceSum += (cartItem.Product_Price * cartItem.Amount);
+            if(parseInt(cartItem.Amount) !== 0){
             return `
             <div class="media" style="margin-bottom: 20px; ">
             <img src="${productPicUrl}${cartItem.Product_Pic}" class="mr-3 cartItemPic" alt="..." >
@@ -49,6 +51,7 @@ let populate = function(){
 
             </div>
             `;
+            }
         }).join('')}`;
 
         if(results.length === 0 ){
@@ -66,5 +69,7 @@ let populate = function(){
        
 
 }
-
 populate();
+
+//window.location.href = 'CartItem.html';
+
