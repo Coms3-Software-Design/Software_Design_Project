@@ -70,16 +70,22 @@ document.getElementById("review_btn").addEventListener('click', function(){
     //console.log(itemRatings);
     var didReview = false;
     console.log(loggedUser);
-    for(var i = 0; i < itemRatings.length; ++ i){
-        if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
-            document.getElementById("your-Review").innerText = "Your review:";
-            document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
-            alert("You already reviewed this  item");
-            didReview = true;
+    if(loggedUser != null){
+        for(var i = 0; i < itemRatings.length; ++ i){
+            if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+                document.getElementById("your-Review").innerText = "Your review:";
+                document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
+                alert("You already reviewed this  item");
+                didReview = true;
+            }
+        }
+        if(!didReview){
+            document.querySelector('.ratingSystem').style.display = 'flex';
         }
     }
-    if(!didReview){
-        document.querySelector('.ratingSystem').style.display = 'flex';
+    else{
+        alert("Please log in to review this product!");
+        window.location.href = "Login.html";
     }
     //alert("Clicked the review button");
 });
@@ -199,7 +205,7 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
 });
 
 document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
-    
+    document.querySelector('.reviews-heading').style.display = 'flex';
     for(var i = 0; i < itemRatings.length; i++){
 
         if(itemRatings[i].Review != ""){
@@ -215,18 +221,11 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
                               '<hr>';
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
-            //reviewBlock.appendChild(node);
             var element = document.getElementById("reviews");
             element.appendChild(reviewBlock);
         }
     }
-    document.querySelector('.review-popup').style.display = 'flex';
 });
-
-document.getElementById("close-btn").addEventListener('click',function(){
-    document.querySelector('.review-popup').style.display = 'none';
-});
-
 
 
 //---> https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php

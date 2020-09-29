@@ -1,4 +1,4 @@
-const Product = require('./Scripts/classes/Product');
+const Product = require('../Scripts/classes/Product');
 
 test("Product details verification", () => {
 	const product = new Product('101', '1001', 'Electronics', 'XBOX', 'Microsoft', 'Best In The World', '10.99', '20', 'www.hello.com/img/img.jpg','10', 'good');
