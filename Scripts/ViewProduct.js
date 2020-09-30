@@ -125,13 +125,17 @@ document.getElementById("post-btn").addEventListener('click', function(){
     if(review != ""){
         console.log(review);
     }
-    console.log(itemRatings);
+    else{
+        review = "No Review";
+    }
+    console.log(item.productID);
 
     let URL='https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php';
     $.getJSON(URL,{ProductID: item.productID, Review:review, Rating:rating, Reviewer:loggedUser.UserID},function(results){
+        console.log("Database results: " + results);
         return;
     });
-    location.reload();
+    //location.reload();
 });
 
 // The buy button
