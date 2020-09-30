@@ -34,6 +34,7 @@
       <label class="Logo"> MarketPlace </label>
       <ul class="nav-items">
         <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
+        <li class="nav-items" id="Service"><a class="nav-a" href="CartItem.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
         <li class="nav-items">
           <a class="nav-a" href="#"><i class="far fa-user" style="color:#fff;"></i> Profile</a>
   
@@ -105,6 +106,18 @@
             </div>
           </div>
         </div>
+        <div class="review row">
+          <div class="review-box">
+            <div>
+              <h3 class="reviews-heading">
+                Reviews: 
+              </h3>
+            </div>
+            <br><br><br>
+            <div id="reviews">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -135,36 +148,20 @@
     </div>
   </div>
 
-  <div class="buy-popup">
-    <div class="buy-box">
-      <div class="row" >
+  <div class="buy-popup" style="height: 100%;">
+    <div class="buy-box" style="height: 35%;">
+      <div >
         
-          <h3 id="buy-message" class="buy-msg">
-            You are about to buy a product, are you sure you want to continue?
-          </h3>
-          <span class="buy-msg" id="user-balance">
-            
-          </span> 
-          <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Buy-btn">
-            <button type="submit"> Buy </button>
+          <p id="buy-message" class="buy-msg">
+            Are you sure you want to add item to cart?
+          </p>
+        
+          <div class="buy-btn text-center" id="Buy-btn">
+            <button type="submit"> Add to cart </button>
           </div>
-          <div class="buy-btn col-10 mx-auto col-sm-6 text-center" id="Cancel-btn">
+          <div class="buy-btn text-center" id="Cancel-btn">
             <button type="submit"> Cancel </button>
           </div>
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="review-popup">
-    <div class="review-box">
-      <div>
-        <h3 class="close-btn" id="close-btn">
-        +
-      </h3>
-      </div>
-      <br><br><br>
-      <div id="reviews">
         
       </div>
     </div>
@@ -175,5 +172,6 @@
   <script src="../Scripts/ViewProduct.js"></script>
   <script src="../Scripts/Popup.js"></script>
   <script src="../Scripts/Numeric.js"></script>
+  
   </body>
 </html>

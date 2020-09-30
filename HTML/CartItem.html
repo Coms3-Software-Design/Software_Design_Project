@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cart</title>
 
     <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA==" crossorigin="anonymous"></script>
+=======
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
+        crossorigin="anonymous"></script>
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
     <link rel="stylesheet" href="../CSS/CartItem.css">
     <link rel="stylesheet" href="../CSS/Homepage.css">
 </head>
+
 <body>
     <nav id="navBar" class="site-header sticky-top py-1">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
-          <i class="fa fa-bars"></i>
+            <i class="fa fa-bars"></i>
         </label>
         <label class="Logo"> MarketPlace </label>
         <ul class="nav-items">
+<<<<<<< HEAD
           <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
 
           <!-- <button type="button"  data-toggle="modal" data-target="#myModal" onclick="window.location.href='../New/app.html'">Sign Up</button> -->
           <!-- data-target="#theModal" data-toggle="modal"  -->
+=======
+            <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i>
+                    Home</a></li>
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
         </ul>
-      </nav>
+    </nav>
 
 
 
@@ -49,8 +73,13 @@
 
     <div class="cartMainBody row">
 
+<<<<<<< HEAD
         <div class="col">
             <div id="topLine" >
+=======
+        <div class="col" style="margin-left: 15px; margin-right: 10px;">
+            <div id="topLine">
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
                 <h2>Shopping Cart</h2>
 
                 <div style="display: flex; margin-left: 60%;">
@@ -72,9 +101,13 @@
             </div>
 
         </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
 
 
-        <div id="cartSummary" class="col-lg-3">
+        <div id="cartSummary" class=" card col-lg-3">
             <h2>Order Summary</h2>
             <div class="border-top border w-75 mx-auto my-3"></div>
             <div style="display: flex;">
@@ -82,17 +115,30 @@
                 <h5 id="SumNumItem">0</h5>
                 <h5 style="margin: auto;" id="PriceSum">0</h5>
             </div>
-            <Button class="btn btn-secondary">Checkout</Button>
+            <a href="ProceedToCheck.html" class="btn btn-secondary">Checkout</a>
         </div>
 
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
 
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="../Scripts/CartItems.js"></script>
-    <script src="../Scripts/Homepage.js"></script>
+   
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+</html>
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f

@@ -338,42 +338,22 @@ form .btn button{
 
 /* =========== reviews pop-up ===========*/
 
-.review-popup{
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
 .review-box{
   width: 800px;
   height: 500px;
   background-color: white;
   border-radius: 10px;
   position: relative;
-  overflow: scroll;
-}
-
-.close-btn{
-  position: absolute;
-  transform: rotate(45deg);
-  font-size: 50px;
-  margin-left: 10px;
-  margin-bottom: 50px;
-  cursor: pointer;
 }
 
 .the-review{
   margin-left: 20px;
 }
 
-.close-btn:hover {
-  background-color: blue;
+.reviews-heading{
+  margin-top: 50px;
+  display: none;
+
 }
 
 /* =========== end of reviews pop-up =====*/

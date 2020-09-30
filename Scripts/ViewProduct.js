@@ -1,3 +1,8 @@
+
+const cartPostUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPPostCart.php";
+const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
+
+
 // Getting to know who's logged in
 let loggedUser = JSON.parse(localStorage.getItem('user'));
 console.log(loggedUser);
@@ -69,16 +74,22 @@ document.getElementById("review_btn").addEventListener('click', function(){
     //console.log(itemRatings);
     var didReview = false;
     console.log(loggedUser);
-    for(var i = 0; i < itemRatings.length; ++ i){
-        if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
-            document.getElementById("your-Review").innerText = "Your review:";
-            document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
-            alert("You already reviewed this  item");
-            didReview = true;
+    if(loggedUser != null){
+        for(var i = 0; i < itemRatings.length; ++ i){
+            if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+                document.getElementById("your-Review").innerText = "Your review:";
+                document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
+                alert("You already reviewed this  item");
+                didReview = true;
+            }
+        }
+        if(!didReview){
+            document.querySelector('.ratingSystem').style.display = 'flex';
         }
     }
-    if(!didReview){
-        document.querySelector('.ratingSystem').style.display = 'flex';
+    else{
+        alert("Please log in to review this product!");
+        window.location.href = "Login.html";
     }
     //alert("Clicked the review button");
 });
@@ -153,50 +164,46 @@ document.getElementById("buy-product").addEventListener('click',function(){
 const buyURL = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPBuy.php";
 document.getElementById("Buy-btn").addEventListener('click',function(){
 
-    console.log("Testing");
+   
+    document.querySelector('.buy-popup').style.display = 'none';
+    updateCart();
+   
+    
+});
 
-
-    let  transDate= new Date();
-    let dd = String(transDate.getDate()).padStart(2, '0');
-    let mm = String(transDate.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = transDate.getFullYear();
-
-    transDate = mm + '/' + dd + '/' + yyyy;
-    let prodID = item.productID;
-    let buyer = loggedUser.UserID;
-    let balance = parseFloat(loggedUser.Balance) - parseFloat(item.pricePerItem);
-    let Quant = parseInt(item.currentQuantity) - 1;
-    console.log( transDate , prodID , buyer , balance , Quant);
-    $.getJSON(buyURL , {
-        ProductID : prodID,
-        Buyer: buyer,
-        TransDate : transDate,
-        Balance: balance,
-        Quantity : Quant
-    },function(confirmation){
-       console.log(confirmation);
-        if(confirmation === "1"){
-        const updateUserURl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReturnUser.php";
-        $.getJSON(updateUserURl , {username : loggedUser.UserName}, function(result){
-            if(result[0] !== ''){
-            localStorage.removeItem('user');
-            localStorage.setItem('user', JSON.stringify(result[0]));
-            console.log(JSON.parse(localStorage.getItem('user')));
-            alert("Product(s) successfully purchased");
-            window.location.href = "Homepage.html";
-            }
+function updateCart(){
+    let found = true;
+    let promise = new Promise(resolve=>{
+        $.getJSON(cartUrl , {userID : loggedUser.UserID} , function(results){
+            results.forEach(prod => {
+                if(parseInt(prod.Product_ID) === parseInt(item.productID)){
+                    found = false;
+                    $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  item.productID , amount : parseInt(prod.Amount)+1},function(ans){
+                        alert("Cart Item increased by 1");
+                        found = false;
+                        resolve(found);  
+                    });
+                }
+                else{
+                    
+                    resolve(found); 
+                }
+            });
         });
 
-        }
     });
 
+    promise.then(answer=>{
+        if(found){
+            $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  item.productID , amount : 1},function(ans){
+                alert("new item addded to cart");  
+            });
+        }
+    });
+    
+ 
 
-
-    document.querySelector('.buy-popup').style.display = 'none';
-
-
-
-});
+}
 
 document.getElementById("Cancel-btn").addEventListener('click',function(){
     document.querySelector('.buy-popup').style.display = 'none';
@@ -204,7 +211,7 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
 });
 
 document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
-    
+    document.querySelector('.reviews-heading').style.display = 'flex';
     for(var i = 0; i < itemRatings.length; i++){
 
         if(itemRatings[i].Review != ""){
@@ -220,18 +227,11 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
                               '<hr>';
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
-            //reviewBlock.appendChild(node);
             var element = document.getElementById("reviews");
             element.appendChild(reviewBlock);
         }
     }
-    document.querySelector('.review-popup').style.display = 'flex';
 });
-
-document.getElementById("close-btn").addEventListener('click',function(){
-    document.querySelector('.review-popup').style.display = 'none';
-});
-
 
 
 //---> https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php
