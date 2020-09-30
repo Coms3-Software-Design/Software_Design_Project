@@ -7,7 +7,7 @@ const updateCartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPUp
 const DeleteCartItemUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPDeleteCartItem.php";
 let cartItems;
 
-//getCartItems();
+
 setVariables();
  
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
@@ -44,7 +44,6 @@ function setVariables() {
     });
     
     promises.then(()=>{
-      
         cartItems = JSON.parse(sessionStorage.getItem("cart"));
         console.log('Trying out promises : ', cartItems);
         if (cartItems === null) return;
@@ -59,8 +58,6 @@ function setVariables() {
         document.getElementById("PCSumNumItem").innerHTML = numItems;
         document.getElementById("PCPriceSum").innerHTML = "R" + sumTotal;
     });
-    
-
 }
 
 
@@ -138,13 +135,9 @@ function proceedToBuy() {
 
             ProcessElement(prodID,buyer,transDate,transDate,balance,Quant);
         }
-
         
     }
     
-    
-    
-
 }
 
 function ProcessElement(prodID,buyer,transDate,transDate,balance,Quant){
