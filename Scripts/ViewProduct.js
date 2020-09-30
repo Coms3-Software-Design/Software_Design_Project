@@ -105,7 +105,8 @@ document.getElementById("review_btn").addEventListener('click', function(){
 
 
 
-document.getElementById("post-btn").addEventListener('click', function(){
+document.getElementById("post-btn").addEventListener('click', function(e){
+    e.preventDefault();
     let review = document.getElementById("review").value;
 
     if(document.getElementById("rate-5").checked == true){
