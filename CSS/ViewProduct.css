@@ -95,6 +95,12 @@ height: 400px;
   display: none;
 }
 
+.rating{
+  align-items: center;
+  justify-content: center;
+  margin-right: 80px;
+}
+
 .star-widget label{
   font-size: 40px;
   color: #444;
@@ -132,10 +138,17 @@ input:checked ~ label{
 .rating-box{
   width: 500px;
   height: 300px;
+  position: relative;
   background-color: white;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
+.formation{
+  justify-content: center;
+  align-items: center;
+}
 .rating-box .star_widget input{
   display: none;
 }
@@ -147,11 +160,20 @@ input:checked ~ label{
   align-items: center;
 }
 
+.close-btn{
+  font-size: 30px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
 .star_widget label{
   font-size: 40px;
   color: #444;
   padding: 10px;
+  margin-right: 13px;
   float: right;
+  justify-content: center;
+  align-items: center;
   transition: all 0.2s ease;
 }
 
@@ -225,15 +247,6 @@ form .btn{
 }
 
 form .btn button{
-  /*height: 100%;
-  width: 100%;
-  border: 1px solid #444;
-  outline: none;
-  font-size: 17px;
-  font-weight: 500;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;*/
   width: 50%;
   height: 40px;
   border-radius: 20px;
@@ -254,6 +267,47 @@ form .btn button{
 /* ========== end of rating pop-up ==============*/
 
 /* =========== end of rating system ===============*/
+
+/* ============= reviews ========================*/
+
+.review-card{
+  width: 100%;
+  border-width: thin;
+  border-style: solid;
+  border-color: #e7e5e5;
+  border-radius: 5px;
+  padding: 3em;
+  line-height: 1.5em;
+  margin-left: 230px;
+  margin-top: 30px;
+  display: none;
+}
+
+.profile_pic{
+  height: 50px;
+  width: 50px;
+}
+
+.profile-pic{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.review-txt{
+  margin-left: 20px;
+  display: block;
+}
+
+.reviewerName{
+  font-weight: bold;
+}
+
+.reviewMsg{
+  font-style: oblique;
+}
+
+/* ============= end of reviews =================*/
 
 /* =========== buy pop-up =============*/
 .buy-popup{
