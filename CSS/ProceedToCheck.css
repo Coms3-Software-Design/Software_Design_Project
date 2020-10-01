@@ -1,0 +1,41 @@
+.summary{
+    height: 100%;
+}
+
+.input{
+    width: 100%;
+    border: none;
+}
+input :hover{
+    border: 2px solid;
+    background: rgba(0,0,0,1);
+}
+
+.postal{
+    width: 25%;
+}
+
+.addInput{
+    margin-bottom: 5px;
+}
+.payments{
+    background-color: rgba(237, 237, 237 , .5);
+}
+.buy-popup{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  .buy-box{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+  }

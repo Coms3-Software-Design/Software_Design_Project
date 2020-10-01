@@ -89,7 +89,6 @@ let topRatedGoods = function(){
           <h5 class="card-title">${result[i].Product_Name.replace(":","")}</h5>
           <h6 class="card-title">R${result[i].Product_Price}</h6>
         </a>
-        <button type="button" class="btn btn-secondary">Add to Cart</button>
        </div>
 
      </div>
@@ -130,9 +129,14 @@ let topRatedServices = function(){
               <h5 class="card-title">${service.Product_Name}</h5>
               <h6 class="card-title">R${service.Product_Price}</h6>
             </a>
+<<<<<<< HEAD
             <button type="button" class="btn btn-secondary">Add to Cart</button>
           </div>
         </div>
+=======
+          </div>  
+        </div>  
+>>>>>>> 9804e78e590eee93b6e279db5bb6ffdf33f8b30f
           `;
       }).join('')
 

@@ -36,7 +36,8 @@
 
 #cartSummary{
     padding: 10px;
+    margin-right: 25px;
     background-color: rgb(232, 235, 233);
-    max-height: 160px;
+    height: 100%;
 }
 
