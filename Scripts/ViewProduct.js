@@ -90,6 +90,10 @@ document.getElementById("review_btn").addEventListener('click', function(){
     //alert("Clicked the review button");
 });
 
+document.getElementById("review-close").addEventListener('click', function(){
+    document.querySelector('.ratingSystem').style.display = 'none';
+});
+
 document.getElementById("post-btn").addEventListener('click', function(){
     
     document.querySelector('.ratingSystem').style.display = 'none';
@@ -211,20 +215,28 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
 });
 
 document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
+    document.querySelector('.review-card').style.display = 'flex';
     document.querySelector('.reviews-heading').style.display = 'flex';
+
     for(var i = 0; i < itemRatings.length; i++){
 
         if(itemRatings[i].Review != ""){
             console.log("Phakathi inside");
             var reviewBlock = document.createElement("div");
-            reviewBlock.className = "all-reviews";
-            var reviewHTML =  '<h3 class="reviewer">'+
+            reviewBlock.className = "profile-pic col";
+            var reviewHTML =  '<img src="../CSS/Images/profile.png" class="profile_pic">'+
+                              '<div class="review-txt">' +
+                              '<div>'+
+                              '<span class="reviewerName">'+
                               itemRatings[i].Reviewers_Name +
-                              '</h3>'+
-                              '<h4 class="the-review">' + 
+                              '</span>' +
+                              '</div>'+
+                              '<div>' +
+                              '<span class="reviewMsg">' + 
                               itemRatings[i].Review +
-                              '</h4>' +
-                              '<hr>';
+                              '</span>' +
+                              '</div>'+
+                              '</div>';
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
             var element = document.getElementById("reviews");
