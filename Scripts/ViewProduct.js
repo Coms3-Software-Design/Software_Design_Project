@@ -84,7 +84,7 @@ document.getElementById("review_btn").addEventListener('click', function(){
     console.log(loggedUser);
     if(loggedUser != null){
         for(var i = 0; i < itemRatings.length; ++ i){
-            if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+            if(itemRatings[i].Reviewers_Name == loggedUser.UserName){
                 document.getElementById("your-Review").innerText = "Your review:";
                 document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
                 alert("You already reviewed this  item");
@@ -107,10 +107,6 @@ document.getElementById("review-close").addEventListener('click', function(){
     document.querySelector('.ratingSystem').style.display = 'none';
 });
 
-document.getElementById("post-btn").addEventListener('click', function(){
-    
-    document.querySelector('.ratingSystem').style.display = 'none';
-});
 
 document.getElementById("post-btn").addEventListener('click', function(e){
     e.preventDefault();
