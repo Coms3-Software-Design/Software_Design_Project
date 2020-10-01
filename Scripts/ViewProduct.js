@@ -154,7 +154,7 @@ document.getElementById("post-btn").addEventListener('click', function(e){
             ProductID: item.productID,
             Review:review, 
             Rating:rating,
-            Reviewer:loggedUser.UserID},
+            Reviewer:loggedUser.UserName},
             function(results){
             console.log("Database results: " + results);
             resolve(results);
