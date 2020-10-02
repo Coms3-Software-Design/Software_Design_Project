@@ -88,7 +88,7 @@ document.getElementById("review_btn").addEventListener('click', function(){
     console.log(loggedUser);
     if(loggedUser != null){
         for(var i = 0; i < itemRatings.length; ++ i){
-            if(itemRatings[i].Reviewers_Name == loggedUser.UserID){
+            if(itemRatings[i].Reviewers_Name == loggedUser.UserName){
                 document.getElementById("your-Review").innerText = "Your review:";
                 document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
                 alert("You already reviewed this  item");
@@ -107,16 +107,9 @@ document.getElementById("review_btn").addEventListener('click', function(){
     //alert("Clicked the review button");
 });
 
-<<<<<<< HEAD
 document.getElementById("review-close").addEventListener('click', function(){
     document.querySelector('.ratingSystem').style.display = 'none';
 });
-
-document.getElementById("post-btn").addEventListener('click', function(){
-    
-    document.querySelector('.ratingSystem').style.display = 'none';
-=======
->>>>>>> e1e50f270307ed4e3dc453c0a9c130ec432492ce
 
 
 document.getElementById("post-btn").addEventListener('click', function(e){
@@ -161,7 +154,7 @@ document.getElementById("post-btn").addEventListener('click', function(e){
             ProductID: item.productID,
             Review:review, 
             Rating:rating,
-            Reviewer:loggedUser.UserID},
+            Reviewer:loggedUser.UserName},
             function(results){
             console.log("Database results: " + results);
             resolve(results);
@@ -176,8 +169,9 @@ document.getElementById("post-btn").addEventListener('click', function(e){
         else{
             alert('Failed to add review');
         }
-        getReviews();
+        
         document.querySelector('.ratingSystem').style.display = 'none';
+        getReviews();
     })
     
     
@@ -251,21 +245,15 @@ document.getElementById("Cancel-btn").addEventListener('click',function(){
 });
 
 document.getElementById("veiw_reviews_btn").addEventListener('click', function(){
-<<<<<<< HEAD
+    $("#reviews").empty();
     document.querySelector('.review-card').style.display = 'flex';
     document.querySelector('.reviews-heading').style.display = 'flex';
 
-=======
-    $("#reviews").empty();
-    document.querySelector('.reviews-heading').style.display = 'flex';
-    
->>>>>>> e1e50f270307ed4e3dc453c0a9c130ec432492ce
     for(var i = 0; i < itemRatings.length; i++){
-        
+        console.log(itemRatings[i]);
         if(itemRatings[i].Review != ""){
             console.log("Phakathi inside");
             var reviewBlock = document.createElement("div");
-<<<<<<< HEAD
             reviewBlock.className = "profile-pic col";
             var reviewHTML =  '<img src="../CSS/Images/profile.png" class="profile_pic">'+
                               '<div class="review-txt">' +
@@ -280,16 +268,6 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
                               '</span>' +
                               '</div>'+
                               '</div>';
-=======
-            reviewBlock.className = "all-reviews";
-             var reviewHTML =  '<h5 class="reviewer">'+
-                              itemRatings[i].Reviewers_Name +
-                              '</h5>'+
-                              '<p class="the-review">' + 
-                              itemRatings[i].Review +
-                              '</p>' +
-                              '<hr>';
->>>>>>> e1e50f270307ed4e3dc453c0a9c130ec432492ce
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
             var element = document.getElementById("reviews");
