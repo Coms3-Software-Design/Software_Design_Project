@@ -1,0 +1,19 @@
+body
+{
+  background:#ccc;
+
+}
+
+ div nav a:hover
+{
+  background-color:  grey;
+}
+
+ #bg-img
+{
+  background: url('../CSS/Images/playground.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 500px;
+
+}
