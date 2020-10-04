@@ -22,7 +22,7 @@ body {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-      display: flex; 
+      display: flex;
     }
  }
 
@@ -42,7 +42,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .input_field input{
     margin-block: 15px;
     width: 60%;
@@ -56,7 +56,7 @@ body {
     text-align: center;
   }
 
-    
+
     .preview-thumbnail.nav-tabs {
       border: none;
       margin-top: 15px; }
@@ -71,7 +71,7 @@ body {
           margin: 0; }
         .preview-thumbnail.nav-tabs li:last-of-type {
           margin-right: 0; }
-    
+
     .tab-content {
       overflow: hidden; }
       .tab-content img {
@@ -80,24 +80,24 @@ body {
                 animation-name: opacity;
         -webkit-animation-duration: .3s;
                 animation-duration: .3s; }
-    
-    
-    
 
-    
-    
+
+
+
+
+
     @media screen and (min-width: 997px) {
       .wrapper {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex; } }
-    
+
 
 
 
     /* -------- */
-    
+
 
     .logo-view {
       margin-top: 5%;
@@ -110,7 +110,7 @@ body {
     .radio-inline{
       margin: 15px;
     }
-    
+
     .checked_radio{
       margin: 5px;
     }
