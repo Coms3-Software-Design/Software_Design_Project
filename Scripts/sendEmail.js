@@ -7,7 +7,7 @@ loginbtn.addEventListener('click', function(e){
 Email.send({
     Host : "smtp.gmail.com",
     Username : "Sibawaih Motaung",
-    Password : "24434786siba",
+    Password : "2443",
     To : 'sirajmotaung@gmail.com',
     From : "info.sibawaih@gmail.com",
     Subject : "Testing how it works",

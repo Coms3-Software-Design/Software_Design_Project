@@ -1,19 +1,24 @@
-body
-{
-  background:#ccc;
-
+body {
+  background: #ccc;
 }
 
- div nav a:hover
-{
-  background-color:  grey;
+div nav a:hover {
+  background-color: grey;
 }
 
- #bg-img
-{
-  background: url('../CSS/Images/playground.jpg');
+#bg-img {
+  background: url("../CSS/Images/playground.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   min-height: 500px;
+}
+#About {
+  margin-top: -200px;
+}
+#About span {
+  padding: 10px 20px 10x 20px;
+}
 
+#About hr {
+  border-width: 3px;
 }
