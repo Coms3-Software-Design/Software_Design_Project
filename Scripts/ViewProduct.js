@@ -84,6 +84,7 @@ getReviews();
 
 // Add review button
 document.getElementById("review_btn").addEventListener('click', function(){
+    window.scrollTo(0,0);
     console.log("Reviews: ");
     //console.log(itemRatings);
     var didReview = false;
@@ -192,7 +193,9 @@ document.getElementById("buy-product").addEventListener('click',function(){
       alert("Insuficient funds, please load your account and try again");
     }
     else{
-      document.querySelector('.buy-popup').style.display = 'flex';
+        window.scrollTo(0,0);
+        document.body.style.overflowY = "hidden";
+        document.querySelector('.buy-popup').style.display = 'flex';
     }
     // document.getElementById("user-balance").value = 'R' + JSON.parse(user).Balance;
     
@@ -207,6 +210,7 @@ document.getElementById("buy-product").addEventListener('click',function(){
 // Buying a product
 
 document.getElementById("Buy-btn").addEventListener('click',function(){
+    document.body.style.overflowY = "visible";
     document.querySelector('.buy-popup').style.display = 'none';
     updateCart();
 });
@@ -244,6 +248,7 @@ function updateCart(){
 }
 
 document.getElementById("Cancel-btn").addEventListener('click',function(){
+    document.body.style.overflowY = "visible";
     document.querySelector('.buy-popup').style.display = 'none';
     alert("Purchase canceled");
 });
