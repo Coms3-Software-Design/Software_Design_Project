@@ -19,17 +19,17 @@ var Profilepic = user.Profile_pic;
 console.log(Profilepic);
 //If there is no Bio.
 if(Bio==null)
-    Bio="";
+    Bio="EMPTY!!!";
 
 //If no Profile pic, a default profile picture is set
 if(Profilepic!=null)
 $('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
 
-
-$('#User').html(`<span>${"I'm "}${Name} ${Surname}</span>`);
+$('#Name').html(`<span>${Name}</span>`);
+$('#Surname').html(`<span>${Surname}</span>`);
+$('#User').html(`<span>${"INFORMATION "}</span>`);
 $('#Email').html(`<span>${ContactDetails}</span>`);
 $('#Username').html(`<span>${UserName}</span>`);
-
 $('#Bio').html(`<span>${Bio}</span>`);
 $('#Balance').html(`<span>${"R "}${Balance}</span>`);
 $('#Date').html(`<Span>${DateCreated}</span>`);
