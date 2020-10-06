@@ -12,11 +12,18 @@ div nav a:hover {
   background-repeat: no-repeat;
   min-height: 500px;
 }
-#About {
+#About
+{
   margin-top: -200px;
 }
+
+.Abt
+{
+  margin-top: -200px;
+}
+
 #About span {
-  padding: 10px 20px 10x 20px;
+  padding: 10px 20px 10px 20px;
 }
 
 #About hr {

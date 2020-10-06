@@ -43,10 +43,9 @@
 
 <!-- ShowCase -->
 <div id="bg-img"></div>
-</body>
 
 <!-- About Me -->
-<div class="About">
+<div class="About" id="Abt">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -54,26 +53,31 @@
           <div class="card bg-white"> 
             <div class="card-title my-5">
               <div class="media">
-                <img src = "../CSS/Images/profile.png" width="250" height="250" class="img-fluid rounded-top mx-5">
+                <div id="Pic"><img src = "../CSS/Images/profile.png" width="250" height="250" class="img-fluid rounded-top mx-5" ></div>
                 <div class="media-body">
-                  <h3 class="display-4 text-muted">I'm Siraj Motaung</h3>
-                  <p class="text-muted">Username</p>
+                  <h3 class="display-4 text-muted" id="User"></h3>
+                  <p class="text-muted" ></p>
                   <div class="container">
                     <table class="table table-responsive ml-2">
                       <tr>
-                        <td class="text-muted">Age</td>
+                        <td class="text-muted">Username</td>
                         <td>:</td>
-                        <td>30 Years old</td>
+                        <td id="Username"></td>
                       </tr>
                       <tr>
                         <td class="text-muted">Email</td>
                         <td>:</td>
-                        <td>Sirajmotaung@gmail.com</td>
+                        <td id="Email"></td>
                       </tr>
                       <tr>
-                        <td class="text-muted">Phone Number</td>
+                        <td class="text-muted">Balance</td>
                         <td>:</td>
-                        <td>+27 84 631 7574</td>
+                        <td id="Balance"></td>
+                      </tr>
+                      <tr>
+                        <td class="text-muted">Date Created</td>
+                        <td>:</td>
+                        <td id="Date"></td>
                       </tr>
                     </table>
                   </div>
@@ -83,7 +87,7 @@
                 <div class="row">
                   <div class="col">
                     <span class="bg-info text-white">Bio</span><hr class="bg-info">
-                      <p class="lead text-justify">smail ibn Musa Menk, also known as Mufti Menk, is a Muslim cleric from Zimbabwe. Head of the country's fatwa department, Menk has been identified as a Salafi. He has been named one of The 500 Most Influential Muslims in the world by the Royal Aal al-Bayt Institute for Islamic Thought in Jordan in 2013, 2014 and 2017. smail ibn Musa Menk, also known as Mufti Menk, is a Muslim cleric from Zimbabwe. Head of the country's fatwa department, Menk has been identified as a Salafi. He has been named one of The 500 Most Influential Muslims in the world by the Royal Aal al-Bayt Institute for Islamic Thought in Jordan in 2013, 2014 and 2017.</p>  
+                      <p class="lead text-justify" id="Bio"></p>  
                   </div>
                 </div>
               </div>
@@ -95,6 +99,7 @@
     </div>
   </div>
 </div>
+<script src="../Scripts/UserProfile.js"></script>
 
-
+  </body>
 </html>
