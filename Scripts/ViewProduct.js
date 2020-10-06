@@ -48,9 +48,16 @@ function getReviews(){
         for(var i = 0; i < results.length;++i){
             console.log(results[i].Review_Rating);
             ratings += parseInt(results[i].Review_Rating);
+
+            if(loggedUser != null){
+                if(results[i].Reviewers_Name == loggedUser.UserName){
+                    document.getElementById("your-Review").innerText = "Your review:";
+                    document.getElementById("yourReview").innerText = itemRatings[i].Review_Rating+" Stars, "+ itemRatings[i].Review;
+                }
+            }
         }
         ratings /= results.length;
-        //console.log(ratings);
+        
     
         if(ratings > 4){
             document.getElementById("rate_5").checked = true;
@@ -76,12 +83,12 @@ function getReviews(){
         
     });
 
-
 }
 getReviews();
 
 // Add review button
 document.getElementById("review_btn").addEventListener('click', function(){
+    window.scrollTo(0,0);
     console.log("Reviews: ");
     //console.log(itemRatings);
     var didReview = false;
@@ -97,6 +104,7 @@ document.getElementById("review_btn").addEventListener('click', function(){
             }
         }
         if(!didReview){
+            document.body.style.overflowY = "hidden";
             document.querySelector('.ratingSystem').style.display = 'flex';
         }
     }
@@ -108,6 +116,7 @@ document.getElementById("review_btn").addEventListener('click', function(){
 });
 
 document.getElementById("review-close").addEventListener('click', function(){
+    document.body.style.overflowY = "visible";
     document.querySelector('.ratingSystem').style.display = 'none';
 });
 
@@ -169,7 +178,7 @@ document.getElementById("post-btn").addEventListener('click', function(e){
         else{
             alert('Failed to add review');
         }
-        
+        document.body.style.overflowY = "visible";
         document.querySelector('.ratingSystem').style.display = 'none';
         getReviews();
     })
@@ -188,7 +197,9 @@ document.getElementById("buy-product").addEventListener('click',function(){
       alert("Insuficient funds, please load your account and try again");
     }
     else{
-      document.querySelector('.buy-popup').style.display = 'flex';
+        window.scrollTo(0,0);
+        document.body.style.overflowY = "hidden";
+        document.querySelector('.buy-popup').style.display = 'flex';
     }
     // document.getElementById("user-balance").value = 'R' + JSON.parse(user).Balance;
 
@@ -203,6 +214,7 @@ document.getElementById("buy-product").addEventListener('click',function(){
 // Buying a product
 
 document.getElementById("Buy-btn").addEventListener('click',function(){
+    document.body.style.overflowY = "visible";
     document.querySelector('.buy-popup').style.display = 'none';
     updateCart();
 });
@@ -240,6 +252,7 @@ function updateCart(){
 }
 
 document.getElementById("Cancel-btn").addEventListener('click',function(){
+    document.body.style.overflowY = "visible";
     document.querySelector('.buy-popup').style.display = 'none';
     alert("Purchase canceled");
 });
@@ -251,6 +264,10 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
 
     for(var i = 0; i < itemRatings.length; i++){
         console.log(itemRatings[i]);
+        var stars = document.createElement("div");
+        for(var j = 0; j < parseInt(itemRatings[i].Review_Rating); ++j){
+            console.log("Si on");
+        }
         if(itemRatings[i].Review != ""){
             console.log("Phakathi inside");
             var reviewBlock = document.createElement("div");
@@ -262,7 +279,8 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
                               itemRatings[i].Reviewers_Name +
                               '</span>' +
                               '</div>'+
-                              '<div>' +
+                              `<div class="stars" id="star${itemRatings[i].ReviewID}">`+
+                              '</div>' +
                               '<span class="reviewMsg">' + 
                               itemRatings[i].Review +
                               '</span>' +
@@ -273,6 +291,22 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
             var element = document.getElementById("reviews");
             element.appendChild(reviewBlock);
         }
+
+        for(var j = 0; j < 5;++j){
+            if(j < itemRatings[i].Review_Rating){
+                var reviewstar = document.createElement("i");
+                reviewstar.className = "fas fa-star";
+                reviewstar.style.color = "yellow";
+                document.getElementById(`star${itemRatings[i].ReviewID}`).appendChild(reviewstar);
+            }
+            else{
+                var reviewstar = document.createElement("i");
+                reviewstar.className = "fas fa-star";
+                document.getElementById(`star${itemRatings[i].ReviewID}`).appendChild(reviewstar);
+            }
+        }
+
+
     }
 });
 
