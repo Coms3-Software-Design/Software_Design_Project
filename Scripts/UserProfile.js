@@ -14,18 +14,17 @@ var DateCreated = user.Date_Created;
 var Gender = user.Gender;
 var Bio = user.Bio;
 var Balance = user.Balance;
-var Profilepic = user.Profilepic;
+var Profilepic = user.Profile_pic;
 
+console.log(Profilepic);
 //If there is no Bio.
 if(Bio==null)
     Bio="";
 
-//if the is no Profile Pic it gets the default Profile pic.
-if(Profilepic==null){
-$('#Pic').html(`<img src = "../CSS/Images/profile.png" width="250" height="250" class="img-fluid rounded-top mx-5" >`);
-}else{
-    $('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
-}
+//If no Profile pic, a default profile picture is set
+if(Profilepic!=null)
+$('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
+
 
 $('#User').html(`<span>${"I'm "}${Name} ${Surname}</span>`);
 $('#Email').html(`<span>${ContactDetails}</span>`);
@@ -35,5 +34,3 @@ $('#Bio').html(`<span>${Bio}</span>`);
 $('#Balance').html(`<span>${"R "}${Balance}</span>`);
 $('#Date').html(`<Span>${DateCreated}</span>`);
 
-
-//$('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
