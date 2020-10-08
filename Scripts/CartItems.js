@@ -1,12 +1,3 @@
-
-/*
-TODO:
-    Give the icons IDs for reference
-    add functionality to the icon to increase and decrease amount of items in cart
-*/  
-//location.reload();
-// fetches cart items
-
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
 const cartPostUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPPostCart.php";
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
