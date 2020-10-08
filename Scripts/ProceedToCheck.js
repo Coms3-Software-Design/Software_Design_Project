@@ -10,6 +10,7 @@ let cartItems;
 
 setVariables();
  
+
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
 
@@ -33,6 +34,9 @@ function personCheck(){
 
 function setVariables() {
     
+    radiobtn = document.getElementById("payment_PaymentMethod_credit-card");
+    radiobtn.checked = true;
+
     const promises = new Promise( resolve =>{  
         $.getJSON(cartUrl , {userID : user.UserID} , function(results){
             console.log("in promise3"); 

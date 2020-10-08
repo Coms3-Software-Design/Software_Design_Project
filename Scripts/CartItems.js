@@ -21,8 +21,7 @@ let populate = function(){
             return;
         }
 
-        document.getElementById("emptyCart").id = "cartNotEmpty";
-        $("#cartNotEmpty").empty();
+       document.getElementById("emptyCart").style.display = 'none';
 
 
        // sessionStorage.setItem("cart" , JSON.stringify(results));
@@ -90,23 +89,23 @@ function update(ID , num){
     let promise = new Promise(resolve=>{
         $.getJSON(cartUrl , {userID : loggedUser.UserID} , results => {
             results.forEach(prod => {
-                if(parseInt(prod.Product_ID) === parseInt(ID)){
+                if(parseInt(prod.Product_ID) === parseInt(ID)  && parseInt(prod.Amount)+num > -1){
                     $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  ID , amount : parseInt(prod.Amount)+num}, ans => {
-                        resolve( [num , prod.Amount]);  
+                        populate();
                     });
                 }
-              
+                populate();
+                resolve(); 
             });
+            //resolve();
         });
-
+       
     });
 
-    promise.then(answer=>{
+    promise.then(()=>{
         populate();
     });
     
- 
-
 }
 populate();
 
