@@ -23,10 +23,11 @@ function personCheck(){
     let postal = document.getElementById("postal").value;
 
     if(pName == "" || mail == "" || street == ""  || suburb == "" || city == "" || postal == ""){
-        alert("Please enter all fields");
+        alert("Please enter all fields in Dilivery Address section");
         return false;
     }
-    else{return true;}
+    else 
+        return true;
 
 }
 
@@ -73,6 +74,7 @@ function varifyAndProceed() {
         alert("Your Balance is insufficient");
         return;
     }
+    if(!personCheck()) return;
 
 
     // Pop up to confirm if you wanna buy
@@ -87,7 +89,6 @@ function varifyAndProceed() {
     //Upon clicking buy on the pop up
     document.getElementById("Buy-btn").addEventListener('click', function () {
          console.log('about to buy');
-
          const promise = new Promise((resolve )=>{
             resolve(proceedToBuy());
          });
@@ -106,8 +107,7 @@ function varifyAndProceed() {
 
 }
 
-function proceedToBuy() {
-    if(!personCheck) return;
+function proceedToBuy() {   
     const buyer = user.UserID;
     let transDate = new Date();
     let dd = String(transDate.getDate()).padStart(2, '0');
