@@ -14,6 +14,10 @@ const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/
 let loggedUser = JSON.parse(localStorage.getItem('user'));
 console.log(loggedUser);
 
+document.getElementById("emptyCart").addEventListener('click',()=>{
+    window.location.href = "Homepage.html";
+})
+
 let populate = function(){
     
     $.getJSON(cartUrl , {userID : loggedUser.UserID} , function(results){
@@ -21,6 +25,14 @@ let populate = function(){
         let priceSum = 0;
         let htmlItems = ``;
         console.log(results);
+        if(results.length === 0){
+            $("#cartBody").empty();
+            return;
+        }
+
+        document.getElementById("emptyCart").id = "cartNotEmpty";
+        $("#cartNotEmpty").empty();
+
 
        // sessionStorage.setItem("cart" , JSON.stringify(results));
 

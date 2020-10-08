@@ -74,10 +74,6 @@ function varifyAndProceed() {
         return;
     }
 
-    if(cartItems.length === 0){
-        alert("No items in cart to checkout");
-        return;
-    }
 
     // Pop up to confirm if you wanna buy
     document.querySelector('.buy-popup').style.display = 'flex';
@@ -140,7 +136,7 @@ function proceedToBuy() {
     
 }
 
-function ProcessElement(prodID,buyer,transDate,transDate,balance,Quant){
+function ProcessElement(prodID,buyer,transDate,balance,Quant){
 
     $.getJSON(buyURL, {
         ProductID: prodID,
