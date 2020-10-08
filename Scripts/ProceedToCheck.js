@@ -65,8 +65,6 @@ function setVariables() {
     });
 }
 
-
-
 function varifyAndProceed() {
     if (user == null) {
         alert("Please sign in");
@@ -133,7 +131,7 @@ function proceedToBuy() {
             let Quant = parseInt(cartItems[i].Current_Quantity) - 1;
             console.log(transDate, prodID, buyer, balance, Quant);
 
-            ProcessElement(prodID,buyer,transDate,transDate,balance,Quant);
+            ProcessElement(prodID,buyer,transDate,balance,Quant);
         }
         
     }
