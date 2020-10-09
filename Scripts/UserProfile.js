@@ -34,3 +34,5 @@ $('#Bio').html(`<span>${Bio}</span>`);
 $('#Balance').html(`<span>${"R "}${Balance}</span>`);
 $('#Date').html(`<Span>${DateCreated}</span>`);
 
+
+

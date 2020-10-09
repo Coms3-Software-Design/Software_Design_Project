@@ -1,9 +1,9 @@
 body {
-  background: #ccc;
+  background: white;
 }
 
 div nav a:hover {
-  background-color: grey;
+  background-color: white;
 }
 
 #bg-img {
@@ -14,18 +14,24 @@ div nav a:hover {
 }
 #About
 {
-  margin-top: -200px;
+ margin-top: -200px;
 }
-
-.Abt
-{
-  margin-top: -200px;
-}
-
 #About span {
   padding: 10px 20px 10px 20px;
 }
 
 #About hr {
-  border-width: 3px;
+  border-width: 5px;
 }
+
+#btn-editp:hover
+{
+  background-color: darkcyan;
+}
+
+.btnE
+{
+  display: none;
+}
+
+

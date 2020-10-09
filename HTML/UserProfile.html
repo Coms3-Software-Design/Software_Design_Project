@@ -45,7 +45,7 @@
 <div id="bg-img"></div>
 
 <!-- About Me -->
-<div class="About" id="Abt">
+<div id="About">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -55,28 +55,29 @@
               <div class="media">
                 <div id="Pic"><img src = "../CSS/Images/profile.png" width="250" height="250" class="img-fluid rounded-top mx-5" ></div>
                 <div class="media-body">
-                  <button class="btn btn-dark float-right mx-4">EDIT PROFILE</button>
+                  <button id="btn-editp" class="btn btn-dark float-right mx-4">EDIT PROFILE</button>
+                  <button id="btn-updatep" class="btn btnE btn-dark float-right mx-4">UPDATE PROFILE</button>
                   <h3 class="display-4 text-muted" id="User"></h3>
                   <p class="text-muted" ></p>
-                  <div class="container">
+                  <div class="container-fluid">
                     <table class="table table-responsive table-hover ml-2">
                       <tr>
                         <td class="text-muted">Name</td>
                         <td>:</td>
                         <td id="Name"></td>
-                        <td><button class="btn btn-info float-right badge-pill">EDIT</button></td>
+                        <td><button id = "btn-editN" class="btn btnE btn-info float-right badge-pill">EDIT</button></td>
                       </tr>
                       <tr>
                         <td class="text-muted">Surname</td>
                         <td>:</td>
                         <td id="Surname"></td>
-                        <td><button class="btn btn-info float-right badge-pill">EDIT</button></td>
+                        <td><button id="btn-editS" class="btn btnE btn-info float-right badge-pill">EDIT</button></td>
                       </tr>
                       <tr>
                         <td class="text-muted">Email</td>
                         <td>:</td>
                         <td id="Email"></td>
-                        <td><button class="btn btn-info float-right badge-pill">EDIT</button></td>
+                        <td><button id="btn-editE" class="btn btnE btn-info float-right badge-pill">EDIT</button></td>
                       </tr>
                       <tr>
                         <td class="text-muted">Balance</td>
@@ -91,10 +92,12 @@
 
                     <table class="table-responsive ml-2">
                         <tr>
-                          <td><button id="btn-changePass" class="btn btn-info badge-pill">Change Password</button></tr></td>
+                          <td><button id="btn-changePass" class="btn btnE btn-info badge-pill">Change Password</button></tr></td>
                         </tr>
                     </table>
 
+                    <form action="">
+                    <div id="Update-password" class="btnE">
                     <table class="table table-responsive ml-2">
                         <tr>
                           <td>Current Password</td>
@@ -115,6 +118,8 @@
                           <td><button id="btn-update" class="btn btn-info badge-pill">Update Password</button></tr></td>
                         </tr>
                     </table>
+                  </form>
+                  </div>
 
                     </table>
                   </div>
@@ -123,7 +128,7 @@
               <div class="container mt-5">
                 <div class="row">
                   <div class="col">
-                    <button class="btn btn-info float-right badge-pill">EDIT</button>
+                    <button id = "btn-editB" class="btn btnE btn-info float-right badge-pill">EDIT</button>
                     <span class="bg-info text-white">Bio</span><hr class="bg-info">
                    
                       <p class="lead text-justify" id="Bio"></p>  
