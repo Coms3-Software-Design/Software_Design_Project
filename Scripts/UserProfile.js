@@ -100,21 +100,36 @@ document.getElementById('change').addEventListener('click', function(){
     
     var timeClicked = 0;
 
-    document.getElementById('btn-editN').addEventListener('click', function(){
-        timeClicked++;
-        document.getElementById('nameChange-input').value = Name;
-        if(timeClicked>0){
-            if(timeClicked%2 != 0){
-                document.getElementById('Name').style.display = "none";
-                document. getElementById('xform').style.display="block";
-            }
-            else{
-            
-                document.getElementById('Name').style.display = "block";
-                document. getElementById('xform').style.display="none";
-            }
-    
-        }
-    });
+
+   let IDs = ['name' , 'surname' , 'email'];
+                IDs.map(id => {
+                    document.getElementById(`btn-edit${id}`).addEventListener('click', function(){
+                        timeClicked++;
+                        
+                        if(timeClicked>0){
+                            if(timeClicked%2 != 0){
+                                document.getElementById(`${id}Change-input`).value = Name;
+                                document.getElementById(`${id}`).style.display = "none";
+                                document. getElementById('xform').style.display="block";
+                         
+                            }
+                            else{
+                            
+                                document.getElementById('Name').style.display = "block";
+                                document. getElementById('xform').style.display="none";
+                                if(document.getElementById('nameChange-input').value == "") alert("No name entered");
+                                if(document.getElementById('nameChange-input').value == Name) alert("name not change");
+                                else if(document.getElementById('nameChange-input').value != "") alert("Name changed");
+                
+                                
+                            }
+                    
+                        }
+                    });
+                }).join('');                
+               
+
+
+
     
     
