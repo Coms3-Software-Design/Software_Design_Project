@@ -20,11 +20,11 @@ if(results=="!exists" && username!=""&&password!=""){
   }
   //If the user exists in the database then it links to the Homepage
   else if( results!="!exists" && username!="" && password!=""){
-
+    results[0].Password = password;
     localStorage.setItem('user', JSON.stringify(results[0]));
      var user1 = JSON.parse(localStorage.getItem('user'));
      console.log(user1);
-
+  
 
     var UserId = JSON.stringify(user1.UserID);
     var Name = JSON.stringify(user1.Name);

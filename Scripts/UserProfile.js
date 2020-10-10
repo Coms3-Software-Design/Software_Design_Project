@@ -2,6 +2,8 @@ let user = JSON.parse(localStorage.getItem('user'));
 console.log(user);
 
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
+const updateProfURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdateProfile.php'
+let CHANGEPASS = false;
 
 var UserId = user.UserID;
 var Name = user.Name;
@@ -41,15 +43,13 @@ $('#Date').html(`<Span>${DateCreated}</span>`);
 
 //when user clicks on change password
 document.getElementById('change').addEventListener('click', function(){
+
+    CHANGEPASS = true;
     let btnPass = document.getElementById('btn-changePass');
     let form = document.getElementById('changePass');
 
     btnPass.style.display="none";
     form.style.display="block";
-
-    
-       
-
 });
 
 document.getElementById('btn-update').addEventListener('click', function(e){
@@ -91,11 +91,14 @@ document.getElementById('btn-update').addEventListener('click', function(e){
 
 });
 
+
     
-    var timeClicked = 0;
+    
    let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
    let params = [Name, Surname, ContactDetails, Bio];
                 IDs.map((id,i) => {
+                    if(id == 'Bio') return;
+                    var timeClicked = 0;
                     document.getElementById(`btn-edit${id}`).addEventListener('click', function(){
                         timeClicked++;
                         
@@ -122,13 +125,16 @@ document.getElementById('btn-update').addEventListener('click', function(e){
                                         var message =  document.getElementById('Emailtext');
                                         if(email.match(patterns))
                                         {
-                                             alert("Valid Email Address"); 
+                                            updateProf(params[0] , params[1] , email, params[3] , 12345 );
+                                             alert("Valid Email Address");     
                                         }
                                         else
                                         {
                                             alert("Invalid email");
                                         }
                                     }
+
+                                    
                                 } 
                 
                                 
@@ -139,7 +145,30 @@ document.getElementById('btn-update').addEventListener('click', function(e){
                 }).join('');     
 
 //When user presses update password
-            
+
+function updateProf(Name , Surname , PNum , Bio , Password){
+
+    console.log(Name , Surname , PNum , Bio , Password ,user.UserID);
+
+    $.getJSON(updateProfURL , {
+        userID : user.UserID,
+        name : Name,
+        surname : Surname,
+        pNum : PNum,
+        bio : Bio,
+        password : Password
+     } , result => {
+        console.log('inside');
+        console.log(result);
+     });
+     
+   
+
+     console.log('heys');
+}
+
+
+
 
 
 
