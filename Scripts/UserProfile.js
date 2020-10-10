@@ -158,13 +158,8 @@ function updateProf(Name , Surname , PNum , Bio , Password){
         bio : Bio,
         password : Password
      } , result => {
-        console.log('inside');
         console.log(result);
      });
-     
-   
-
-     console.log('heys');
 }
 
 
