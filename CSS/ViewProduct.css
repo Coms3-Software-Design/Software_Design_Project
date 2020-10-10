@@ -2,8 +2,8 @@
 
 body {
   font-family: 'open sans';
-  overflow-x: hidden; 
-
+  overflow-x: hidden;
+  overflow-y: visible; 
   background-color: #ebebeb;
   
 }
@@ -125,11 +125,12 @@ input:checked ~ label{
 
 .ratingSystem{
   width: 100%;
-  height: 100%;
+  height: 104%;
   background-color: rgba(0,0,0,0.7);
   position: absolute;
   top: 0;
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   display: none;
@@ -272,6 +273,7 @@ form .btn button{
 
 .review-card{
   width: 100%;
+  height: 100%;
   border-width: thin;
   border-style: solid;
   border-color: #e7e5e5;
@@ -281,6 +283,10 @@ form .btn button{
   margin-left: 230px;
   margin-top: 30px;
   display: none;
+}
+
+.theBtn{
+  width: 100%;
 }
 
 .profile_pic{
@@ -382,6 +388,8 @@ form .btn button{
 .buy-msg{
   height: 100%;
   width: 100%;
+  margin-top: 35px;
+  margin-bottom: 20px;
   font: sans-serif;
   position: relative;
   text-align: center;

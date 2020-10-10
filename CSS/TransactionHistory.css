@@ -1,0 +1,151 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+
+
+/*************Top Part Of The Side Bar Like*******************************************/
+.transaction-container {
+	align-items: center;
+	width: 80vw ;
+	height: 90vh ;
+	margin: 30px 110px;
+	border-radius: 20px ;
+	display: flex;
+}
+
+.transaction-profile {
+	height: 100% ;
+	border-radius: 20px ;
+	flex: 0 0 35% ;
+	max-width: 100% ;
+}
+
+.transaction-history {
+	border-radius: 20px ;
+	height: 100% ;
+	flex: 0 0 65% ;
+	max-width: 100% ;
+}
+
+/*********************************************************************************/
+
+.transaction-profile-image { 
+	background-color: white;
+	height: 40% ; 
+ }
+
+ .transaction-profile-image-info {
+ }
+ 
+.transaction-profile-image-info img{
+	height: 100px ;
+	width: 100px ;
+	border-radius: 50% ;
+	margin: 0 32% ;
+ }
+
+ .transaction-profile-names {
+ 	text-align: center;
+ 	padding: 15px 0 ;
+ }
+ .transaction-profile-balance{
+ 	margin-left: 20px ;
+ }
+
+ .transaction-profile-balance .price {
+ 	margin-left: 65px; 
+ }
+/*************Top Part Of The Side Bar Like*************************************/
+
+.transaction-profile-links {
+	background-color: white ;
+	height: 40% ;
+	margin: 0;
+}
+
+.transaction-profile-links ul{
+	list-style: none ;
+}
+
+.transaction-profile-links li {
+	margin: 10px 10px 10px 10px;
+	padding: 20px ;
+	border: 2px #ccc solid;
+	border-radius: 8px ;
+}
+
+.transaction-profile-links li a {
+	text-decoration: none ;
+	font-size: 20px ;
+	letter-spacing: 2px ;
+	color: #383838;
+}
+
+.transaction-profile-links li a:hover {
+	color: orange;
+}
+
+/*******************************************************************************/
+
+.transaction-history-title {
+	max-width: 100% ;
+	height: 30px ;
+}
+
+.transaction-history h1 {
+	margin: 25px ;
+	letter-spacing: 2px ;
+}
+
+.transaction-history ul {
+	list-style: none;
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+}
+
+.transaction-history ul li {
+	margin: 0 30px ;
+	padding: 10px ;
+}
+
+.transaction-history ul li a {
+	text-decoration: none ;
+	letter-spacing: 2px ;
+	font-weight: 700 ;
+	color : #383838;
+}
+
+.transaction-history ul li a:hover {
+	color: orange;
+}
+
+.transaction-history-list {
+	overflow-y: scroll; 
+	width: 640px ;
+	height: 450px ;
+	margin: auto;
+	border: 1px #999 solid ;
+}
+
+.transaction-history-list .lists {
+	display: flex;
+	padding: 20px ;
+	margin: 10px ;
+	color: white ;
+	background-color: #383838;
+	border: 1px #ccc solid;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.lists-details{
+	/*color: #1c39bb ;*/
+}

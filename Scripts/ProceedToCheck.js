@@ -10,6 +10,7 @@ let cartItems;
 
 setVariables();
  
+
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
 
@@ -23,15 +24,19 @@ function personCheck(){
     let postal = document.getElementById("postal").value;
 
     if(pName == "" || mail == "" || street == ""  || suburb == "" || city == "" || postal == ""){
-        alert("Please enter all fields");
+        alert("Please enter all fields in Dilivery Address section");
         return false;
     }
-    else{return true;}
+    else 
+        return true;
 
 }
 
 function setVariables() {
     
+    radiobtn = document.getElementById("payment_PaymentMethod_credit-card");
+    radiobtn.checked = true;
+
     const promises = new Promise( resolve =>{  
         $.getJSON(cartUrl , {userID : user.UserID} , function(results){
             console.log("in promise3"); 
@@ -60,8 +65,6 @@ function setVariables() {
     });
 }
 
-
-
 function varifyAndProceed() {
     if (user == null) {
         alert("Please sign in");
@@ -73,11 +76,8 @@ function varifyAndProceed() {
         alert("Your Balance is insufficient");
         return;
     }
+    if(!personCheck()) return;
 
-    if(cartItems.length === 0){
-        alert("No items in cart to checkout");
-        return;
-    }
 
     // Pop up to confirm if you wanna buy
     document.querySelector('.buy-popup').style.display = 'flex';
@@ -91,7 +91,6 @@ function varifyAndProceed() {
     //Upon clicking buy on the pop up
     document.getElementById("Buy-btn").addEventListener('click', function () {
          console.log('about to buy');
-
          const promise = new Promise((resolve )=>{
             resolve(proceedToBuy());
          });
@@ -110,8 +109,7 @@ function varifyAndProceed() {
 
 }
 
-function proceedToBuy() {
-    if(!personCheck) return;
+function proceedToBuy() {   
     const buyer = user.UserID;
     let transDate = new Date();
     let dd = String(transDate.getDate()).padStart(2, '0');
@@ -133,14 +131,14 @@ function proceedToBuy() {
             let Quant = parseInt(cartItems[i].Current_Quantity) - 1;
             console.log(transDate, prodID, buyer, balance, Quant);
 
-            ProcessElement(prodID,buyer,transDate,transDate,balance,Quant);
+            ProcessElement(prodID,buyer,transDate,balance,Quant);
         }
         
     }
     
 }
 
-function ProcessElement(prodID,buyer,transDate,transDate,balance,Quant){
+function ProcessElement(prodID,buyer,transDate,balance,Quant){
 
     $.getJSON(buyURL, {
         ProductID: prodID,

@@ -41,3 +41,9 @@
     height: 100%;
 }
 
+#emptyCart{
+    cursor: pointer;
+    margin-top: 15%;
+    width: 50%;
+}
+

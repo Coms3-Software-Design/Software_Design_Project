@@ -1,18 +1,13 @@
-
-/*
-TODO:
-    Give the icons IDs for reference
-    add functionality to the icon to increase and decrease amount of items in cart
-*/  
-//location.reload();
-// fetches cart items
-
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
 const cartPostUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPPostCart.php";
 const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/';
 
 let loggedUser = JSON.parse(localStorage.getItem('user'));
 console.log(loggedUser);
+
+document.getElementById("emptyCart").addEventListener('click',()=>{
+    window.location.href = "Homepage.html";
+})
 
 let populate = function(){
     
@@ -21,6 +16,13 @@ let populate = function(){
         let priceSum = 0;
         let htmlItems = ``;
         console.log(results);
+        if(results.length === 0){
+            $("#cartBody").empty();
+            return;
+        }
+
+       document.getElementById("emptyCart").style.display = 'none';
+
 
        // sessionStorage.setItem("cart" , JSON.stringify(results));
 
@@ -87,23 +89,23 @@ function update(ID , num){
     let promise = new Promise(resolve=>{
         $.getJSON(cartUrl , {userID : loggedUser.UserID} , results => {
             results.forEach(prod => {
-                if(parseInt(prod.Product_ID) === parseInt(ID)){
+                if(parseInt(prod.Product_ID) === parseInt(ID)  && parseInt(prod.Amount)+num > -1){
                     $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  ID , amount : parseInt(prod.Amount)+num}, ans => {
-                        resolve( [num , prod.Amount]);  
+                        populate();
                     });
                 }
-              
+                populate();
+                resolve(); 
             });
+            //resolve();
         });
-
+       
     });
 
-    promise.then(answer=>{
+    promise.then(()=>{
         populate();
     });
     
- 
-
 }
 populate();
 
