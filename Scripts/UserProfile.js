@@ -47,6 +47,41 @@ document.getElementById('change').addEventListener('click', function(){
     btnPass.style.display="none";
     form.style.display="block";
 
+    
+       
+
+});
+
+document.getElementById('btn-update').addEventListener('click', function(e){
+    e.preventDefault();
+    
+    let database = "12345"
+    let currentpass = document.getElementById('current-pass').value;
+    let newpass = document.getElementById('new-pass').value;
+    let confirmpass = document.getElementById('confirm-pass').value;
+
+   if(currentpass=="" && newpass=="" && confirmpass==""){
+   alert("Password not changed");
+   btnPass.style.display="block";
+   form.style.display="none";
+   }
+   else if(currentpass!="" && newpass!="" && confirmpass!=""){
+
+       if(newpass != confirmpass)
+       alert("Password does not match")
+
+       else if(newpass == confirmpass && currentpass==database){
+            alert("Password successfully Changed");
+       }
+       else{
+           alert(" you have entered an incorrect password")
+       }
+       
+   }else{
+       alert("All fields required");
+   }
+
+
 
 });
 
@@ -70,16 +105,35 @@ document.getElementById('change').addEventListener('click', function(){
                                 document.getElementById(`${id}`).style.display = "block";
                                 document. getElementById(`${id}form`).style.display="none";
                                 if(document.getElementById(`${id}Change-input`).value == "") alert("No name entered");
+
                                 if(document.getElementById(`${id}Change-input`).value == params[i]) alert("name not change");
-                                else if(document.getElementById(`${id}Change-input`).value != "") alert("Name changed");
+
+                                else if(document.getElementById(`${id}Change-input`).value != ""){
+
+                                    if(i==2 && document.getElementById(`${id}Change-input`).value != params[i]){
+                                        var email = document.getElementById(`${id}Change-input`).value;
+                                        var patterns = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                                        var message =  document.getElementById('Emailtext');
+                                        if(email.match(patterns))
+                                        {
+                                             alert("Valid Email Address"); 
+                                        }
+                                        else
+                                        {
+                                            alert("Invalid email");
+                                        }
+                                    }
+                                } 
                 
                                 
                             }
                     
                         }
                     });
-                }).join('');                
-               
+                }).join('');     
+
+//When user presses update password
+            
 
 
 
