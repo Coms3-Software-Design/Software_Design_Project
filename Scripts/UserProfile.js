@@ -102,13 +102,14 @@ document.getElementById('change').addEventListener('click', function(){
 
     document.getElementById('btn-editN').addEventListener('click', function(){
         timeClicked++;
+        document.getElementById('nameChange-input').value = Name;
         if(timeClicked>0){
             if(timeClicked%2 != 0){
                 document.getElementById('Name').style.display = "none";
-                document. getElementById('xform').style.display="block"; 
-                
+                document. getElementById('xform').style.display="block";
             }
             else{
+            
                 document.getElementById('Name').style.display = "block";
                 document. getElementById('xform').style.display="none";
             }
