@@ -1,31 +1,24 @@
-let user = JSON.parse(localStorage.getItem('user'));
-console.log(user);
+let users;
+users = JSON.parse(localStorage.getItem('user'));
+console.log(users);
 
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
-const updateProfURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdateProfile.php'
-let CHANGEPASS = false;
+const updateProfURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdateProfile.php';
+const returnUserURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReturnUser.php';
 
-var UserId = user.UserID;
-var Name = user.Name;
-var Surname = user.Surname;
-var UserName = user.UserName;
-var Password = user.Password;
-var ContactDetails = user.ContactNum;
-var DateOfBirth = user.D_O_B;
-var DateCreated = user.Date_Created;
-var Gender = user.Gender;
-var Bio = user.Bio;
-var Balance = user.Balance;
-var Profilepic = user.Profile_pic;
 
-console.log(Profilepic);
-//If there is no Bio.
-if(Bio==null)
-    Bio="EMPTY!!!";
-
-//If no Profile pic, a default profile picture is set
-if(Profilepic!=null)
-$('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
+var UserId = users.UserID;
+var Name = users.Name;
+var Surname = users.Surname;
+var UserName = users.UserName;
+var Password = users.Password;
+var ContactDetails = users.ContactNum;
+var DateOfBirth = users.D_O_B;
+var DateCreated = users.Date_Created;
+var Gender = users.Gender;
+var Bio = users.Bio;
+var Balance = users.Balance;
+var Profilepic = users.Profile_pic;
 
 $('#Name').html(`<span>${Name}</span>`);
 $('#Surname').html(`<span>${Surname}</span>`);
@@ -36,6 +29,16 @@ $('#Bio').html(`<span>${Bio}</span>`);
 $('#Balance').html(`<span>${"R "}${Balance}</span>`);
 $('#Date').html(`<Span>${DateCreated}</span>`);
 
+console.log(Profilepic);
+//If there is no Bio.
+if(Bio==null)
+    Bio="EMPTY!!!";
+
+//If no Profile pic, a default profile picture is set
+if(Profilepic!=null)
+$('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
+
+
 
 //When a user presses Edit profile, edit fields appear.
 
@@ -44,7 +47,7 @@ $('#Date').html(`<Span>${DateCreated}</span>`);
 //when user clicks on change password
 document.getElementById('change').addEventListener('click', function(){
 
-    CHANGEPASS = true;
+   
     let btnPass = document.getElementById('btn-changePass');
     let form = document.getElementById('changePass');
 
@@ -74,7 +77,7 @@ document.getElementById('btn-update').addEventListener('click', function(e){
        if(newpass != confirmpass)
        alert("Password does not match")
 
-       else if(newpass == confirmpass && currentpass==database){
+       else if(newpass == confirmpass && matched()){
 
             alert("Password successfully Changed");
 
@@ -91,11 +94,42 @@ document.getElementById('btn-update').addEventListener('click', function(e){
 
 });
 
+function matched(password){
+return true;
+
+}
+
+populate();
+Repopulate();
+function populate(){
+
+    let promise = new Promise(resolve=>{
+        $.getJSON(returnUserURL , {username : users.UserName}, (results) => {
+           // localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(results));
+            users = JSON.parse(localStorage.getItem('user'));
+            resolve(results);
+        })
+    });
+
+    promise.then((results)=>{
+        console.log(results);
+        
+        Repopulate();
+    })
 
     
-    
+}
+
+function Repopulate(){  
+
+
+    let params = [Name, Surname, ContactDetails, Bio];   
+
+    let user = JSON.parse(localStorage.getItem('user'));
+    users = JSON.parse(localStorage.getItem('user'));
    let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
-   let params = [Name, Surname, ContactDetails, Bio];
+   
                 IDs.map((id,i) => {
                     if(id == 'Bio') return;
                     var timeClicked = 0;
@@ -113,9 +147,8 @@ document.getElementById('btn-update').addEventListener('click', function(e){
                             
                                 document.getElementById(`${id}`).style.display = "block";
                                 document. getElementById(`${id}form`).style.display="none";
-                                if(document.getElementById(`${id}Change-input`).value == "") alert("No name entered");
-
-                                if(document.getElementById(`${id}Change-input`).value == params[i]) alert("name not change");
+                    
+                                if(document.getElementById(`${id}Change-input`).value == params[i]) console.log("name not change");
 
                                 else if(document.getElementById(`${id}Change-input`).value != ""){
 
@@ -125,8 +158,9 @@ document.getElementById('btn-update').addEventListener('click', function(e){
                                         var message =  document.getElementById('Emailtext');
                                         if(email.match(patterns))
                                         {
-                                            updateProf(params[0] , params[1] , email, params[3] , 12345 );
-                                             alert("Valid Email Address");     
+                                            //updateProf(params[0] , params[1] , email, params[3] , 12345 );
+                                            params[2] = document.getElementById(`${id}Change-input`).value;
+                                            alert("Valid Email Address");     
                                         }
                                         else
                                         {
@@ -134,7 +168,23 @@ document.getElementById('btn-update').addEventListener('click', function(e){
                                         }
                                     }
 
-                                    
+                                    else{
+                                        item = document.getElementById(`${id}Change-input`).value;
+                                        params[i] = item;
+                                    }
+
+                                    updateProf(params[0] , params[1] , params[2], params[3] , 12345 ,user);
+
+                                    $('#Name').html(`<span>${params[0]}</span>`);
+                                    $('#Surname').html(`<span>${params[1]}</span>`);
+                                    $('#User').html(`<span>${"INFORMATION "}</span>`);
+                                    $('#Email').html(`<span>${params[2]}</span>`);
+                                    $('#Username').html(`<span>${UserName}</span>`);
+                                    $('#Bio').html(`<span>${params[3]}</span>`);
+                                    $('#Balance').html(`<span>${"R "}${Balance}</span>`);
+                                    $('#Date').html(`<Span>${DateCreated}</span>`);
+
+                                    populate();
                                 } 
                 
                                 
@@ -146,7 +196,9 @@ document.getElementById('btn-update').addEventListener('click', function(e){
 
 //When user presses update password
 
-function updateProf(Name , Surname , PNum , Bio , Password){
+} 
+
+function updateProf(Name , Surname , PNum , Bio , Password , user){
 
     console.log(Name , Surname , PNum , Bio , Password ,user.UserID);
 
@@ -160,6 +212,7 @@ function updateProf(Name , Surname , PNum , Bio , Password){
      } , result => {
         console.log('inside');
         console.log(result);
+        populate();
      });
      
    
