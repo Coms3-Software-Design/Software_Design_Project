@@ -138,7 +138,8 @@ div nav a:hover {
 {
   display: none;
 }
-.fa:hover
+
+.pen:hover
 {
  transform: scale(1.2);
 }

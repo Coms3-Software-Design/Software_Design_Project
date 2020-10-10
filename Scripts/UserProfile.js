@@ -66,10 +66,24 @@ document.getElementById('btn-editp').addEventListener('click', function(){
     btnUpdate.style.display="none";
     btnEdit.style.display="block";
     form.style.display="none";
+    document.getElementById('Name').style.display = "block";
+    document. getElementById('xform').style.display="none"; 
 
     
     });
+
+    // let timeClicked = 0;
+    // document.getElementById('btn-editN').addEventListener('click', function(){
+    //     timeClicked++;
+    // });
+    // if(timeClicked>0){
+    //     if(timeClicked%2=!0){}
+
+    // }
+
+    
 });
+
 
 
 //when user clicks on change password
@@ -80,4 +94,26 @@ document.getElementById('change').addEventListener('click', function(){
     btnPass.style.display="none";
     form.style.display="block";
 
+
 });
+
+    
+    var timeClicked = 0;
+
+    document.getElementById('btn-editN').addEventListener('click', function(){
+        timeClicked++;
+        if(timeClicked>0){
+            if(timeClicked%2 != 0){
+                document.getElementById('Name').style.display = "none";
+                document. getElementById('xform').style.display="block"; 
+                
+            }
+            else{
+                document.getElementById('Name').style.display = "block";
+                document. getElementById('xform').style.display="none";
+            }
+    
+        }
+    });
+    
+    
