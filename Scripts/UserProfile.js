@@ -71,7 +71,9 @@ document.getElementById('btn-update').addEventListener('click', function(e){
        alert("Password does not match")
 
        else if(newpass == confirmpass && currentpass==database){
+           
             alert("Password successfully Changed");
+
        }
        else{
            alert(" you have entered an incorrect password")
