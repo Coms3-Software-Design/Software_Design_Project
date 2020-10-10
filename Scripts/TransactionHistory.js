@@ -29,17 +29,23 @@ let transURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPTransHistory.p
 					${results.map(function(transaction){
 				return `
 					<div class="lists">
+
 						<div class="lists-details">
 							<h3>${transaction.Product_Name}</h3>
 							<h6>${transaction.Transaction_Date}</h6>
 						</div>
+					
+
 					<div class="category">
 							<div class="category-color">Bought from: </div>
 							<h5>${transaction.Name}</h5>
 						</div>
+					
+					
 					<div class="price-tag">
 						 <h2>R ${transaction.Product_Price}</h2>
 					</div>
+
 				</div>
 					`
 					}).join('')}`;
