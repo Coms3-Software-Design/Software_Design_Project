@@ -112,6 +112,9 @@ document.getElementById('change').addEventListener('click', function(){
             
                 document.getElementById('Name').style.display = "block";
                 document. getElementById('xform').style.display="none";
+                if(document.getElementById('nameChange-input').value = null){
+                    alert("all");
+                }
             }
     
         }
