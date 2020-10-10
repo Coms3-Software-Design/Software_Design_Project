@@ -33,38 +33,7 @@ div nav a:hover {
   background-color: darkcyan;
 }
 
-
-#btn-editN
-{
-  display: none;
-}
-#btn-editS
-{
-  display: none;
-}
-#btn-editE
-{
-  display: none;
-}
-#btn-editB
-{
-  display: none;
-}
-#btn-changePass
-{
-  display: none;
-}
 #changePass
-{
-  display: none;
-
-}
-#changePass
-{
-  display: none;
-}
-
-#btn-updatep
 {
   display: none;
 }
@@ -86,7 +55,7 @@ div nav a:hover {
 
 .formName input
 {
-  width: 100%;
+  width: 150%;
   height: 100%;
   color: #595f5e;
   padding-top: 10px;
@@ -142,5 +111,18 @@ div nav a:hover {
 .pen:hover
 {
  transform: scale(1.2);
+}
+.Surnameform
+{
+  display: none;
+}
+.Nameform
+{
+  display: none;
+}
+
+.Emailform
+{
+  display: none;
 }
 

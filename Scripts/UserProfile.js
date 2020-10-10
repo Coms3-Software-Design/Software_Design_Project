@@ -36,53 +36,6 @@ $('#Date').html(`<Span>${DateCreated}</span>`);
 
 
 //When a user presses Edit profile, edit fields appear.
-document.getElementById('btn-editp').addEventListener('click', function(){
-
-    //alert("Clicked");
-    var btnN = document.getElementById('btn-editN');
-    let btnS = document.getElementById('btn-editS');
-    let btnE = document.getElementById('btn-editE');
-    let btnB = document.getElementById('btn-editB');
-    let btnPass = document.getElementById('btn-changePass');
-    let btnUpdate = document.getElementById('btn-updatep');
-    let btnEdit = document.getElementById('btn-editp');
-    let form = document.getElementById('changePass');
-    
-    btnN.style.display="block";
-    btnS.style.display="block";
-    btnE.style.display="block";
-    btnB.style.display="block";
-    btnPass.style.display="block";
-    btnUpdate.style.display="block";
-    btnEdit.style.display="none";
-    
-
-    document.getElementById('btn-updatep').addEventListener('click', function(){
-        btnN.style.display="none";
-    btnS.style.display="none";
-    btnE.style.display="none";
-    btnB.style.display="none";
-    btnPass.style.display="none";
-    btnUpdate.style.display="none";
-    btnEdit.style.display="block";
-    form.style.display="none";
-    document.getElementById('Name').style.display = "block";
-    document. getElementById('xform').style.display="none"; 
-
-    
-    });
-
-    // let timeClicked = 0;
-    // document.getElementById('btn-editN').addEventListener('click', function(){
-    //     timeClicked++;
-    // });
-    // if(timeClicked>0){
-    //     if(timeClicked%2=!0){}
-
-    // }
-
-    
-});
 
 
 
@@ -99,25 +52,36 @@ document.getElementById('change').addEventListener('click', function(){
 
     
     var timeClicked = 0;
+   let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
+   let params = [Name, Surname, ContactDetails, Bio];
+                IDs.map((id,i) => {
+                    document.getElementById(`btn-edit${id}`).addEventListener('click', function(){
+                        timeClicked++;
+                        
+                        if(timeClicked>0){
+                            if(timeClicked%2 != 0){
+                                document.getElementById(`${id}Change-input`).value = params[i];
+                                document.getElementById(`${id}`).style.display = "none";
+                                document. getElementById(`${id}form`).style.display="block";
+                         
+                            }
+                            else{
+                            
+                                document.getElementById(`${id}`).style.display = "block";
+                                document. getElementById(`${id}form`).style.display="none";
+                                if(document.getElementById(`${id}Change-input`).value == "") alert("No name entered");
+                                if(document.getElementById(`${id}Change-input`).value == params[i]) alert("name not change");
+                                else if(document.getElementById(`${id}Change-input`).value != "") alert("Name changed");
+                
+                                
+                            }
+                    
+                        }
+                    });
+                }).join('');                
+               
 
-    document.getElementById('btn-editN').addEventListener('click', function(){
-        timeClicked++;
-        document.getElementById('nameChange-input').value = Name;
-        if(timeClicked>0){
-            if(timeClicked%2 != 0){
-                document.getElementById('Name').style.display = "none";
-                document. getElementById('xform').style.display="block";
-            }
-            else{
-            
-                document.getElementById('Name').style.display = "block";
-                document. getElementById('xform').style.display="none";
-                if(document.getElementById('nameChange-input').value = null){
-                    alert("all");
-                }
-            }
-    
-        }
-    });
+
+
     
     
