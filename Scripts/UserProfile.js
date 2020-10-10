@@ -1,6 +1,6 @@
 let users;
 users = JSON.parse(localStorage.getItem('user'));
-console.log(users);
+//console.log(users);
 
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
 const updateProfURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdateProfile.php';
@@ -100,34 +100,37 @@ return true;
 }
 
 populate();
-Repopulate();
-function populate(){
-
+Repopulate(users);
+function populate(userd){
+    let user = userd
     let promise = new Promise(resolve=>{
         $.getJSON(returnUserURL , {username : users.UserName}, (results) => {
-           // localStorage.removeItem('user');
-            localStorage.setItem('user', JSON.stringify(results));
+            console.log(results[0]);
+            localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(results[0]));
             users = JSON.parse(localStorage.getItem('user'));
-            resolve(results);
+            resolve(users);
         })
     });
 
     promise.then((results)=>{
-        console.log(results);
         
-        Repopulate();
+        //localStorage.setItem('user', JSON.stringify(results));
+        users = JSON.parse(localStorage.getItem('user'));
+        console.log(users , 'WE ARE TRYING THINGD OUT');
+        Repopulate(results);
     })
 
     
 }
 
-function Repopulate(){  
+function Repopulate(user){  
 
 
     let params = [Name, Surname, ContactDetails, Bio];   
 
-    let user = JSON.parse(localStorage.getItem('user'));
-    users = JSON.parse(localStorage.getItem('user'));
+    //let user = JSON.parse(localStorage.getItem('user'));
+   // users = JSON.parse(localStorage.getItem('user'));
    let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
    
                 IDs.map((id,i) => {
@@ -184,7 +187,8 @@ function Repopulate(){
                                     $('#Balance').html(`<span>${"R "}${Balance}</span>`);
                                     $('#Date').html(`<Span>${DateCreated}</span>`);
 
-                                    populate();
+                                    
+                                    populate(user);
                                 } 
                 
                                 
