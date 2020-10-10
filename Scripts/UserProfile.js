@@ -61,9 +61,13 @@ document.getElementById('btn-update').addEventListener('click', function(e){
     let confirmpass = document.getElementById('confirm-pass').value;
 
    if(currentpass=="" && newpass=="" && confirmpass==""){
+    let btnPass = document.getElementById('btn-changePass');
+    let form = document.getElementById('changePass');
+    
    alert("Password not changed");
    btnPass.style.display="block";
    form.style.display="none";
+
    }
    else if(currentpass!="" && newpass!="" && confirmpass!=""){
 
@@ -71,7 +75,7 @@ document.getElementById('btn-update').addEventListener('click', function(e){
        alert("Password does not match")
 
        else if(newpass == confirmpass && currentpass==database){
-           
+
             alert("Password successfully Changed");
 
        }
