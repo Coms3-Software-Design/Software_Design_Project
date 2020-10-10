@@ -1,9 +1,9 @@
 body {
-  background: #ccc;
+  background: white;
 }
 
 div nav a:hover {
-  background-color: grey;
+  background-color: white;
 }
 
 #bg-img {
@@ -14,18 +14,115 @@ div nav a:hover {
 }
 #About
 {
-  margin-top: -200px;
+ margin-top: -200px;
 }
-
-.Abt
-{
-  margin-top: -200px;
-}
-
 #About span {
   padding: 10px 20px 10px 20px;
 }
 
 #About hr {
-  border-width: 3px;
+  border-width: 5px;
 }
+
+#btn-editp:hover
+{
+  background-color: darkcyan;
+}
+#btn-updatep:hover
+{
+  background-color: darkcyan;
+}
+
+#changePass
+{
+  display: none;
+}
+
+#change:hover
+{
+  transform: scale(1.04);
+}
+
+.formName
+{
+  width: 100%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  top: -10px;
+
+}
+
+.formName input
+{
+  width: 130%;
+  height: 100%;
+  color: #595f5e;
+  padding-top: 10px;
+  border: none;
+  outline: none;
+}
+.formName label
+{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+}
+.formName label::after
+{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  left: 0px;
+  bottom: -1px;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+.content-name
+{
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: transform all 0.3s ease;
+}
+.formName input:focus + .label-name .content-name
+.formName input:valid + .label-name .content-name
+{
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.formName input:focus + .label-name::after, .formName input:valid + .label-name::after
+{
+  transform: translateX(0%);
+}
+.xform
+{
+  display: none;
+}
+
+.pen:hover
+{
+ transform: scale(1.2);
+}
+.Surnameform
+{
+  display: none;
+}
+.Nameform
+{
+  display: none;
+}
+
+.Emailform
+{
+  display: none;
+}
+
