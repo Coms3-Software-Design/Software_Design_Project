@@ -13,6 +13,8 @@ let goods_service = document.getElementById('prod-opt').value;
 let categories = document.getElementById('cat-opt').value;
 
 url = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/creatProd.php";
+url_image_upload = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/upload.php";
+
 console.log(goods_service);
 
 $.getJSON(url,
@@ -49,9 +51,82 @@ $.getJSON(url,
      //   $("#response").fadeIn().html('<span>All fields required</span>');
      //   setTimeout(function(){ $("#response").fadeOut('slow');}, 3000);
      //   return;
-
+       
       }
 
      );
-
+     postImageData();
 });
+
+//////////////////////////////////////////////////////////////////
+
+function postImageData(){
+  var img = document.getElementById('add-picture')
+  var myBase64EncodedData  = getBase64Image(img);
+                  $.ajax({
+                      type: 'POST',
+                      url: url_image_upload,
+                      data: { 
+                          'imagedata': myBase64EncodedData 
+                            },
+                      success: function(msg){
+                          console.log('posted' + msg);
+                      }
+                  });
+              }
+
+
+//////////////////////////////////////////////////////////////////
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    var src = reader.result;
+    var variable;
+    
+    //document.getElementById("dataUrl").innerText = src;
+    
+    console.log("This is the image : ",input.files);
+    reader.onload = function (e) {
+      $('#add-picture')
+        .attr('src', e.target.result);
+        variable = e.target.result;
+        console.log("The base64",variable);
+        //url_path = bitmap.image.toString(variable);
+        var image = new Image();
+        image.src = variable;
+        url_path = image.src;
+        var decodedString = atob( e.target.result);
+        console.log(decodedString); 
+        // Outputs: "Hello World!
+        //url_path = input.files[0]['type'];//.split('/');
+        //console.log(image);
+    };
+      
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////
+
+function getBase64Image(img) {
+  // Create an empty canvas element
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Copy the image contents to the canvas
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  // Get the data-URL formatted image
+  // Firefox supports PNG and JPEG. You could check img.src to
+  // guess the original format, but be aware the using "image/jpg"
+  // will re-encode the image.
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+
