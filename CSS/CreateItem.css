@@ -20,7 +20,7 @@ body {
 
 #response{
   text-align: center;
-  color: red;
+  color: rgb(80, 59, 59);
 }
 
 /* positions the upload image card to the centre */
