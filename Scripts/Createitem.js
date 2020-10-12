@@ -67,7 +67,7 @@ function postImageData(){
                       type: 'POST',
                       url: url_image_upload,
                       data: { 
-                          'imagedata': myBase64EncodedData 
+                          'image': myBase64EncodedData 
                             },
                       success: function(msg){
                           console.log('posted' + msg);
