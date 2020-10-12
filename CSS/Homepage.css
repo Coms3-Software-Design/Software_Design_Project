@@ -9,6 +9,7 @@
 body{
   text-decoration: none;
   font-family: montserrat , sans-serif;
+  background-color: #ebebeb;
 }
 
 
@@ -204,18 +205,23 @@ nav ul li:hover .profile-SubMenu li a:hover{
     background: linear-gradient(rgba(0,0,0,.3),
         rgba(0,0,0,.4)),
         url('./Images/iphone.jpg');
+        background-position: center;
+        background-size: cover;
 }
 
 .carousel-image-2{
     background: linear-gradient(rgba(0,0,0,.3),
         rgba(0,0,0,.4)),
         url('./Images/ca_shield.png');
+        background-position: center;
+        background-size: cover;
 }
 
 .carousel-image-3{
     background: linear-gradient(rgba(0,0,0,.3),
         rgba(0,0,0,.4)),
         url('./Images/playground.jpg');
+        background-size: cover;
 }
 
 .title-color{

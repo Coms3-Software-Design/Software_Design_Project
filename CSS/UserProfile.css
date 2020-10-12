@@ -2,10 +2,6 @@ body {
   background: white;
 }
 
-div nav a:hover {
-  background-color: white;
-}
-
 #bg-img {
   background: url("../CSS/Images/playground.jpg");
   background-size: 100%;

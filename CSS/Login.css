@@ -5,6 +5,16 @@ body {
   background-color: #ebebeb;
 }
 
+#bg-img {
+  background: url("../CSS/Images/3d3.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom;
+}
+
 #response{
   text-align: center;
   color: red;
@@ -15,7 +25,7 @@ body {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 30px; /* Added */
-  margin-top: 60px;
+  margin-top: -400px;
 }
 
   @media screen and (min-width: 997px) {
@@ -94,19 +104,12 @@ body {
         display: -ms-flexbox;
         display: flex; } }
     
-
+.Logo{
+  margin-right: 60%;
+}
 
 
     /* -------- */
-    
-
-    .logo-view {
-      margin-top: 5%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-    }
 
 
     /* ----------------------------------------- */
