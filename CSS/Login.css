@@ -104,7 +104,9 @@ body {
         display: -ms-flexbox;
         display: flex; } }
     
-
+.Logo{
+  margin-right: 60%;
+}
 
 
     /* -------- */
