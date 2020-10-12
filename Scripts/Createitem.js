@@ -71,6 +71,8 @@ function postImageData(){
                             },
                       success: function(msg){
                           console.log('posted' + msg);
+                          alert("You have successfully created a product");
+                          window.location.href = "Homepage.html";
                       }
                   });
               }
@@ -81,26 +83,11 @@ function postImageData(){
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
-    var src = reader.result;
-    var variable;
-    
-    //document.getElementById("dataUrl").innerText = src;
-    
+        
     console.log("This is the image : ",input.files);
     reader.onload = function (e) {
       $('#add-picture')
         .attr('src', e.target.result);
-        variable = e.target.result;
-        console.log("The base64",variable);
-        //url_path = bitmap.image.toString(variable);
-        var image = new Image();
-        image.src = variable;
-        url_path = image.src;
-        var decodedString = atob( e.target.result);
-        console.log(decodedString); 
-        // Outputs: "Hello World!
-        //url_path = input.files[0]['type'];//.split('/');
-        //console.log(image);
     };
       
     reader.readAsDataURL(input.files[0]);
