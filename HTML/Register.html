@@ -93,20 +93,15 @@
 							</div>
 				
 							<div class="input_field">
-								<label class="sr-only" >date</label>
-								<input type="text" name="datecreated" id="datecreated" class="form-control" placeholder="date" required>
-							</div>
-				
-							<div class="input_field">
 								<label  class="sr-only">Phone Number</label>
-								<input type='text' name="contactnum" id = "contactnum" min="1" max="10"  step="2" ondrop="return false;" onpast="return false;" onkeypress="return event.charCode>=45 && event.charCode<=57" class="form-control" placeholder="Phone Number" required/>
+								<input type='text' name="contactnum" id = "contactnum" min="1" max="10"  step="2" ondrop="return false;" onpaste="return false;" class="form-control" placeholder="Email Address" required/>
 							</div>
 				
 							<label class="radio-inline">
-								<input type="radio" class="checked_radio" id="male" name="gender" value="male" >Male
+								<input type="radio" class="checked_radio" id="male" name="gender" value="male"  checked>Male
 							  </label>
 							  <label class="radio-inline" >
-								<input type="radio"  class="checked_radio" id="female" name="gender" value="female">Female
+								<input type="radio"  class="checked_radio" id="female" name="gender" value="female" >Female
 							</label>
 				
 				
@@ -116,18 +111,18 @@
 							</div>
 				
 							
-
-							<button class="btn btn-primary" type="submit" id="submit" name="submit">Sign Up</button>
+							<div id="response"></div>
+							<button class="btn btn-primary"  id="submit" >Sign Up</button>
 				
 							<div>
-								<!-- <p class="Signing_up"> already a member  <a href="Login.html"  class="li-modal"  data-dismiss="modal">  Sign In </a> </p> -->
 								<p class="Signing_up">Already a member <a href="Login.html" >Sign In</a></p>
 							</div>
 				
-							<div id="response"></div>
+							
 				
 							<p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
 						</form>
+						
                         
                     </div>
                 </div>
@@ -140,7 +135,6 @@
 
 
 	<script src="../Scripts/Register.js"></script>
-	<script src="../Scripts/Numeric.js"></script>
 
 
 </body>
