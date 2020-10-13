@@ -134,20 +134,22 @@ function Repopulate(user){
    let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
    
                 IDs.map((id,i) => {
-                    if(id == 'Bio') return;
+                
                     var timeClicked = 0;
                     document.getElementById(`btn-edit${id}`).addEventListener('click', function(){
                         timeClicked++;
                         
                         if(timeClicked>0){
                             if(timeClicked%2 != 0){
-                                document.getElementById(`${id}Change-input`).value = params[i];
+                                document.getElementById(`${id}Change-input`).value = params[i] ;
                                 document.getElementById(`${id}`).style.display = "none";
                                 document. getElementById(`${id}form`).style.display="block";
+                               
                          
                             }
                             else{
                             
+                               
                                 document.getElementById(`${id}`).style.display = "block";
                                 document. getElementById(`${id}form`).style.display="none";
                     
