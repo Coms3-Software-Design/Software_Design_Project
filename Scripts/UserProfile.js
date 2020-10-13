@@ -37,7 +37,7 @@ if(Bio==null)
 
 //If no Profile pic, a default profile picture is set
 if(Profilepic!=null)
-$('#Pic').html(`<img src="${picURL}${UserId}.jpg" id="Pic" width="250" height="250">`);
+$('#Pic').html(`<img src="${picURL}${UserId}.jpg" class= "rounded-circle ml-5" id="Pic" width="250" height="250">`);
 
 
 
@@ -65,8 +65,6 @@ document.getElementById('btn-update').addEventListener('click', function(e){
     let confirmpass = document.getElementById('confirmpass').value;
 
    if(currentpass=="" && newpass=="" && confirmpass==""){
-    let btnPass = document.getElementById('btn-changePass');
-    let form = document.getElementById('changePass');
     defaultf();
     
    alert("Password not changed");
@@ -158,7 +156,7 @@ function Repopulate(user){
                         
                         if(timeClicked>0){
                             if(timeClicked%2 != 0){
-                                //document.getElementById(`${id}Change-input`).value = params[i] ;
+                                document.getElementById(`${id}Change-input`).value = params[i] ;
                                 document.getElementById(`${id}`).style.display = "none";
                                 document. getElementById(`${id}form`).style.display="block";
                                 //alert(timeClicked);
@@ -193,6 +191,7 @@ function Repopulate(user){
                                     else{
                                         item = document.getElementById(`${id}Change-input`).value;
                                         params[i] = item;
+                                        
                                     }
 
                                     updateProf(params[0] , params[1] , params[2], params[3] , 12345 ,user);
