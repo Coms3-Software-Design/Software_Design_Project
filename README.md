@@ -6,7 +6,7 @@
 
 [![codecov](https://codecov.io/gh/Coms3-Software-Design/software_design_project/branch/origin/master/graph/badge.svg)](https://codecov.io/gh/Coms3-Software-Design/software_design_project)
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Coms3-Software-Design/software_design_project?logo=GitHub&style=flat-square)]()
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Coms3-Software-Design/software_design_project?logo=GitHub&style=flat-square)](https://github.com/Coms3-Software-Design/software_design_project/releases/tag/v2.0)
 
 
 ## WE START WITH THE DIAGRAMS THAT DESCRIBE THE SYSTEM WE BUILDING
