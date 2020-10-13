@@ -3,27 +3,57 @@
 
 <head>
 	<title>Transactions</title>
+		
+		<link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
+        crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="../CSS/TransactionHistory.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-	</script>
+	<link rel="stylesheet" type="text/css" href="../CSS/Homepage.css">
+	
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
+	<nav id="navBar" class="site-header sticky-top py-1">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="Logo"> MarketPlace </label>
+        <ul class="nav-items">
+            <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i>
+                    Home</a></li>
+        </ul>
+    </nav>
+
 	<div class="transaction-container">
 		<div class="transaction-profile">
-
+			
 			<div class="transaction-profile-image">
-
+				
 				<div class="transaction-profile-image-info">
 					<img src="../CSS/Images/iphone.jpg">
-
+				
 					<div class="transaction-profile-names">
-						<h2 id='transaction-profile-username'>Username</h2>
-						<h4 id='transaction-profile-names'>Name And Surname</h4>
-					</div>
+							<h2 id='transaction-profile-username'>Username</h2>
+							<h4 id='transaction-profile-names'>Name And Surname</h4>
+						</div>
 				</div>
 
 				<div class="transaction-profile-balance">
@@ -31,29 +61,29 @@
 					<h2 id='transaction-profile-balance' class="price">R 10 562</h2>
 				</div>
 			</div>
-
-			<div class="transaction-profile-links">
+			
+			<!-- <div class="transaction-profile-links">
 				<ul>
 					<li><a href="#">History</a></li>
 					<li><a href="#">Payments</a></li>
 					<li><a href="#">Accounts</a></li>
 				</ul>
-			</div>
-
+			</div> -->
+		
 		</div>
 
 		<div class="transaction-history">
-
+			
 			<h1>Transactions</h1>
 
+				<!-- <li>
 			<ul>
-				<li>
 					<a href="#">History</a>
-				</li>
-				<li>
+				</li> -->
+				<!-- <li>
 					<a href="#">Transaction</a>
-				</li>
 			</ul>
+				</li> -->
 
 			<div id="transaction-history-list" class="transaction-history-list">
 				<!-- ALERT-->
@@ -65,8 +95,14 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
 	<script type="text/javascript" src="../Scripts/classes/TransactionHistory.js"></script>
 	<script type="text/javascript" src="../Scripts/TransactionHistory.js"></script>
 </body>
-
 </html>

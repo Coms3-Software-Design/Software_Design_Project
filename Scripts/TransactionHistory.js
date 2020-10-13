@@ -23,8 +23,8 @@ function getTransactionInfo() {
 						</div>
 					
 
-					<div class="category">
-							<div class="category-color">Bought from: </div>
+					<div class="buyer">
+							<div class="buyer-color">Bought from: </div>
 							<h5>${transaction.Name}</h5>
 						</div>
 					
