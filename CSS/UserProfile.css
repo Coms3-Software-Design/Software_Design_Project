@@ -110,6 +110,10 @@ body {
 .Nameform {
   display: none;
 }
+.Bioform
+{
+  display: none;
+}
 
 .Emailform {
   display: none;
