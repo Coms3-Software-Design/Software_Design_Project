@@ -293,7 +293,7 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function()
                               '</div>';
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
-            var element = document.getElementById("reviews");
+            var element = document.getElementById("reviews"); 
             element.appendChild(reviewBlock);
         }
 
