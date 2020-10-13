@@ -1,236 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width , initial-scale=1.0">
-    <title>My Profile</title>
 
-    <!-- <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css"> -->
-    <!-- <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href ="../CSS/UserProfile.css">
-    <link rel="stylesheet" href="../CSS/Homepage.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+  <title>My Profile</title>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA==" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css"> -->
+  <!-- <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/UserProfile.css">
+  <link rel="stylesheet" href="../CSS/Homepage.css">
 
-
-    <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
-        crossorigin="anonymous"></script>
-
-  </head>
-
-  <body>
-        <!-- Nav Bar -->
-        <nav id="navBar" class="site-header sticky-top py-1">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-            <i class="fa fa-bars"></i>
-            </label>
-            <label class="Logo"> MarketPlace </label>
-            <ul class="nav-items">
-            <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i> Home</a></li>
-            <li class="nav-items">
-                <a class="nav-a" href="#"><i class="far fa-user" style="color:#fff;"></i> Profile</a>
-        
-                <div class="profile-SubMenu">
-                <ul>
-                    <li><a href="UserProfile.html" >Edit profile</a></li>
-                    <li><a href="#">Transaction history</a></li>
-                    <li><a href="CreateItem.html">Create item</a></li>
-                    <li><a href="#">Edit my items </a></li>
-
-                </ul>
-                </div>
-            </li>
-            </ul>
-        </nav>
-        <!-- End of Nav bar -->
-
-<!-- ShowCase -->
-<div id="bg-img"></div>
-
-<!-- About Me -->
-<div id="About">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div id="AboutData">
-          <div class="card bg-white"> 
-            <div class="card-title my-5">
-              <div class="media">
-                <div id="Pic"><img src = "../CSS/Images/profile.png" width="250" height="250" class="img-fluid rounded-top mx-5" ></div>
-                <div class="media-body">
-                  <h3 class="display-4 text-muted" id="User"></h3>
-                  <p class="text-muted" ></p>
-                  <div class="container-fluid">
-                    <table class="table table-responsive ml-2">
-
-                      <tr>
-                        <td class="text-muted">Name</td>
-                        <td>:</td>
-                        <td>
-                          <div id="Name"></div>
-
-                          <div class="Nameform" id="Nameform"> 
-                            <div class="formName">
-                              <input type="text" name="name" id="NameChange-input">
-                                <label for="name" class="label-name">
-                                </label>
-                            </div>
-                          </div>
-
-                        </td>
-                        <td>
-                          <div class="pen" id="btn-editName">
-                          <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
-                        </div> 
-                        </td>
-                      </tr>
-
-                      <tr>
-                        <td class="text-muted">Surname</td>
-                        <td>:</td>
-                        <td>
-                          <div id="Surname"></div>
-                          <div class="Surnameform" id="Surnameform"> 
-                            <div class="formName">
-                              <input type="text" name="name" id="SurnameChange-input">
-                                <label for="name" class="label-name">
-                                </label>
-                            </div>
-                          </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
+    crossorigin="anonymous"></script>
 
 
-                        </td>
+  <link rel="stylesheet" href="../CSS/fontawesome-free-5.14.0-web/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha512-I5TkutApDjnWuX+smLIPZNhw+LhTd8WrQhdCKsxCFRSvhFx2km8ZfEpNIhF9nq04msHhOkE8BMOBj5QE07yhMA=="
+    crossorigin="anonymous"></script>
 
-                        <td>
-                          <div class="pen" id="btn-editSurname">
-                          <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
-                        </div> 
-                        </td>
+</head>
 
-                      </tr>
-                      <tr>
+<body>
+  <!-- Nav Bar -->
+  <nav id="navBar" class="site-header sticky-top py-1">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fa fa-bars"></i>
+    </label>
+    <label class="Logo"> MarketPlace </label>
+    <ul class="nav-items">
+      <li class="nav-items"><a class="nav-a" href="Homepage.html"><i class="fas fa-home" style="color:#fff;"></i>
+          Home</a></li>
+      <li class="nav-items">
+        <a class="nav-a" href="#"><i class="far fa-user" style="color:#fff;"></i> Profile</a>
 
-                        <td class="text-muted">Email</td>
-                        <td>:</td>
-                        <td>
-                          <div id="Email"></div>
+        <div class="profile-SubMenu">
+          <ul>
+            <li><a href="UserProfile.html">Edit profile</a></li>
+            <li><a href="#">Transaction history</a></li>
+            <li><a href="CreateItem.html">Create item</a></li>
+            <li><a href="#">Edit my items </a></li>
 
-                          <div class="Emailform" id="Emailform"> 
-                            <div class="formName">
-                              <input type="text" name="name" id="EmailChange-input">
-                                <label for="name" class="label-name">
-                                </label>
-                                
-                            </div>
-                          </div>
-                          
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- End of Nav bar -->
 
+  <!-- ShowCase -->
+  <div id="bg-img"></div>
 
-                        </td>
+  <!-- About Me -->
+  <div id="About">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="AboutData">
+            <div class="card bg-white">
+              <div class="card-title my-5">
+                <div class="media">
+                  <div id="Pic"><img src="../CSS/Images/profile.png" width="250" height="250"
+                      class="img-fluid rounded-top mx-5"></div>
+                  <div class="media-body">
+                    <h3 class="display-4 text-muted" id="User"></h3>
+                    <p class="text-muted"></p>
+                    <div class="container-fluid">
+                      <table class="table table-responsive ml-2">
 
-                         <td>
-                          <div class="pen" id="btn-editEmail">
-                          <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
-                        </div> 
-                        </td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="text-muted">Balance</td>
-                        <td>:</td>
-                        <td id="Balance" class="text-muted"></td>
-                      </tr>
-
-                      <tr>
-                        <td class="text-muted">Date Created</td>
-                        <td>:</td>
-                        <td id="Date" class="text-muted"></td>
-                      </tr>
-
-                    <table id="btn-changePass" class="table-responsive ml-2">
                         <tr>
-                          <td><button id="change" class="btn btnE btn-info badge-pill">Change Password</button></td>
-                        </tr>
-                    </table>
-
-                   
-                    <form id="changePass" action="">
-                    <table class="table table-responsive ml-2">
-                        <tr>
-                          <td>Current Password</td>
+                          <td class="text-muted">Name</td>
                           <td>:</td>
                           <td>
-                            <input type="text" name="current" id="current-pass">
+                            <div id="Name"></div>
+
+                            <div class="Nameform" id="Nameform">
+                              <div class="formName">
+                                <input type="text" name="name" id="NameChange-input">
+                                <label for="name" class="label-name">
+                                </label>
+                              </div>
+                            </div>
+
+                          </td>
+                          <td>
+                            <div class="pen" id="btn-editName">
+                              <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
+                            </div>
                           </td>
                         </tr>
-                        <tr>
-                          <td>New Password</td>
-                          <td>:</td>
-                          <td><input type="text" id="new-pass"></td>
-                        </tr>
-                        <tr>
-                          <td>Confirm Password</td>
-                          <td>:</td>
-                          <td><input type="text" id="confirm-pass"></td>
-                        </tr>
-                        
-                        <tr>
-                          <td><button id="btn-update" type="submit" class="btn btn-info badge-pill">Update Password</button></td>
-                        </tr>
-                    </table>
-                  </form>
 
-                    </table>
+                        <tr>
+                          <td class="text-muted">Surname</td>
+                          <td>:</td>
+                          <td>
+                            <div id="Surname"></div>
+                            <div class="Surnameform" id="Surnameform">
+                              <div class="formName">
+                                <input type="text" name="name" id="SurnameChange-input">
+                                <label for="name" class="label-name">
+                                </label>
+                              </div>
+                            </div>
+
+
+                          </td>
+
+                          <td>
+                            <div class="pen" id="btn-editSurname">
+                              <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
+                            </div>
+                          </td>
+
+                        </tr>
+                        <tr>
+
+                          <td class="text-muted">Email</td>
+                          <td>:</td>
+                          <td>
+                            <div id="Email"></div>
+
+                            <div class="Emailform" id="Emailform">
+                              <div class="formName">
+                                <input type="text" name="name" id="EmailChange-input">
+                                <label for="name" class="label-name">
+                                </label>
+
+                              </div>
+                            </div>
+
+
+
+                          </td>
+
+                          <td>
+                            <div class="pen" id="btn-editEmail">
+                              <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true"></i>
+                            </div>
+                          </td>
+
+                        </tr>
+
+                        <tr>
+                          <td class="text-muted">Balance</td>
+                          <td>:</td>
+                          <td id="Balance" class="text-muted"></td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-muted">Date Created</td>
+                          <td>:</td>
+                          <td id="Date" class="text-muted"></td>
+                        </tr>
+
+                        <table id="btn-changePass" class="table-responsive ml-2">
+                          <tr>
+                            <td><button id="change" class="btn btnE btn-info badge-pill">Change Password</button></td>
+                          </tr>
+                        </table>
+
+
+                        <form id="changePass" action="">
+                          <table class="table table-responsive ml-2">
+                            <tr>
+                              <td>Current Password</td>
+                              <td>:</td>
+                              <td>
+                                <input type="text" name="current" id="current-pass">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>New Password</td>
+                              <td>:</td>
+                              <td><input type="text" id="new-pass"></td>
+                            </tr>
+                            <tr>
+                              <td>Confirm Password</td>
+                              <td>:</td>
+                              <td><input type="text" id="confirm-pass"></td>
+                            </tr>
+
+                            <tr>
+                              <td><button id="btn-update" type="submit" class="btn btn-info badge-pill">Update
+                                  Password</button></td>
+                            </tr>
+                          </table>
+                        </form>
+
+                      </table>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="container mt-5">
-                <div class="row">
-                  <div class="col">
-                    <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true" id="btn-editB" ></i>
-                    <span class="bg-info text-white">Bio</span><hr class="bg-info">
-                   
-                      <p class="lead text-justify" id="Bio"></p>  
-                      
+                <div class="container mt-5">
+                  <div class="row">
+                    <div class="col">
+                      <i class="fa fa-pen   fa-info float-right badge-pill" aria-hidden="true" id="btn-editB"></i>
+                      <span class="bg-info text-white">Bio</span>
+                      <hr class="bg-info">
+
+                      <p class="lead text-justify" id="Bio"></p>
+
+                    </div>
                   </div>
                 </div>
-              </div>
                 <div class="card-footer bg-primary"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="../Scripts/UserProfile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="../Scripts/UserProfile.js"></script>
 
-  </body>
+</body>
+
 </html>

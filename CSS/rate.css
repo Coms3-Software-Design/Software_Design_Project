@@ -1,11 +1,11 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
 }
 
-.container{
+.container {
 	position: relative;
 	width: 400px;
 	/*opacity: 0.5;*/
@@ -16,17 +16,17 @@
 	flex-direction: column;
 }
 
-.container .post{
+.container .post {
 	display: none;
 }
 
-.container .text{
+.container .text {
 	font-size: 25px;
 	color: #666;
 	font-weight: 500;
 }
 
-.container .edit{
+.container .edit {
 	position: absolute;
 	right: 10px;
 	top: 5px;
@@ -36,15 +36,15 @@
 	cursor: pointer;
 }
 
-.container .edit:hover{
+.container .edit:hover {
 	text-decoration: underline;
 }
 
-.container .star-widget input{
+.container .star-widget input {
 	display: none;
 }
 
-.star-widget label{
+.star-widget label {
 	font-size: 40px;
 	color: #444;
 	padding: 10px;
@@ -52,16 +52,16 @@
 	transition: all 0.2s ease;
 }
 
-input:not(:checked) ~label:hover,
-input:not(:checked) ~label:hover ~ label{
+input:not(:checked)~label:hover,
+input:not(:checked)~label:hover~label {
 	color: #fd4;
 }
 
-input:checked ~ label{
+input:checked~label {
 	color: #fd4;
 }
 
-input#rate-5:checked ~ label{
+input#rate-5:checked~label {
 	color: #fe7;
 	text-shadow: 0 0 20px #952;
 }
@@ -70,11 +70,11 @@ input#rate-5:checked ~ label{
 	display: none;
 }
 
-input:checked ~ form{
+input:checked~form {
 	display: block;
 }
 
-form header{
+form header {
 	width: 100%;
 	font-size: 25px;
 	font-weight: 500;
@@ -83,13 +83,13 @@ form header{
 	transition: all 0.2s ease;
 }
 
-form .textarea{
+form .textarea {
 	height: 100px;
 	width: 100%;
 	overflow: hidden;
 }
 
-form .textarea textarea{
+form .textarea textarea {
 	height: 100%;
 	width: 100%;
 	outline: none;
@@ -99,13 +99,13 @@ form .textarea textarea{
 	resize: none;
 }
 
-form .btn{
+form .btn {
 	height: 45px;
 	width: 100%;
 	margin: 15px 0;
 }
 
-form .btn button{
+form .btn button {
 	height: 100%;
 	width: 100%;
 	border: 1px solid #444;
@@ -117,7 +117,7 @@ form .btn button{
 	transition: all 0.3s ease;
 }
 
-form .btn button:hover{
+form .btn button:hover {
 	background: #a4a3a3;
 
 }

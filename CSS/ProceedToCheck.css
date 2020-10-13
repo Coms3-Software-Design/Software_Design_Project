@@ -1,74 +1,70 @@
-.summary{
-    height: 100%;
+.summary {
+  height: 100%;
 }
 
-.input{
-    width: 100%;
-    border: none;
-}
-input :hover{
-    border: 2px solid;
-    background: rgba(0,0,0,1);
+.input {
+  width: 100%;
+  border: none;
 }
 
-.postal{
-    width: 25%;
+input :hover {
+  border: 2px solid;
+  background: rgba(0, 0, 0, 1);
 }
 
-.addInput{
-    margin-bottom: 5px;
+.postal {
+  width: 25%;
 }
-.payments{
-    background-color: rgba(237, 237, 237 , .5);
-}
-.buy-popup{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-  }
-  
-  .buy-box{
-    width: 500px;
-    height: 300px;
-    background-color: white;
-    border-radius: 10px;
-  }
 
-  .buy-popup{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    position: absolute;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-  }
-  
-  .buy-box{
-    width: 500px;
-    height: 300px;
-    background-color: white;
-    border-radius: 10px;
-  }
-  
-  .buy-btn{
-    /*height: 45px;
-    width: 100px;
-    margin: 15px 0;
-    display: flex;
-    position: bottom;*/
-  }
-  
-  .buy-btn button{
-    /*height: 100%;
+.addInput {
+  margin-bottom: 5px;
+}
+
+.payments {
+  background-color: rgba(237, 237, 237, .5);
+}
+
+.buy-popup {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.buy-box {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.buy-popup {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.buy-box {
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+.buy-btn button {
+  /*height: 100%;
     width: 100%;
     border: none;
     outline: none;
@@ -77,46 +73,32 @@ input :hover{
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;*/
-  
-    width: 40%;
-    height: 40px;
-    border-radius: 20px;
-    border: none;
-    margin: 1rem 0;
-    cursor: pointer;
-    transition: .5s;
-    background-size: 200%;
-    background: rgb(88, 133, 201);
-    color: white;
-  }
-  
-  .buttons{
-    display: flex;
-  }
-  
-  /*.buy-btn button{
-    background: #ff9f1a;
-    padding: 1.2em 1.5em;
-    border: none;
-    text-transform: UPPERCASE;
-    font-weight: bold;
-    color: #fff;
-    -webkit-transition: background .3s ease;
-    transition: background .3s ease;
-  }*/
-  /*.buy-btn button:hover{
-    background: #b36800;
-    color: #fff; 
-  }*/
-  
-  .buy-msg{
-    height: 100%;
-    width: 100%;
-    margin-top: 35px;
-    margin-bottom: 20px;
-    font: sans-serif;
-    position: relative;
-    text-align: center;
+
+  width: 40%;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: .5s;
+  background-size: 200%;
+  background: rgb(88, 133, 201);
+  color: white;
+}
+
+.buttons {
+  display: flex;
+}
+
+
+.buy-msg {
+  height: 100%;
+  width: 100%;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  font: sans-serif;
+  position: relative;
+  text-align: center;
   /*  font-weight: 500;
     overflow: hidden;*/
-  }
+}

@@ -89,7 +89,6 @@ let topRatedGoods = function(){
         </div>
         <div class="card-body"
           <h5 class="card-title">${result[i].Product_Name.replace(":","")}</h5>
-          
           <h6 class="card-title">R${result[i].Product_Price}</h6>
         </div>  
         </a>
@@ -125,19 +124,19 @@ let topRatedServices = function(){
         const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
         const item = JSON.stringify(prodItem);
           return `
-        <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
+        <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%; height: 100%;">
         
           <div class="card" style="width: 8rem; height: 10rem; cursor: pointer;" id="${service.Product_ID}">
-          <a href="ViewProduct.html">
+          <a href="ViewProduct.html" style="background-color: white; height : 100%">
               <div class = "img-container">
                 <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
               </div>
               
               <div class = "card-body">
-                <h5 class="card-title">${service.Product_Name}</h5>
-                <h6 class="card-title">R${service.Product_Price}</h6>
+                <h6 class="card-title">${service.Product_Name}</h6>
+                <p class="card-title">R${service.Product_Price}</p>
               </div>
-              </a>
+            </a>
           </div>  
           
         </div>  
