@@ -158,7 +158,7 @@ function Repopulate(user){
                         
                         if(timeClicked>0){
                             if(timeClicked%2 != 0){
-                                //document.getElementById(`${id}Change-input`).value = params[i] ;
+                                document.getElementById(`${id}Change-input`).value = params[i] ;
                                 document.getElementById(`${id}`).style.display = "none";
                                 document. getElementById(`${id}form`).style.display="block";
                                 //alert(timeClicked);
@@ -167,6 +167,8 @@ function Repopulate(user){
                             else{
                             
                                // alert(timeClicked);
+                              // document.getElementById(`${id}Change-input`).value = params[i] ;
+
                                 document.getElementById(`${id}`).style.display = "block";
                                 document. getElementById(`${id}form`).style.display="none";
                     
@@ -193,6 +195,7 @@ function Repopulate(user){
                                     else{
                                         item = document.getElementById(`${id}Change-input`).value;
                                         params[i] = item;
+                                        document.getElementById(`${id}Change-input`).value = params[i];
                                     }
 
                                     updateProf(params[0] , params[1] , params[2], params[3] , 12345 ,user);
