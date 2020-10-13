@@ -4,9 +4,10 @@
 
 [![Build Status](https://travis-ci.org/Coms3-Software-Design/software_design_project.svg?branch=master)](https://travis-ci.org/Coms3-Software-Design/software_design_project)
 
-[![codecov](https://codecov.io/gh/Coms3-Software-Design/software_design_project/branch/theMeal/graph/badge.svg)](https://codecov.io/gh/Coms3-Software-Design/software_design_project)
+[![codecov](https://codecov.io/gh/Coms3-Software-Design/software_design_project/branch/origin/master/graph/badge.svg)](https://codecov.io/gh/Coms3-Software-Design/software_design_project)
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Coms3-Software-Design/software_design_project?logo=GitHub&logoColor=%23ccc&style=flat-square)
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Coms3-Software-Design/software_design_project?logo=GitHub&style=flat-square)](https://github.com/Coms3-Software-Design/software_design_project/releases/tag/v2.0)
 
 
 ## WE START WITH THE DIAGRAMS THAT DESCRIBE THE SYSTEM WE BUILDING

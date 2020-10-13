@@ -1,6 +1,7 @@
 let user = JSON.parse(localStorage.getItem('user'));
 
 let transURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPTransHistory.php';
+const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
 
 
 function getTransactionInfo() {
@@ -43,7 +44,9 @@ function getTransactionInfo() {
 
 }
 
+console.log(user);
 document.getElementById('transaction-profile-username').innerHTML = username(user);
 document.getElementById('transaction-profile-names').innerHTML = names(user);
 document.getElementById('transaction-profile-balance').innerHTML = "R " + balance(user);
+document.getElementById('picIDID').src = picURL+user.Profile_pic;
 getTransactionInfo();
