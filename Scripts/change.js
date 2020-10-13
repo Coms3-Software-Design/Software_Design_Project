@@ -1,8 +1,11 @@
 
 const changUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReset.php';
 
-let Username = document.getElementById('');
-let pass = document.getElementById('');
+
+document.getElementById('submit').addEventListener('click', function(e){
+    e.preventDefault();
+let Username = document.getElementById('user');
+let pass = document.getElementById('pass');
 
 $.getJSON(changUrl, {
     UserID: Username,
@@ -14,5 +17,7 @@ $.getJSON(changUrl, {
         alert("Password Changed Successfully")
     }
     console.log(result);
+});
+
 });
 
