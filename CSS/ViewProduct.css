@@ -4,17 +4,23 @@ body {
   font-family: 'open sans';
   overflow-x: hidden;
   overflow-y: visible; 
-  background-color: #ebebeb;
+  color: #ebebeb;
+}
 
+.container{
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  background-color: #ebebeb;
 }
 
 .card {
   height: 100%;
   width: 100%;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
   padding: 3em;
   line-height: 1.5em;
-  margin-left: 230px;
+  /*margin-left: 230px;*/
 }
 
 img {
@@ -282,6 +288,7 @@ form .btn button{
   line-height: 1.5em;
   margin-left: 230px;
   margin-top: 30px;
+  overflow: scroll;
   display: none;
 }
 
