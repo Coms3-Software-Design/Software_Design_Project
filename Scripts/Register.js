@@ -22,7 +22,7 @@ Button.addEventListener('click', function (e) {
 
 
 
-     if (username == '' || stno == '' || full_name == '' || last_name == '' || password == '' || contact == '' || dob == '') {
+     if (verifyUser(username, stno, full_name, last_name, password, contact, dob)) {
           $('#response').html('<span class="text-danger">All Fields are required</span>');
           return;
      }

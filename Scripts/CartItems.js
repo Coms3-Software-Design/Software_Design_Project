@@ -30,7 +30,7 @@ let populate = function () {
 
         htmlItems += `${results.map(function(cartItem){
             totalItemsQuant += 1;
-            priceSum += (cartItem.Product_Price * cartItem.Amount);
+            priceSum += (sumPrice(cartItem.Product_Price ,cartItem.Amount));
             
             return `
             <div class="media" style="margin-bottom: 20px; ">
@@ -80,10 +80,6 @@ let populate = function () {
         })
 
     });
-
-
-
-
 
 }
 

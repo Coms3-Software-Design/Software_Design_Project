@@ -15,7 +15,10 @@ button.addEventListener('click', function (e) {
   url = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/creatProd.php";
   url_image_upload = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/upload.php";
 
+  Item item = new Item(user_name, user_id, user_brand, desc_name, price_value, quantity_value, goods_service, categories)
+
   console.log(goods_service);
+  console.log("User ID ------> " + user_id);
 
   $.getJSON(url, {
       pName: user_name,
@@ -31,7 +34,7 @@ button.addEventListener('click', function (e) {
 
       console.log("The results", results);
       //if the user inputs wrong credentials
-      if (user_name == "" || user_brand == "") {
+      if (wrongCred(user_name, user_brand)) {
         console.log("empty");
         $("#response").fadeIn().html('<span>All the fields are required</span>');
         setTimeout(function () {
