@@ -5,6 +5,7 @@ users = JSON.parse(localStorage.getItem('user'));
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
 const updateProfURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdateProfile.php';
 const returnUserURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPReturnUser.php';
+const updatePasswordurl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdatePassword.php';
 
 
 var UserId = users.UserID;
@@ -58,37 +59,52 @@ document.getElementById('change').addEventListener('click', function(){
 document.getElementById('btn-update').addEventListener('click', function(e){
     e.preventDefault();
     
-    let databasePass = Password;
-    let currentpass = document.getElementById('current-pass').value;
-    let newpass = document.getElementById('new-pass').value;
-    let confirmpass = document.getElementById('confirm-pass').value;
+
+    let currentpass = document.getElementById('currentpass').value;
+    let newpass = document.getElementById('newpass').value;
+    let confirmpass = document.getElementById('confirmpass').value;
 
    if(currentpass=="" && newpass=="" && confirmpass==""){
     let btnPass = document.getElementById('btn-changePass');
     let form = document.getElementById('changePass');
+    defaultf();
     
    alert("Password not changed");
-   btnPass.style.display="block";
-   form.style.display="none";
+   
 
    }
    else if(currentpass!="" && newpass!="" && confirmpass!=""){
 
-       if(newpass != confirmpass)
+       if(newpass != confirmpass){
        alert("Password does not match")
+       defaultf();
+       }
+       else if(newpass == confirmpass){
 
-       else if(newpass == confirmpass && currentpass == databasePass){
-
-            
-            
+        $.getJSON(updatePasswordurl,{
+            UserID: users.UserID,
+            current_pass: currentpass,
+            new_pass: newpass
+        }, result=>{
+            if(result=="0"){
+                alert("Change Password Failed")
+            }
+            else{
+                alert("Password Changed Successfully")
+            }
+        console.log(result);
+        });
+        defaultf();
 
        }
        else{
-           alert(" you have entered an incorrect password")
+           alert("you have entered an incorrect password")
+           defaultf();
        }
        
    }else{
        alert("All fields required");
+       defaultf();
    }
 
 
@@ -223,19 +239,38 @@ function updateProf(Name , Surname , PNum , Bio , Password , user){
      });
 }
 
-let updatePasswordurl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdatePassword.php';
-
-function updatePassword(username, currentpass,newpass){
-    $.getJSON(updatePasswordurl,{
-        username: username,
-        current: currentpass,
-        pass: newpass
+function updatePassword(UserID,current_password,new_password){
+$.getJSON(updatePasswordurl,{
+    UserID: users.UserID,
+    current_pass: currentpass,
+    new_pass: newpass
 }, result=>{
-    console.log(result);
+    if(retult=="0"){
+        alert("PChange Password Failed")
+    }
+    else{
+        alert("Password Changed Successfully")
+    }
+console.log(result);
 });
 
-
 }
+
+function defaultf(){
+    let btnPass = document.getElementById('btn-changePass');
+    let form = document.getElementById('changePass');
+    document.getElementById('currentpass').value="";
+    document.getElementById('newpass').value="";
+    document.getElementById('confirmpass').value="";
+    btnPass.style.display="block";
+   form.style.display="none";
+}
+
+
+
+
+ 
+
 
 
 
