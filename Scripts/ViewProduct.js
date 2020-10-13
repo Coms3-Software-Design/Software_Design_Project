@@ -304,6 +304,11 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function (
     }
 });
 
+document.getElementById("viewPSO").addEventListener('click',e=>{
+    localStorage.removeItem('user');
+    sessionStorage.clear();
+    window.location.href = 'Homepage.html';
+});
 
 //---> https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php
 /*
