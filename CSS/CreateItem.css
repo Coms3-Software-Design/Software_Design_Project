@@ -4,7 +4,7 @@ body {
   background-color: #ebebeb;
 }
 
-.header-name{
+.header-name {
   margin-top: 60px;
 }
 
@@ -16,63 +16,67 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-} 
+}
 
-#response{
+#response {
   text-align: center;
   color: rgb(80, 59, 59);
 }
 
 /* positions the upload image card to the centre */
 .card {
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 30px; /* Added */
+  margin: 0 auto;
+  /* Added */
+  float: none;
+  /* Added */
+  margin-bottom: 30px;
+  /* Added */
   margin-top: -400px;
 }
 
-  @media screen and (min-width: 997px) {
-    .wrapper {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex; 
-    }
- }
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
- .wrapper-centre{
+.wrapper-centre {
   text-align: center;
- }
+}
 
- .btn{
+.btn {
   width: 30%;
   height: 40px;
   margin-bottom: 30px;
- }
+}
 
 /* the input spacing and placement */
 .input_field {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .input_field input{
-    margin-block: 15px;
-    width: 60%;
-    padding-left: 10px;
-    border: 1px solid silver;
-    outline: none;
-  }
-  /* -------end------------- */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .header-name{
-    text-align: center;
-  }
+.input_field input {
+  margin-block: 15px;
+  width: 60%;
+  padding-left: 10px;
+  border: 1px solid silver;
+  outline: none;
+}
+
+/* -------end------------- */
+
+.header-name {
+  text-align: center;
+}
 
 
 /* this css code might be used when we decide to change to a select instead of a datalist */
-  /* .input_field select{
+/* .input_field select{
     margin-block: 15px;
     width: 66%;
     height: 35px;
@@ -81,57 +85,69 @@ body {
     outline: none;
   } */
 
-  /* ----------------- --------------------- ------------------------- ----------------------------*/
-
-
-    
-    .preview-thumbnail.nav-tabs {
-      border: none;
-      margin-top: 15px; }
-      .preview-thumbnail.nav-tabs li {
-        width: 18%;
-        margin-right: 2.5%; }
-        .preview-thumbnail.nav-tabs li img {
-          max-width: 100%;
-          display: block; }
-        .preview-thumbnail.nav-tabs li a {
-          padding: 0;
-          margin: 0; }
-        .preview-thumbnail.nav-tabs li:last-of-type {
-          margin-right: 0; }
-    
-    .tab-content {
-      overflow: hidden; }
-      .tab-content img {
-        width: 100%;
-        -webkit-animation-name: opacity;
-                animation-name: opacity;
-        -webkit-animation-duration: .3s;
-                animation-duration: .3s; }
-    
-    
-    
-
-    
-    
-    @media screen and (min-width: 997px) {
-      .wrapper {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex; } }
-    
+/* ----------------- --------------------- ------------------------- ----------------------------*/
 
 
 
-    /* -------- */
-  
+.preview-thumbnail.nav-tabs {
+  border: none;
+  margin-top: 15px;
+}
 
-    #add-picture {
-      width:500px;
-      height: 400px; 
-      }
+.preview-thumbnail.nav-tabs li {
+  width: 18%;
+  margin-right: 2.5%;
+}
 
-    /* ----------------------------------------- */
+.preview-thumbnail.nav-tabs li img {
+  max-width: 100%;
+  display: block;
+}
 
-    
+.preview-thumbnail.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+
+.preview-thumbnail.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
+
+.tab-content {
+  overflow: hidden;
+}
+
+.tab-content img {
+  width: 100%;
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
+
+
+
+
+
+
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+
+
+
+/* -------- */
+
+
+#add-picture {
+  width: 500px;
+  height: 400px;
+}
+
+/* ----------------------------------------- */

@@ -92,12 +92,15 @@ let topRatedGoods = function(){
        item = JSON.stringify(prodItem);
         prod += `
        <div class = "col-sm-1 my-2 ml-5"  style="margin: auto; width: 50%; cursor: pointer;">
-
+       <a href="ViewProduct.html">
        <div class="card" style="width: 10rem; height: 10rem; " id="${result[i].Product_ID}">
-        <a href="ViewProduct.html">
+        <div class="img-container">
           <img src="${productPicUrl}${result[i].Product_ID}" class="card-img-top" alt="..." style="min-width:10rem ; max-width:10rem; min-height:10rem ; max-height:10rem;">
+        </div>
+        <div class="card-body"
           <h5 class="card-title">${result[i].Product_Name.replace(":","")}</h5>
           <h6 class="card-title">R${result[i].Product_Price}</h6>
+        </div>  
         </a>
        </div>
 
@@ -131,15 +134,21 @@ let topRatedServices = function(){
         const prodItem = new Product(service.Product_ID, service.UserID, service.Category, service.Product_Name, service.Product_Brand, service.Product_Description, service.Product_Price, service.Current_Quantity, service.Product_Pic, service.Sold_Quantity, service.Product_type);
         const item = JSON.stringify(prodItem);
           return `
-        <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%;">
-
-          <div href="ViewProduct.html" class="card" style="width: 8rem; height: 10rem; cursor: pointer;" id="${service.Product_ID}">
-            <a href="ViewProduct.html">
-              <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
-              <h5 class="card-title">${service.Product_Name}</h5>
-              <h6 class="card-title">R${service.Product_Price}</h6>
+        <div class = "col-sm-1 my-2 ml-5 " style="margin: auto; width: 50%; height: 100%;">
+        
+          <div class="card" style="width: 8rem; height: 10rem; cursor: pointer;" id="${service.Product_ID}">
+          <a href="ViewProduct.html" style="background-color: white; height : 100%">
+              <div class = "img-container">
+                <img src="${productPicUrl}${service.Product_ID}" class="card-img-top" alt="..." style="min-width:8rem ; max-width:8rem; min-height:10rem ; max-height:10rem;">
+              </div>
+              
+              <div class = "card-body">
+                <h6 class="card-title">${service.Product_Name}</h6>
+                <p class="card-title">R${service.Product_Price}</p>
+              </div>
             </a>
           </div>  
+          
         </div>  
           `;
       }).join('')

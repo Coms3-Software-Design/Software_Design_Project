@@ -8,10 +8,11 @@ body {
   background-repeat: no-repeat;
   min-height: 500px;
 }
-#About
-{
- margin-top: -200px;
+
+#About {
+  margin-top: -200px;
 }
+
 #About span {
   padding: 10px 20px 10px 20px;
 }
@@ -20,27 +21,23 @@ body {
   border-width: 5px;
 }
 
-#btn-editp:hover
-{
-  background-color: darkcyan;
-}
-#btn-updatep:hover
-{
+#btn-editp:hover {
   background-color: darkcyan;
 }
 
-#changePass
-{
+#btn-updatep:hover {
+  background-color: darkcyan;
+}
+
+#changePass {
   display: none;
 }
 
-#change:hover
-{
+#change:hover {
   transform: scale(1.04);
 }
 
-.formName
-{
+.formName {
   width: 100%;
   position: relative;
   height: 50px;
@@ -49,8 +46,7 @@ body {
 
 }
 
-.formName input
-{
+.formName input {
   width: 130%;
   height: 100%;
   color: #595f5e;
@@ -58,8 +54,8 @@ body {
   border: none;
   outline: none;
 }
-.formName label
-{
+
+.formName label {
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -68,8 +64,8 @@ body {
   pointer-events: none;
   border-bottom: 1px solid black;
 }
-.formName label::after
-{
+
+.formName label::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -80,45 +76,45 @@ body {
   transform: translateX(-100%);
   transition: all 0.3s ease;
 }
-.content-name
-{
+
+.content-name {
   position: absolute;
   bottom: 5px;
   left: 0px;
   transition: transform all 0.3s ease;
 }
-.formName input:focus + .label-name .content-name
-.formName input:valid + .label-name .content-name
-{
+
+.formName input:focus+.label-name .content-name .formName input:valid+.label-name .content-name {
   transform: translateY(-150%);
   font-size: 14px;
   color: #5fa8d3;
 }
 
-.formName input:focus + .label-name::after, .formName input:valid + .label-name::after
-{
+.formName input:focus+.label-name::after,
+.formName input:valid+.label-name::after {
   transform: translateX(0%);
 }
-.xform
+
+.xform {
+  display: none;
+}
+
+.pen:hover {
+  transform: scale(1.2);
+}
+
+.Surnameform {
+  display: none;
+}
+
+.Nameform {
+  display: none;
+}
+.Bioform
 {
   display: none;
 }
 
-.pen:hover
-{
- transform: scale(1.2);
-}
-.Surnameform
-{
+.Emailform {
   display: none;
 }
-.Nameform
-{
-  display: none;
-}
-
-.Emailform
-{
-  display: none;
-}
-

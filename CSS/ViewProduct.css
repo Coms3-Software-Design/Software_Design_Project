@@ -24,33 +24,45 @@ body {
 }
 
 img {
-width:500px;
-height: 400px; 
+  width: 500px;
+  height: 400px;
 }
 
 .preview-thumbnail.nav-tabs {
   border: none;
-  margin-top: 15px; }
-  .preview-thumbnail.nav-tabs li {
-    width: 18%;
-    margin-left: 2.5%; }
-    .preview-thumbnail.nav-tabs li img {
-      max-width: 100%;
-      display: block; }
-    .preview-thumbnail.nav-tabs li a {
-      padding: 0;
-      margin: 0; }
-    .preview-thumbnail.nav-tabs li:last-of-type {
-      margin-right: 0; }
+  margin-top: 15px;
+}
+
+.preview-thumbnail.nav-tabs li {
+  width: 18%;
+  margin-left: 2.5%;
+}
+
+.preview-thumbnail.nav-tabs li img {
+  max-width: 100%;
+  display: block;
+}
+
+.preview-thumbnail.nav-tabs li a {
+  padding: 0;
+  margin: 0;
+}
+
+.preview-thumbnail.nav-tabs li:last-of-type {
+  margin-right: 0;
+}
 
 .tab-content {
-  overflow: hidden; }
-  .tab-content img {
-    width: 100%;
-    -webkit-animation-name: opacity;
-            animation-name: opacity;
-    -webkit-animation-duration: .3s;
-            animation-duration: .3s; }
+  overflow: hidden;
+}
+
+.tab-content img {
+  width: 100%;
+  -webkit-animation-name: opacity;
+  animation-name: opacity;
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+}
 
 
 
@@ -60,7 +72,9 @@ height: 400px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; } }
+    display: flex;
+  }
+}
 
 .details {
   display: -webkit-box;
@@ -70,24 +84,37 @@ height: 400px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 
 .colors {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
 
-.product-title, .price, .sizes, .colors {
+.product-title,
+.price,
+.sizes,
+.colors {
   text-transform: UPPERCASE;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
-.checked, .price span {
-  color: #ff9f1a; }
+.checked,
+.price span {
+  color: #ff9f1a;
+}
 
-.product-title, .rating, .product-description, .price, .vote, .sizes {
-  margin-bottom: 15px; 
+.product-title,
+.rating,
+.product-description,
+.price,
+.vote,
+.sizes {
+  margin-bottom: 15px;
 }
 
 .product-title {
@@ -97,17 +124,17 @@ height: 400px;
 
 /* =========== rating system ==================*/
 
-.star-widget input{
+.star-widget input {
   display: none;
 }
 
-.rating{
+.rating {
   align-items: center;
   justify-content: center;
   margin-right: 80px;
 }
 
-.star-widget label{
+.star-widget label {
   font-size: 40px;
   color: #444;
   padding: 10px;
@@ -115,13 +142,13 @@ height: 400px;
   transition: all 0.2s ease;
 }
 
-input:checked ~ label{
+input:checked~label {
   color: #fd4;
 }
 
 
 /* This is the review button with extended width */
-.review-btn{
+.review-btn {
   width: 100%;
   margin: 15px 0;
 }
@@ -129,10 +156,10 @@ input:checked ~ label{
 
 /* ========= rating pop-up ===============*/
 
-.ratingSystem{
+.ratingSystem {
   width: 100%;
   height: 104%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   display: flex;
@@ -142,7 +169,7 @@ input:checked ~ label{
   display: none;
 }
 
-.rating-box{
+.rating-box {
   width: 500px;
   height: 300px;
   position: relative;
@@ -152,28 +179,29 @@ input:checked ~ label{
   align-items: center;
 }
 
-.formation{
+.formation {
   justify-content: center;
   align-items: center;
 }
-.rating-box .star_widget input{
+
+.rating-box .star_widget input {
   display: none;
 }
 
-.star_widget{
+.star_widget {
   margin-right: 50px;
   margin-left: 50px;
   justify-content: center;
   align-items: center;
 }
 
-.close-btn{
+.close-btn {
   font-size: 30px;
   margin-top: 5px;
   margin-right: 10px;
 }
 
-.star_widget label{
+.star_widget label {
   font-size: 40px;
   color: #444;
   padding: 10px;
@@ -184,45 +212,45 @@ input:checked ~ label{
   transition: all 0.2s ease;
 }
 
-input:not(:checked) ~label:hover,
-input:not(:checked) ~label:hover ~ label{
+input:not(:checked)~label:hover,
+input:not(:checked)~label:hover~label {
   color: #fd4;
 }
 
-input:checked ~ label{
+input:checked~label {
   color: #fd4;
 }
 
-input#rate-5:checked ~ label{
+input#rate-5:checked~label {
   color: #fe7;
   text-shadow: 0 0 20px #952;
 }
 
-input#rate-1:checked ~ form header:before{
+input#rate-1:checked~form header:before {
   content: "I just hate it";
 }
 
-input#rate-2:checked ~ form header:before{
+input#rate-2:checked~form header:before {
   content: "I don't like it";
 }
 
-input#rate-3:checked ~ form header:before{
+input#rate-3:checked~form header:before {
   content: "It is awesome";
 }
 
-input#rate-4:checked ~ form header:before{
+input#rate-4:checked~form header:before {
   content: "I just like it";
 }
 
-input#rate-5:checked ~ form header:before{
+input#rate-5:checked~form header:before {
   content: "I love it";
 }
 
-input:checked ~ form{
+input:checked~form {
   display: block;
 }
 
-form header{
+form header {
   width: 100%;
   font-size: 25px;
   font-weight: 500;
@@ -231,13 +259,13 @@ form header{
   transition: all 0.2s ease;
 }
 
-form .textarea{
+form .textarea {
   height: 100px;
   width: 100%;
   overflow: hidden;
 }
 
-form .textarea textarea{
+form .textarea textarea {
   height: 100%;
   width: 100%;
   outline: none;
@@ -247,13 +275,13 @@ form .textarea textarea{
   resize: none;
 }
 
-form .btn{
+form .btn {
   height: 45px;
   width: 100%;
   margin: 15px 0;
 }
 
-form .btn button{
+form .btn button {
   width: 50%;
   height: 40px;
   border-radius: 20px;
@@ -277,7 +305,7 @@ form .btn button{
 
 /* ============= reviews ========================*/
 
-.review-card{
+.review-card {
   width: 100%;
   height: 100%;
   border-width: thin;
@@ -318,38 +346,38 @@ form .btn button{
   width: 100%;
 }
 
-.profile_pic{
+.profile_pic {
   height: 50px;
   width: 50px;
 }
 
-.profile-pic{
+.profile-pic {
   display: flex;
   margin-top: 20px;
   margin-left: 30px;
   margin-bottom: 20px;
 }
 
-.review-txt{
+.review-txt {
   margin-left: 20px;
   display: block;
 }
 
-.reviewerName{
+.reviewerName {
   font-weight: bold;
 }
 
-.reviewMsg{
+.reviewMsg {
   font-style: oblique;
 }
 
 /* ============= end of reviews =================*/
 
 /* =========== buy pop-up =============*/
-.buy-popup{
+.buy-popup {
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   display: flex;
@@ -358,22 +386,14 @@ form .btn button{
   display: none;
 }
 
-.buy-box{
+.buy-box {
   width: 500px;
   height: 300px;
   background-color: white;
   border-radius: 10px;
 }
 
-.buy-btn{
-  /*height: 45px;
-  width: 100px;
-  margin: 15px 0;
-  display: flex;
-  position: bottom;*/
-}
-
-.buy-btn button{
+.buy-btn button {
   /*height: 100%;
   width: 100%;
   border: none;
@@ -396,7 +416,7 @@ form .btn button{
   color: white;
 }
 
-.buttons{
+.buttons {
   display: flex;
 }
 
@@ -415,7 +435,7 @@ form .btn button{
   color: #fff; 
 }*/
 
-.buy-msg{
+.buy-msg {
   height: 100%;
   width: 100%;
   margin-top: 35px;
@@ -423,19 +443,41 @@ form .btn button{
   font: sans-serif;
   position: relative;
   text-align: center;
-/*  font-weight: 500;
+  /*  font-weight: 500;
   overflow: hidden;*/
 }
+
 /* =========== end buy pop-up ==========*/
 
 /* =========== reviews pop-up ===========*/
 
+.review-box {
+  width: 800px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+.the-review {
+  margin-left: 20px;
+}
+
+.reviews-heading {
+  margin-top: 50px;
+  display: none;
+
+}
+
 /* =========== end of reviews pop-up =====*/
 
 .size {
-  margin-right: 10px; }
-  .size:first-of-type {
-    margin-left: 40px; }
+  margin-right: 10px;
+}
+
+.size:first-of-type {
+  margin-left: 40px;
+}
 
 .color {
   display: inline-block;
@@ -443,55 +485,72 @@ form .btn button{
   margin-right: 10px;
   height: 2em;
   width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
+  border-radius: 2px;
+}
+
+.color:first-of-type {
+  margin-left: 20px;
+}
 
 /* This is the buy button with extended width */
 .add-to-cart {
   width: 100%;
   margin: 15px 0;
-    }
+}
 
 .not-available {
   text-align: center;
-  line-height: 2em; }
-  .not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff; }
+  line-height: 2em;
+}
+
+.not-available:before {
+  font-family: fontawesome;
+  content: "\f00d";
+  color: #fff;
+}
 
 .orange {
-  background: #ff9f1a; }
+  background: #ff9f1a;
+}
 
 .green {
-  background: #85ad00; }
+  background: #85ad00;
+}
 
 .blue {
-  background: #0076ad; }
+  background: #0076ad;
+}
 
 .tooltip-inner {
-  padding: 1.3em; }
+  padding: 1.3em;
+}
 
 @-webkit-keyframes opacity {
   0% {
     opacity: 0;
     -webkit-transform: scale(3);
-            transform: scale(3); }
+    transform: scale(3);
+  }
+
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1); } }
+    transform: scale(1);
+  }
+}
 
 @keyframes opacity {
   0% {
     opacity: 0;
     -webkit-transform: scale(3);
-            transform: scale(3); }
+    transform: scale(3);
+  }
+
   100% {
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1); } }
-            
-/*# sourceMappingURL=style.css.map */
+    transform: scale(1);
+  }
+}
 
+/*# sourceMappingURL=style.css.map */

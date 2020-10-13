@@ -1,5 +1,4 @@
-
-.inputText{
+.inputText {
   display: block;
   box-sizing: border-box;
   background: none;
@@ -10,51 +9,58 @@
   height: 32px;
   border: none;
   border-bottom: 1px solid #0082e6;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
 }
-.inputText:focus{
+
+.inputText:focus {
   border-bottom: 2px solid #3498db;
-  border-bottom-right-radius: 20px:
-  color:#3498db;
+  border-bottom-right-radius: 20px;
+  color: #3498db;
   transition: 0.2 ease;
 
 }
-.edit-btn{
-  border:1px solid #3498db;
+
+.edit-btn {
+  border: 1px solid #3498db;
   background: rgb(88, 133, 201);
   height: 30px;
   width: 100px;
   border-radius: 5px;
-  margin:0px;
+  margin: 0px;
   color: white;
   transition: all 0.3s;
 }
-.edit-btn:hover{
+
+.edit-btn:hover {
   transform: scale(1.1);
 }
-.edit-pic{
+
+.edit-pic {
   box-sizing: border-box;
-  font-size:15px;
+  font-size: 15px;
   color: white;
   border: 1px solid rgb(88, 133, 201);
-  background-color:rgb(88, 133, 201);
+  background-color: rgb(88, 133, 201);
   padding: 2px 20px;
   border-radius: 10px;
   transition: all 0.3s;
   margin-left: 250px;
   width: 110px;
 }
-.edit-pic:hover{
-background-color:rgb(88, 133, 201);
-transform: scale(1.05);
+
+.edit-pic:hover {
+  background-color: rgb(88, 133, 201);
+  transform: scale(1.05);
 }
-.lab{
+
+.lab {
   display: none;
 }
-.profile{
+
+.profile {
   margin: 0 auto;
   width: 300px;
   height: 700px;

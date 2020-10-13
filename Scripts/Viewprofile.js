@@ -1,4 +1,3 @@
-
 let user = JSON.parse(localStorage.getItem('user'));
 console.log(user);
 const picURL = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/uploads/';
@@ -16,7 +15,7 @@ var Bio = user.Bio;
 var Balance = user.Balance;
 var Profilepic = user.Profilepic;
 
-var abuser = new User(UserId,Name,Surname,UserName,Password,ContactDetails,DateOfBirth,DateCreated,Gender,Bio,Balance,Profilepic);
+var abuser = new User(UserId, Name, Surname, UserName, Password, ContactDetails, DateOfBirth, DateCreated, Gender, Bio, Balance, Profilepic);
 console.log("halo");
 $("#p-Name").html(`<p class="pItem">${Name}</p>`);
 $("#p-surname").html(`<p class="pItem">${Surname}</p>`);

@@ -1,4 +1,3 @@
-
 let user = JSON.parse(localStorage.getItem("user"));
 const buyURL = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPBuy.php";
 const cartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPGetCart.php";
@@ -6,49 +5,82 @@ const updateUserUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPRe
 const updateCartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPUpdateCartItem.php";
 const DeleteCartItemUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPDeleteCartItem.php";
 let cartItems;
-
+let NotAdded = true;
 
 setVariables();
- 
+let list = document.getElementById("listOfProductsBought");
+            let Items = ``;
 
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
 
+let modal = document.getElementById("simpleModal");
 
-function personCheck(){
+function personCheck() {
     let pName = document.getElementById("name").value;
-    let mail =  document.getElementById("mail").value;
+    let mail = document.getElementById("mail").value;
     let street = document.getElementById("street").value;
     let suburb = document.getElementById("suburb").value;
     let city = document.getElementById("city").value;
     let postal = document.getElementById("postal").value;
 
-    if(pName == "" || mail == "" || street == ""  || suburb == "" || city == "" || postal == ""){
+    if (pName == "" || mail == "" || street == "" || suburb == "" || city == "" || postal == "") {
         alert("Please enter all fields in Dilivery Address section");
         return false;
-    }
-    else 
+    } else
         return true;
 
 }
 
 function setVariables() {
-    
+
     radiobtn = document.getElementById("payment_PaymentMethod_credit-card");
     radiobtn.checked = true;
 
-    const promises = new Promise( resolve =>{  
-        $.getJSON(cartUrl , {userID : user.UserID} , function(results){
-            console.log("in promise3"); 
-        sessionStorage.removeItem("cart");
-        sessionStorage.setItem("cart" , JSON.stringify(results));
-        cartItems = JSON.parse(sessionStorage.getItem("cart"));
-        resolve();
+    const promises = new Promise(resolve => {
+        $.getJSON(cartUrl, {
+            userID : user.UserID
+        }, function (results) {
+            console.log("in promise3");
+            sessionStorage.removeItem("cart");
+            sessionStorage.setItem("cart", JSON.stringify(results));
+            cartItems = JSON.parse(sessionStorage.getItem("cart"));
+            Citems = JSON.parse(sessionStorage.getItem("cart"));
+
+            if(NotAdded){
+                cartItems.map(prod => {
+                    return Items += `
+                        <li class="row">
+                            <div class="col">
+                                ${prod.Product_Name}
+                                </br>
+                                <p style="font-size : 12px;">${prod.Product_Description}</p>
+                            </div>
+        
+                            <div class="col-lg-5">
+                                Quantity
+                                <p style="font-size: 12px;"> ${prod.Amount} </p>
+                            </div>
+        
+                            <div class="col-lg-2">
+                                Price per item
+                                <p style="font-size: 12px;"> R${prod.Product_Price}.00 </p>
+                            </div>
+                        </li>
+                    `;
+                    }).join('');
+        
+                    list.innerHTML = Items;
+            }
+            //let Citems = JSON.parse(sessionStorage.getItem("cart"));
+           NotAdded = false;
+
+            resolve();
         });
         //resolve(getCartItems());
     });
-    
-    promises.then(()=>{
+
+    promises.then(() => {
         cartItems = JSON.parse(sessionStorage.getItem("cart"));
         console.log('Trying out promises : ', cartItems);
         if (cartItems === null) return;
@@ -57,9 +89,9 @@ function setVariables() {
         sumTotal = 0;
         for (let i = 0; i < cartItems.length; i++) {
             sumTotal += (parseFloat(cartItems[i].Amount) * parseFloat(cartItems[i].Product_Price));
-           // console.log("Promise : ", cartItems[i]);
+            // console.log("Promise : ", cartItems[i]);
         }
-    
+
         document.getElementById("PCSumNumItem").innerHTML = numItems;
         document.getElementById("PCPriceSum").innerHTML = "R" + sumTotal;
     });
@@ -76,7 +108,7 @@ function varifyAndProceed() {
         alert("Your Balance is insufficient");
         return;
     }
-    if(!personCheck()) return;
+    if (!personCheck()) return;
 
 
     // Pop up to confirm if you wanna buy
@@ -90,26 +122,26 @@ function varifyAndProceed() {
 
     //Upon clicking buy on the pop up
     document.getElementById("Buy-btn").addEventListener('click', function () {
-         console.log('about to buy');
-         const promise = new Promise((resolve )=>{
+        console.log('about to buy');
+        const promise = new Promise((resolve) => {
             resolve(proceedToBuy());
-         });
-         
-         promise.then(()=>{
+        });
+
+        promise.then(() => {
             DeleteItemFromCart()
-            promise.then(()=>{
+            promise.then(() => {
                 setVariables();
                 document.querySelector('.buy-popup').style.display = 'none';
                 alert("Product(s) successfully purchased");
-                window.location.href = "Homepage.html";
-
+                //window.location.href = "Homepage.html";
+                afterPurchase();
             });
-         })
+        })
     });
 
 }
 
-function proceedToBuy() {   
+function proceedToBuy() {
     const buyer = user.UserID;
     let transDate = new Date();
     let dd = String(transDate.getDate()).padStart(2, '0');
@@ -118,27 +150,27 @@ function proceedToBuy() {
     transDate = mm + '/' + dd + '/' + yyyy;
 
     for (let i = 0; i < cartItems.length; i++) {
-    
+        Citems.push(cartItems[i]);
         // Go to the next item if the quantity of the item in cart is 0
-        if(parseInt(cartItems[i].Current_Quantity) === 0){
+        if (parseInt(cartItems[i].Current_Quantity) === 0) {
             alert(`${cartItems[i].Product_Name} is currently out of stock. \n You will be notified once we have stock`);
             continue;
         }
-        for (let j = 0; j < parseInt(cartItems[i].Amount); j++) {  
+        for (let j = 0; j < parseInt(cartItems[i].Amount); j++) {
             cartItems[i].Current_Quantity--;
             let prodID = cartItems[i].Product_ID;
             let balance = parseFloat(user.Balance) - parseFloat(cartItems[i].Product_Price);
             let Quant = parseInt(cartItems[i].Current_Quantity) - 1;
             console.log(transDate, prodID, buyer, balance, Quant);
 
-            ProcessElement(prodID,buyer,transDate,balance,Quant);
+            ProcessElement(prodID, buyer, transDate, balance, Quant);
         }
-        
+
     }
-    
+
 }
 
-function ProcessElement(prodID,buyer,transDate,balance,Quant){
+function ProcessElement(prodID, buyer, transDate, balance, Quant) {
 
     $.getJSON(buyURL, {
         ProductID: prodID,
@@ -159,7 +191,7 @@ function ProcessElement(prodID,buyer,transDate,balance,Quant){
                     user = JSON.parse(localStorage.getItem("user"));
                     console.log(JSON.parse(localStorage.getItem('user')));
                     console.log("Product successfully purchased");
-                     MinusFromDatabase(user.UserID,prodID);   
+                    MinusFromDatabase(user.UserID, prodID);
                 }
             });
 
@@ -168,22 +200,24 @@ function ProcessElement(prodID,buyer,transDate,balance,Quant){
 
 }
 
-function MinusFromDatabase(uID , pID){
- //Minuses one from the database
- $.getJSON(updateCartUrl, {
-    userID: uID,
-    product_ID: pID
-}, function (update) {
-    console.log(pID + ' minused');
-    DeleteItemFromCart();
+function MinusFromDatabase(uID, pID) {
+    //Minuses one from the database
+    $.getJSON(updateCartUrl, {
+        userID: uID,
+        product_ID: pID
+    }, function (update) {
+        console.log(pID + ' minused');
+        DeleteItemFromCart();
 
-});
+    });
 
 }
 
 function DeleteItemFromCart() {
     // Here we delete an 
-    $.getJSON(cartUrl, {userID: user.UserID}, function (results) {
+    $.getJSON(cartUrl, {
+        userID: user.UserID
+    }, function (results) {
         results.map(function (item) {
             console.log(item);
             if (item.Amount === "0") {
@@ -200,12 +234,39 @@ function DeleteItemFromCart() {
         }).join('');
     });
 
-    
+
+}
+
+function AP(){
+    let prom = new Promise(resolve =>{
+        setVariables();
+        resolve();
+    });
+
+    prom.then(()=>{
+        afterPurchase();
+    })
+
+}
+
+function afterPurchase(){
+
+modal.style.display='block';
+
+window.addEventListener('click' , e => {
+    if(e.target == modal){
+        modal.style.display = 'none';
+        window.location.href = "Homepage.html";
+    }
+});
+
+ setTimeout(()=>{
+     window.location.href = "Homepage.html";
+     modal.style.display = 'none';
+ },3000);
+   
 }
 
 
 
-
 ConfirmPurchase.setAttribute("onclick", "varifyAndProceed()");
-
-

@@ -5,26 +5,28 @@ const productPicUrl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Products/
 let loggedUser = JSON.parse(localStorage.getItem('user'));
 console.log(loggedUser);
 
-document.getElementById("emptyCart").addEventListener('click',()=>{
+document.getElementById("emptyCart").addEventListener('click', () => {
     window.location.href = "Homepage.html";
 })
 
-let populate = function(){
-    
-    $.getJSON(cartUrl , {userID : loggedUser.UserID} , function(results){
+let populate = function () {
+
+    $.getJSON(cartUrl, {
+        userID: loggedUser.UserID
+    }, function (results) {
         let totalItemsQuant = 0;
         let priceSum = 0;
         let htmlItems = ``;
         console.log(results);
-        if(results.length === 0){
+        if (results.length === 0) {
             $("#cartBody").empty();
             return;
         }
 
-       document.getElementById("emptyCart").style.display = 'none';
+        document.getElementById("emptyCart").style.display = 'none';
 
 
-       // sessionStorage.setItem("cart" , JSON.stringify(results));
+        // sessionStorage.setItem("cart" , JSON.stringify(results));
 
         htmlItems += `${results.map(function(cartItem){
             totalItemsQuant += 1;
@@ -57,57 +59,63 @@ let populate = function(){
             
         }).join('')}`;
 
-        if(results.length === 0 ){
+        if (results.length === 0) {
             htmlItems = `<a href="Homepage.html" style="marginn:auto; width:50%;"><Button class="btn btn-danger">Continue Shopping<button></a>`;
         }
-        
+
         document.getElementById("cartItemsDiv").innerHTML = htmlItems;
         document.getElementById("tLNumItem").innerHTML = totalItemsQuant;
-        document.getElementById("SumNumItem").innerHTML = totalItemsQuant;  
-        document.getElementById("PriceSum").innerHTML = "R"+priceSum;
+        document.getElementById("SumNumItem").innerHTML = totalItemsQuant;
+        document.getElementById("PriceSum").innerHTML = "R" + priceSum;
 
-        
 
-        results.forEach(cart_i =>{
+
+        results.forEach(cart_i => {
             console.log(cart_i);
-            
+
             let minus = document.getElementById(`minus${cart_i.Product_ID}`);
             let plus = document.getElementById(`plus${cart_i.Product_ID}`);
-            minus.setAttribute("onclick",`update(${cart_i.Product_ID} , ${-1})`);
-            plus.setAttribute("onclick",`update(${cart_i.Product_ID} , ${1})`);
+            minus.setAttribute("onclick", `update(${cart_i.Product_ID} , ${-1})`);
+            plus.setAttribute("onclick", `update(${cart_i.Product_ID} , ${1})`);
         })
-        
+
     });
 
-   
 
-       
+
+
 
 }
-function update(ID , num){
-    
-    let promise = new Promise(resolve=>{
-        $.getJSON(cartUrl , {userID : loggedUser.UserID} , results => {
+
+function update(ID, num) {
+
+    let promise = new Promise(resolve => {
+        $.getJSON(cartUrl, {
+            userID: loggedUser.UserID
+        }, results => {
             results.forEach(prod => {
-                if(parseInt(prod.Product_ID) === parseInt(ID)  && parseInt(prod.Amount)+num > -1){
-                    $.getJSON(cartPostUrl, {userID : loggedUser.UserID, product_ID :  ID , amount : parseInt(prod.Amount)+num}, ans => {
+                if (parseInt(prod.Product_ID) === parseInt(ID) && parseInt(prod.Amount) + num > -1) {
+                    $.getJSON(cartPostUrl, {
+                        userID: loggedUser.UserID,
+                        product_ID: ID,
+                        amount: parseInt(prod.Amount) + num
+                    }, ans => {
                         populate();
                     });
                 }
                 populate();
-                resolve(); 
+                resolve();
             });
             //resolve();
         });
-       
+
     });
 
-    promise.then(()=>{
+    promise.then(() => {
         populate();
     });
-    
+
 }
 populate();
 
 //window.location.href = 'CartItem.html';
-

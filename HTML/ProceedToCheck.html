@@ -153,29 +153,25 @@
             </div>
             <Button class="btn btn-secondary" id="confirmPurchase">Confirm</Button>
         </div>
-
+       
+    
     </div>
-<!-- 
-    <div class="buy-popup">
-        <div class="buy-box">
-          <div  >
-            
-              <p id="buy-message" class="buy-msg">
-                proceed to checkout?
-              </p>
-              <span class="buy-msg" id="user-balance">
+
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: rgba(0, 0, 0, .05);">
+                <h3 style="color: rbga(0,0,0,.1);">Items Checked Out</h3>
+            </div>
+
+            <div class="modal-body">
+                <ul id="listOfProductsBought">
                 
-              </span> 
-              <div class="buy-btn btn text-center" id="Buy-btn">
-                <button type="submit"class="btn btn-primary"> Buy </button>
-              </div>
-              <div class="buy-btn btn text-center" id="Cancel-btn">
-                <button type="submit" class="btn btn-danger"> Cancel </button>
-              </div>
+                </ul>
+            </div>
             
-          </div>
         </div>
-      </div> -->
+    </div>
+
 
       <div class="buy-popup" style="height: 100%;">
         <div class="buy-box" style="height: 35%;">
@@ -196,7 +192,7 @@
         </div>
       </div>
 
-
+     
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">

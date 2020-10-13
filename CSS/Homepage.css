@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -6,15 +6,17 @@
     /*box-sizing: border-box;*/
 }
 
-body{
-  text-decoration: none;
-  font-family: montserrat , sans-serif;
-  background-color: #ebebeb;
+body {
+    text-decoration: none;
+    font-family: montserrat, sans-serif;
+    background-color: #ebebeb;
+}
+#goodlink {
+background-color: #fff;
 }
 
-
-.D-login{
-display: none;
+.D-login {
+    display: none;
 }
 
 
@@ -23,26 +25,29 @@ display: none;
     background-color: rgba(0, 0, 0, .85);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    height:  80px;
+    height: 80px;
     width: 100%;
 
-  }
-  .site-header a {
+}
+
+.site-header a {
     color: #999;
     transition: ease-in-out color .15s;
 
-  }
-  .site-header a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-  /* ----------end----------- */
-
-a{
-  cursor: pointer;
 }
 
-label.Logo{
+.site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ----------end----------- */
+
+a {
+    cursor: pointer;
+}
+
+label.Logo {
     color: white;
     font-size: 30px;
     line-height: 80px;
@@ -50,30 +55,34 @@ label.Logo{
     font-weight: bold;
 }
 
-nav ul.nav-items{
+nav ul.nav-items {
     float: right;
     margin-right: 20px;
 }
 
-nav ul li.nav-items{
+nav ul li.nav-items {
     display: inline-block;
     line-height: 80px;
     margin-right: 5px;
 }
-nav ul li a.nav-a{
-  text-decoration: none;
-    color:  white;
+
+nav ul li a.nav-a {
+    text-decoration: none;
+    color: white;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
 }
-a.active, a.nav-a:hover{
+
+a.active,
+a.nav-a:hover {
     background: #1b9bff;
     transition: .5s;
-    color:  white;
+    color: white;
 }
-.checkbtn{
+
+.checkbtn {
     font-size: 30px;
     color: white;
     float: right;
@@ -85,189 +94,206 @@ a.active, a.nav-a:hover{
 
 /*Drop downs of nav items*/
 .profile-SubMenu {
-  padding: 0;
-  margin: 0;
-  z-index:99 !important;
-  position: fixed;
-  display: none;
+    padding: 0;
+    margin: 0;
+    z-index: 99 !important;
+    position: fixed;
+    display: none;
 }
-nav ul li:hover .profile-SubMenu{
-  display: block;
-  position:  fixed;
-  top:60px;
-  background: rgb(230,230,230);
+
+nav ul li:hover .profile-SubMenu {
+    display: block;
+    position: fixed;
+    top: 60px;
+    background: rgb(230, 230, 230);
 }
-nav ul li .profile-SubMenu li{
-  line-height: 40px;
-  display: flex;
+
+nav ul li .profile-SubMenu li {
+    line-height: 40px;
+    display: flex;
 }
+
 nav ul li:hover .profile-SubMenu li a {
- background: transparent;
- font-size: 15px;
- width: 150px;
- padding-left : 5px;
- border-radius: 0;
- text-align:Left;
- text-decoration: none;
- color: #1b9bff;
+    background: transparent;
+    font-size: 15px;
+    width: 150px;
+    padding-left: 5px;
+    border-radius: 0;
+    text-align: Left;
+    text-decoration: none;
+    color: #1b9bff;
 
 }
 
-.category{
-  display: flex;
-  font-size: 15px;
+.category {
+    display: flex;
+    font-size: 15px;
 
-  padding-left : 20px;
-  border-radius: 0;
-  text-align:Left;
-  text-decoration: none;
-  color: #1b9bff;
+    padding-left: 20px;
+    border-radius: 0;
+    text-align: Left;
+    text-decoration: none;
+    color: #1b9bff;
 }
 
-.category:hover{
-  cursor: pointer;
-  transition: .4s;
-  color: white;
-  position: relative;
-  background: #1b9bff;
-}
-#productPic{
-  min-width: 300px;
-  min-height: 250px;
-  max-width: 300px;
-  max-height: 250px;
+.category:hover {
+    cursor: pointer;
+    transition: .4s;
+    color: white;
+    position: relative;
+    background: #1b9bff;
 }
 
-nav ul li:hover .profile-SubMenu li a:hover{
-  transition: .4s;
-  color: white;
-  position: relative;
-  background: #1b9bff;
+#productPic {
+    min-width: 300px;
+    min-height: 250px;
+    max-width: 300px;
+    max-height: 250px;
+}
+
+nav ul li:hover .profile-SubMenu li a:hover {
+    transition: .4s;
+    color: white;
+    position: relative;
+    background: #1b9bff;
 }
 
 /* handling responsiveness*/
-#check , #Services{
+#check,
+#Services {
     display: none;
 }
 
 @media (max-width: 952px) {
-    label.Logo{
+    label.Logo {
         font-size: 30px;
-        padding-left:50px ;
+        padding-left: 50px;
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 16px;
     }
 }
 
 @media (max-width: 858px) {
-  nav{
-    position: absolute;
-    z-index: 99 !important;
-  }
-    .checkbtn{
+    nav {
+        position: absolute;
+        z-index: 99 !important;
+    }
+
+    .checkbtn {
         display: block;
     }
-    ul{
+
+    ul {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background:#2c3e50;
+        background: #2c3e50;
         top: 80px;
         left: -100%;
         text-align: center;
         transition: all .5s;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 20px;
     }
-    a:hover,a.active{
+
+    a:hover,
+    a.active {
         background: none;
         color: #0082e6;
     }
 
-    #check:checked ~ul{
+    #check:checked~ul {
         left: 0;
     }
 }
 
 
-.carousel-item{
+.carousel-item {
     height: 400px;
 }
 
-.carousel-image-1{
-    background: linear-gradient(rgba(0,0,0,.3),
-        rgba(0,0,0,.4)),
+.carousel-image-1 {
+    background: linear-gradient(rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .4)),
         url('./Images/iphone.jpg');
-        background-position: center;
-        background-size: cover;
+    background-position: center;
+    background-size: cover;
 }
 
-.carousel-image-2{
-    background: linear-gradient(rgba(0,0,0,.3),
-        rgba(0,0,0,.4)),
+.carousel-image-2 {
+    background: linear-gradient(rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .4)),
         url('./Images/ca_shield.png');
-        background-position: center;
-        background-size: cover;
+    background-position: center;
+    background-size: cover;
 }
 
-.carousel-image-3{
-    background: linear-gradient(rgba(0,0,0,.3),
-        rgba(0,0,0,.4)),
+.carousel-image-3 {
+    background: linear-gradient(rgba(0, 0, 0, .3),
+            rgba(0, 0, 0, .4)),
         url('./Images/playground.jpg');
-        background-size: cover;
+    background-size: cover;
 }
 
-.title-color{
+.title-color {
     color: white;
 }
 
-.btn-color{
+.btn-color {
     background: black;
     color: white;
 }
 
-.btn-color:hover{
+.btn-color:hover {
     color: grey;
 }
 
-@keyframes slide-btn{
-    16%{
+@keyframes slide-btn {
+    16% {
         transform: translateY(8px);
     }
-    33%{
+
+    33% {
         transform: translateY(-6px);
     }
-    50%{
+
+    50% {
         transform: translateY(4px);
     }
-    65%{
+
+    65% {
         transform: translateY(-2px);
     }
-    85%{
+
+    85% {
         transform: translateY(1px);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
 }
 
-.slide-btn{
+.slide-btn {
     display: inline-block;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0,0,0,0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
 .slide-btn:hover,
 .slide-btn:focus,
-.slide-btn:active{
+.slide-btn:active {
     animation-name: slide-btn;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
@@ -276,19 +302,21 @@ nav ul li:hover .profile-SubMenu li a:hover{
 
 /*======== Product section ===========*/
 
-#products{
+#products {
     background: url("https://www.rawpixel.com/image/575923/marbled-table-top-background");
 }
 
-.product-title{
+.product-title {
     color: white;
 }
-#main , #product-items{
+
+#main,
+#product-items {
     position: relative;
-    top:-19.6px;
+    top: -19.6px;
 }
 
-.single-item{
+.single-item {
     display: inline-block;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
@@ -299,7 +327,7 @@ nav ul li:hover .profile-SubMenu li a:hover{
     cursor: pointer
 }
 
-.single-item:before{
+.single-item:before {
     pointer-events: none;
     position: absolute;
     z-index: -1;
@@ -316,22 +344,22 @@ nav ul li:hover .profile-SubMenu li a:hover{
 
 .single-item:hover,
 .single-item:focus,
-.single-item:active{
+.single-item:active {
     transform: translateY(-5px);
 }
 
 .single-item:hover:before,
 .single-item:focus:before,
-.single-item:active:before{
+.single-item:active:before {
     opacity: 1;
     transform: translateY(5px);
 }
 
-.products{
+.products {
     background-color: black;
 }
 
-.img-container{
+.img-container {
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -339,14 +367,14 @@ nav ul li:hover .profile-SubMenu li a:hover{
     display: inline-block;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 50px rgba(0,0,0,0);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0);
     transition-duration: 0.3s;
     transition-property: box-shadow, transform;
 }
 
 .img-container:hover,
 .product-img:focus,
-.product-img:active{
+.product-img:active {
     box-shadow: 1px 0px 1px 4px rgba(247, 243, 243, 0.9);
     transform: scale(1.1);
 }
@@ -355,48 +383,48 @@ nav ul li:hover .profile-SubMenu li a:hover{
 
 /* ======= About Section ==============*/
 
-.about-sec{
+.about-sec {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.text-color{
+.text-color {
     color: black;
 }
 
-.market-img{
+.market-img {
     margin-top: 35px;
 }
 
-.market-img{
+.market-img {
     animation-name: imgLeft;
     animation-duration: 3s;
 }
 
-.about-text{
+.about-text {
     animation-name: textRight;
     animation-duration: 3s;
 }
 
-@keyframes imgLeft{
-    0%{
+@keyframes imgLeft {
+    0% {
         transform: translateX(-120px);
         opacity: 0;
     }
 
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes textRight{
-    0%{
+@keyframes textRight {
+    0% {
         transform: translateX(30px);
         opacity: 0;
     }
 
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
