@@ -263,7 +263,7 @@ window.addEventListener('click' , e => {
  setTimeout(()=>{
      window.location.href = "Homepage.html";
      modal.style.display = 'none';
- },3000);
+ },5000);
    
 }
 
