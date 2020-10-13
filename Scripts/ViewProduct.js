@@ -32,6 +32,11 @@ document.getElementById("product_price").innerHTML = "R" + item.pricePerItem;
 /* Getting and setting Product Quantity*/
 document.getElementById("product_quantity").innerHTML = item.currentQuantity;
 
+/* setting the user balance on the nav bar*/
+if(loggedUser != null){
+    document.getElementById("showBalance").innerHTML = "Balance: " + "R" + loggedUser.Balance;
+}
+
 /* Getting and setting Ratings*/
 
 
@@ -278,7 +283,7 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function (
                 '</div>';
             reviewBlock.innerHTML = reviewHTML;
             var node = document.createTextNode(reviewHTML);
-            var element = document.getElementById("reviews");
+            var element = document.getElementById("reviews"); 
             element.appendChild(reviewBlock);
         }
 
@@ -299,6 +304,11 @@ document.getElementById("veiw_reviews_btn").addEventListener('click', function (
     }
 });
 
+document.getElementById("viewPSO").addEventListener('click',e=>{
+    localStorage.removeItem('user');
+    sessionStorage.clear();
+    window.location.href = 'Homepage.html';
+});
 
 //---> https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPAddReview.php
 /*
