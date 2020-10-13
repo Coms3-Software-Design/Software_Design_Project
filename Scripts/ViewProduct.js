@@ -33,6 +33,11 @@ document.getElementById("product_price").innerHTML = "R" + item.pricePerItem;
 /* Getting and setting Product Quantity*/
 document.getElementById("product_quantity").innerHTML = item.currentQuantity;
 
+/* setting the user balance on the nav bar*/
+if(loggedUser != null){
+    document.getElementById("showBalance").innerHTML = "Balance: " + "R" + loggedUser.Balance;
+}
+
 /* Getting and setting Ratings*/
 
 

@@ -23,6 +23,16 @@ let hide = function(){
   }
 }
 
+//Checks whether the user logged in or not. If not it redirects to login page
+let doSignUp = function(){
+  if(localStorage.getItem('user') == null){
+    alert('You will be directed to the log in page');
+    window.location.href = "Login.html";
+  }else{
+    alert("you already logged in!!");
+  }
+}
+
 //clears the session when the user has logged out
 let logout = function(){
   localStorage.removeItem('user');
