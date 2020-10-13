@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: sans-serif;
+	font-family: 'Helvetica', 'Arial', sans-serif;
 	box-sizing: border-box;
 }
 
@@ -41,9 +41,6 @@ body {
 	height: 40% ; 
  }
 
- .transaction-profile-image-info {
- }
- 
 .transaction-profile-image-info img{
 	height: 100px ;
 	width: 100px ;
@@ -137,15 +134,34 @@ body {
 
 .transaction-history-list .lists {
 	display: flex;
-	padding: 20px ;
-	margin: 10px ;
+	height: 70px;
 	color: white ;
 	background-color: #383838;
 	border: 1px #ccc solid;
 	justify-content: space-between;
-	align-items: center;
+	align-items: center;  
 }
 
-.lists-details{
-	/*color: #1c39bb ;*/
+.lists div {
+	width: 180px ;
+	/*height: 100% ;*/
+	text-align: center ;
 }
+
+/***
+.lists .lists-details {
+	width: 180px ;
+	height: 100% ;
+	background-color: orange;
+}
+.lists .category {
+	width: 180px ;
+	height: 100% ;
+	background-color: green;
+}
+
+.lists .price-tag {
+	width: 180px ;
+	height: 100% ;
+	background-color: red ;
+}*/
