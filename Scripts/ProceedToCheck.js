@@ -5,14 +5,16 @@ const updateUserUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPRe
 const updateCartUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPUpdateCartItem.php";
 const DeleteCartItemUrl = "https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/Cart/MPDeleteCartItem.php";
 let cartItems;
-
+let NotAdded = true;
 
 setVariables();
-
+let list = document.getElementById("listOfProductsBought");
+            let Items = ``;
 
 const ConfirmPurchase = document.getElementById("confirmPurchase"); //This the buy button
 let sumTotal = 0;
 
+let modal = document.getElementById("simpleModal");
 
 function personCheck() {
     let pName = document.getElementById("name").value;
@@ -37,12 +39,42 @@ function setVariables() {
 
     const promises = new Promise(resolve => {
         $.getJSON(cartUrl, {
-            userID: user.UserID
+            userID : user.UserID
         }, function (results) {
             console.log("in promise3");
             sessionStorage.removeItem("cart");
             sessionStorage.setItem("cart", JSON.stringify(results));
             cartItems = JSON.parse(sessionStorage.getItem("cart"));
+            Citems = JSON.parse(sessionStorage.getItem("cart"));
+
+            if(NotAdded){
+                cartItems.map(prod => {
+                    return Items += `
+                        <li class="row">
+                            <div class="col">
+                                ${prod.Product_Name}
+                                </br>
+                                <p style="font-size : 12px;">${prod.Product_Description}</p>
+                            </div>
+        
+                            <div class="col-lg-5">
+                                Quantity
+                                <p style="font-size: 12px;"> ${prod.Amount} </p>
+                            </div>
+        
+                            <div class="col-lg-2">
+                                Price per item
+                                <p style="font-size: 12px;"> R${prod.Product_Price}.00 </p>
+                            </div>
+                        </li>
+                    `;
+                    }).join('');
+        
+                    list.innerHTML = Items;
+            }
+            //let Citems = JSON.parse(sessionStorage.getItem("cart"));
+           NotAdded = false;
+
             resolve();
         });
         //resolve(getCartItems());
@@ -101,8 +133,8 @@ function varifyAndProceed() {
                 setVariables();
                 document.querySelector('.buy-popup').style.display = 'none';
                 alert("Product(s) successfully purchased");
-                window.location.href = "Homepage.html";
-
+                //window.location.href = "Homepage.html";
+                afterPurchase();
             });
         })
     });
@@ -118,7 +150,7 @@ function proceedToBuy() {
     transDate = mm + '/' + dd + '/' + yyyy;
 
     for (let i = 0; i < cartItems.length; i++) {
-
+        Citems.push(cartItems[i]);
         // Go to the next item if the quantity of the item in cart is 0
         if (parseInt(cartItems[i].Current_Quantity) === 0) {
             alert(`${cartItems[i].Product_Name} is currently out of stock. \n You will be notified once we have stock`);
@@ -205,6 +237,35 @@ function DeleteItemFromCart() {
 
 }
 
+function AP(){
+    let prom = new Promise(resolve =>{
+        setVariables();
+        resolve();
+    });
+
+    prom.then(()=>{
+        afterPurchase();
+    })
+
+}
+
+function afterPurchase(){
+
+modal.style.display='block';
+
+window.addEventListener('click' , e => {
+    if(e.target == modal){
+        modal.style.display = 'none';
+        window.location.href = "Homepage.html";
+    }
+});
+
+ setTimeout(()=>{
+     window.location.href = "Homepage.html";
+     modal.style.display = 'none';
+ },3000);
+   
+}
 
 
 

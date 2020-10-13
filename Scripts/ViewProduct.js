@@ -244,7 +244,7 @@ function updateCart() {
 document.getElementById("Cancel-btn").addEventListener('click', function () {
     document.body.style.overflowY = "visible";
     document.querySelector('.buy-popup').style.display = 'none';
-    alert("Purchase canceled");
+   // alert("Purchase canceled");
 });
 
 document.getElementById("veiw_reviews_btn").addEventListener('click', function () {
