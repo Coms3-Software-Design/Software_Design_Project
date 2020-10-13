@@ -58,7 +58,7 @@ document.getElementById('change').addEventListener('click', function(){
 document.getElementById('btn-update').addEventListener('click', function(e){
     e.preventDefault();
     
-    let database = "12345"
+    let databasePass = Password;
     let currentpass = document.getElementById('current-pass').value;
     let newpass = document.getElementById('new-pass').value;
     let confirmpass = document.getElementById('confirm-pass').value;
@@ -77,9 +77,10 @@ document.getElementById('btn-update').addEventListener('click', function(e){
        if(newpass != confirmpass)
        alert("Password does not match")
 
-       else if(newpass == confirmpass && matched()){
+       else if(newpass == confirmpass && currentpass == databasePass){
 
-            alert("Password successfully Changed");
+            
+            
 
        }
        else{
@@ -134,8 +135,8 @@ function Repopulate(user){
    let IDs = ['Name' , 'Surname' , 'Email', 'Bio'];
    
                 IDs.map((id,i) => {
-                
                     var timeClicked = 0;
+                   
                     document.getElementById(`btn-edit${id}`).addEventListener('click', function(){
                         timeClicked++;
                         
@@ -144,18 +145,18 @@ function Repopulate(user){
                                 document.getElementById(`${id}Change-input`).value = params[i] ;
                                 document.getElementById(`${id}`).style.display = "none";
                                 document. getElementById(`${id}form`).style.display="block";
-                               
+                                //alert(timeClicked);
                          
                             }
                             else{
                             
-                               
+                               // alert(timeClicked);
                                 document.getElementById(`${id}`).style.display = "block";
                                 document. getElementById(`${id}form`).style.display="none";
                     
                                 if(document.getElementById(`${id}Change-input`).value == params[i]) console.log("name not change");
 
-                                else if(document.getElementById(`${id}Change-input`).value != ""){
+                                else if(document.getElementById(`${id}Change-input`).value != "" ){
 
                                     if(i==2 && document.getElementById(`${id}Change-input`).value != params[i]){
                                         var email = document.getElementById(`${id}Change-input`).value;
@@ -192,11 +193,12 @@ function Repopulate(user){
                                     
                                     populate(user);
                                 } 
-                
+                            
                                 
                             }
-                    
+                            
                         }
+                       
                     });
                 }).join('');     
 
@@ -219,6 +221,20 @@ function updateProf(Name , Surname , PNum , Bio , Password , user){
         console.log(result);
         populate();
      });
+}
+
+let updatePasswordurl = 'https://lamp.ms.wits.ac.za/~s1814731/MPphpfiles/MPUpdatePassword.php';
+
+function updatePassword(username, currentpass,newpass){
+    $.getJSON(updatePasswordurl,{
+        username: username,
+        current: currentpass,
+        pass: newpass
+}, result=>{
+    console.log(result);
+});
+
+
 }
 
 
