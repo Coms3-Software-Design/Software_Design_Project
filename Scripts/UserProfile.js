@@ -158,7 +158,7 @@ function Repopulate(user){
                         
                         if(timeClicked>0){
                             if(timeClicked%2 != 0){
-                                document.getElementById(`${id}Change-input`).value = params[i] ;
+                                //document.getElementById(`${id}Change-input`).value = params[i] ;
                                 document.getElementById(`${id}`).style.display = "none";
                                 document. getElementById(`${id}form`).style.display="block";
                                 //alert(timeClicked);
